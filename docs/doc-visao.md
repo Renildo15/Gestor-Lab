@@ -7,7 +7,7 @@ Membro | Papel | Email
 Breno | Programador | brenoalves43@hotmail.com
 Eduardo | Gerente | eduardo.h3nriqu3@gmail.com
 Renildo | programador | renildorabi22@gmail.com
-Jeison | Programador | jeison@gmail.com
+Jeison | Programador | jeisonjs42@gmail.com
 Leonardo | testador | leo@gmail.com
 Pedro | testador | pedro@gmail.com
 
@@ -18,7 +18,7 @@ Membro | Competência
 Breno | Desenvolvedor Python(Django), JavaScript, PHP.
 Eduardo | Desenvolvedor Python, JavaScript, Java.
 Renildo | Desenvolvedor Python(Django), JavaScript.
-Jeison | Desenvolvedor Python, JavaScript, Java.
+Jeison | Desenvolvedor Python, JavaScript, C.
 Leonardo | Desenvolvedor Python, JavaScript, Java.
 Pedro | Desenvolvedor Python, JavaScript, Java.
 
