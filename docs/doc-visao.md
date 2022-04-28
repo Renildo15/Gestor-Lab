@@ -6,7 +6,7 @@ Membro | Papel | Email
 ------ | ----- | -----
 Breno | Programador | brenoalves43@hotmail.com
 Eduardo | Gerente | eduardo.h3nriqu3@gmail.com
-Renildo | programador | renildo@gmail.com
+Renildo | programador | renildorabi22@gmail.com
 Jeison | Programador | jeison@gmail.com
 Leonardo | testador | leo@gmail.com
 Pedro | testador | pedro@gmail.com
