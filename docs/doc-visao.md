@@ -17,7 +17,7 @@ Membro | Competência
 ------ | -----------
 Breno | Desenvolvedor Python(Django), JavaScript, PHP.
 Eduardo | Desenvolvedor Python, JavaScript, Java.
-Renildo | Desenvolvedor Python, JavaScript, Java.
+Renildo | Desenvolvedor Python(Django), JavaScript.
 Jeison | Desenvolvedor Python, JavaScript, Java.
 Leonardo | Desenvolvedor Python, JavaScript, Java.
 Pedro | Desenvolvedor Python, JavaScript, Java.
