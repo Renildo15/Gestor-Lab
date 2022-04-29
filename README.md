@@ -1,9 +1,9 @@
 # GestorLab
 
 Projeto de Gestão de Laboratórios para gerenciar a equipe, as tarefas, os projetos, os artigos
-e as apresentações em no laboratório no LabCoffee MeetUp.
+e as apresentações no laboratório.
 
-* A tecnologia escolhida para o projeto foi o **Python** utulizando o frame work **Django**
+* A tecnologia escolhida para o projeto foi o **Python** utilizando o frame work **Django**
 
 * Tutoriais da tecnologia escolhida: https://www.youtube.com/watch?v=Dzuiy-JNi-E&ab_channel=FabioRuicci, https://www.w3schools.com/django/index.php
 
