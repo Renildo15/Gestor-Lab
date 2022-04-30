@@ -26,19 +26,21 @@ Pedro | Desenvolvedor Python, JavaScript, Java, C.
 
 # Descrição do projeto
 
-O projeto tem como objetivo facilitar o gerenciamento dos laboratórios, tendo funcionalidades de gestão de equipes, tarefas, projetos, artigos e as apresentações no laboratóio LabCoffe MeetUP.
+O projeto tem como objetivo facilitar o gerenciamento dos laboratórios, tendo funcionalidades de gestão de equipes, tarefas, projetos, artigos e as apresentações no laboratório LabCoffe MeetUP.
 
 
 # Perfis dos usuários
 
 O sistema poderá ser usado por Alunos e Professores.
 
-* Perfil do Professor: Os professores poderam fazer solicitações de projetos ...
+* Perfil do Professor: Os professores poderão fazer solicitações de projetos ...
 
-* Perfil do Aluno: Os alunos usaram o sistema para...
+* Perfil do Aluno: Os alunos usarão o sistema para...
 
 # Requisitos funcionais
-................
+Requisito| Descrição   | Ator |
+---------| ----------- | ---------- |
+RF001 - Manter Laboratório de Pesquisa| Um laboratório tem um nome, descrição, linhas de pesquisa, um coordenador, um vice-coordenador, membros discentes, docentes e colaboradores externos. | .................
 
 # Requisitos não funcionais 
 .................
