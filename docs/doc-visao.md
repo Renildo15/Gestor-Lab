@@ -45,6 +45,7 @@ RF004 - Manter projetos de Ensino, Pesquisa e Extensão| os projetos possuem nom
 RF005 - Manter artigos publicados| os artigos possuem Título, autores, local de publicação e como citar no formato ABNT e TEX. | Professor
 RF006 - Manter horários dos membros do laboratório| ................. | Professor
 RF007 - Manter estágios| os estágios possuem informações do estagiário, orientador, supervisor e atividades | Professor
+RF008 - Manter TCC | TCC possui informações do discente, do orientador, descrição, linha de pesquisa e atividades. | .................
 
 # Requisitos não funcionais 
 .................
