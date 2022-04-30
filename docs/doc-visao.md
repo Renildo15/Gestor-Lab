@@ -8,7 +8,7 @@ Breno | Programador | brenoalves43@hotmail.com
 Eduardo | Gerente | eduardo.h3nriqu3@gmail.com
 Renildo | programador | renildorabi22@gmail.com
 Jeison | Programador | jeisonjs42@gmail.com
-Leonardo | testador | leo@gmail.com
+Leonardo | testador | leonardodds@hotmail.com
 Pedro | testador | pedro.augustohp02@gmail.com
 
 ## Matriz de Competências 
@@ -19,7 +19,7 @@ Breno | Desenvolvedor Python(Django), JavaScript, PHP.
 Eduardo | Desenvolvedor Python, JavaScript, Java.
 Renildo | Desenvolvedor Python(Django), JavaScript.
 Jeison | Desenvolvedor Python, JavaScript, C.
-Leonardo | Desenvolvedor Python, JavaScript, Java.
+Leonardo | Desenvolvedor Python, JavaScript, C.
 Pedro | Desenvolvedor Python, JavaScript, Java, C.
 
 
