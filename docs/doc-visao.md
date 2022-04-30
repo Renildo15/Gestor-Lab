@@ -49,7 +49,12 @@ RF008 - Manter TCC | TCC possui informações do discente, do orientador, descri
 RF009 - Manter apresentações | Apresentações possuem autores e são vinculadas a um Evento/Projeto. | .................
 RF010 - Evento/Revistas de Interesse | Evento/Revistas de Interesse possuem titulo, descrição, áreas, site e datas de submissão ativas. | .................
 # Requisitos não funcionais 
-.................
+Requisitos| Descrição|
+----------| ---------|
+RNF001 - Deve ser acessível via navegador| O sistema deve abrir perfeitamente no Chrome e Firefox.|
+RNF002 - Consultas rápidas| O sistema deve executar as consultas o mais rápido possível.|
+RNF003 - Conexão com Banco de Dados| O sistema deve ter uma conexão com o banco de dados.|
+RNF004 - Fácil utlização| O sistema deve layout intuitivo para que o usuário possa usar sem problemas.|
 
 # Riscos
 
