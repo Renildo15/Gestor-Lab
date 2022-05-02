@@ -60,6 +60,8 @@ RNF004 - Fácil utlização| O sistema deve layout intuitivo para que o usuário
 
 Data | Risco | Prioridade | Responsável | status | Providência/Solução
 ---- | ----- | ---------- | ----------- | ------ | ------------------
-
+02/05/2022 | Má divisão de tarefas | Baixa | Gerente | Vigente | acompanhar o trabalho realizado pelos membros
+02/05/2022 | Algum membro precisar se ausêntar por motivo pessoal | Alta | Gerente | Vigente |Passar as funções do membro afastado para os demais membros
+02/05/2022 | Problemas com a aprendizagem das ferramentas usadas pelo componentes do grupo | Alta | Todos | Vigente | Contatar os colegas para um possível esclarecimento do erro, e procurar soluções online 
 
 
