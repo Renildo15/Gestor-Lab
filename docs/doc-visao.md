@@ -51,10 +51,13 @@ RF010 - Evento/Revistas de Interesse | Evento/Revistas de Interesse possuem titu
 # Requisitos não funcionais 
 Requisitos| Descrição|
 ----------| ---------|
-RNF001 - Deve ser acessível via navegador| O sistema deve abrir perfeitamente no Chrome e Firefox.|
-RNF002 - Consultas rápidas| O sistema deve executar as consultas o mais rápido possível.|
+RNF001 - Deve ser acessível via navegador| O sistema deve abrir perfeitamente nos navegadores web Chrome e Firefox.|
+RNF002 - Consultas rápidas| O sistema deve executar consultas rapidas, não ultrapassando o tempo limite de 1 minuto.|
 RNF003 - Conexão com Banco de Dados| O sistema deve ter uma conexão com o banco de dados.|
 RNF004 - Fácil utlização| O sistema deve layout intuitivo para que o usuário possa usar sem problemas.|
+RNF005 - Idioma | O sistema deve apresentar mensagens e telas no idioma português do Brasil.|
+RNF006 - Proteção de dados | O sistema deve garantir proteção aos dados coletados.|
+
 
 # Riscos
 
