@@ -10,8 +10,10 @@ Data | Versão |  Descrição |  Autor
 ### User Story RF001 - Manter laboratório de pesquisa
 
 Descrição | O Sistema deve manter um cadastro do loboratório de pesquisa. O laboratório tem os atributos nome, descrição, linhas de pesquisa, um coordenador, um vice-coordenador, membros discentes, docentes e colaboradores externos. O usuário administrador será quem poderá cadastrar um laboratório, alterar ou remover da lista de laboratórios.
+--------- | -----------------------------------------------
 
 Requisitos Envolvidos | ---------
+--------------------- | -------
 RF001 | CRUD do labotório
 
 Prioridade | Essencial
@@ -26,6 +28,7 @@ Testador | Jeison
 
 
 Teste de aceitação (TA) | -----
+----------------------- | -----
 Código | Descrição
 TA01 | Descrever o teste de aceitação .........
 
