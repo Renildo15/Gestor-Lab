@@ -19,6 +19,16 @@ RF002 | Consultar Laboratório|
 RF003 | Alterar Laboratório  |
 RF004 | Excluir Laboratório  |
 
+Prioridade | Essencial
+---------- | --------
+Estimativa | 10h
+Tempo Gasto (real): | -----
+Tamanho Funcional | ?????
+Analista | Eduardo
+Desenvolvedor | Breno
+Revisor | Renildo
+Testador | Jeison
+
 ### User Story 002 - Manter linhas de pesquisa:
 
 Descrição | O Sistema deve manter um cadastro de linhas de pesquisa. As linhas de pesquisa tem os atributos nome, descrição, área e CNPQ. O usuário administrador será quem poderá cadastrar uma linha de pesquisa, alterar, consultar ou remover.
@@ -30,6 +40,16 @@ RF001 | Cadastrar Linha de Pesquisa|
 RF002 | Consultar Linha de Pesquisa|
 RF003 | Alterar Linha de Pesquisa  |
 RF004 | Excluir Linha de Pesquisa  |
+
+Prioridade | Essencial
+---------- | --------
+Estimativa | 10h
+Tempo Gasto (real): | -----
+Tamanho Funcional | ?????
+Analista | Jeison
+Desenvolvedor | Leonardo
+Revisor | Breno
+Testador | Pedro
 
 ### User Story 003 - Manter Membros do laboratório:
 
@@ -43,6 +63,16 @@ RF002 | Consultar Membro do laboratório           |
 RF003 | Alterar Membro do laboratório             |
 RF004 | Excluir Membro do laboratório             |
 RF005 | Selecionar Função do Membro do laboratório|
+
+Prioridade | Essencial
+---------- | --------
+Estimativa | 12h
+Tempo Gasto (real): | -----
+Tamanho Funcional | ?????
+Analista | Renildo
+Desenvolvedor | Leonardo
+Revisor | Eduardo
+Testador | Pedro
 
 ### User Story 004 - Manter projetos de Ensino, Pesquisa e Extensão:
 
@@ -59,7 +89,7 @@ RF005 | Selecionar Tipo do Projeto|
 
 Prioridade | Essencial
 ---------- | --------
-Estimativa | 10h
+Estimativa | 12h
 Tempo Gasto (real): | -----
 Tamanho Funcional | ?????
 Analista | Renildo
@@ -71,7 +101,7 @@ Testador | Jeison
 Teste de aceitação (TA) | -----
 ----------------------- | -----
 Código | Descrição
-TA01 | Descrever o teste de aceitação .........
+TA01 | 
 
 
 
