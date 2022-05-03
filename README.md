@@ -10,6 +10,6 @@ e as apresentações no laboratório.
 # Documentos
 
 [Documento de visão](https://github.com/Renildo15/Gestor-Lab/blob/main/docs/doc-visao.md)<br/>
-Documento de Modelos<br/>
-[Plano de Releases e Intaração](https://github.com/Renildo15/Gestor-Lab/blob/main/docs/doc-interacao.md)<br/>
-Documento de User Story base<br/>
+[Documento de Modelos](https://github.com/Renildo15/Gestor-Lab/blob/first-branch/docs/doc-modelo.md)<br/>
+[Plano de Interação e Releases](https://github.com/Renildo15/Gestor-Lab/blob/main/docs/doc-interacao.md)<br/>
+[Documento de User Story base](https://github.com/Renildo15/Gestor-Lab/blob/first-branch/docs/doc-userStory.md)<br/>
