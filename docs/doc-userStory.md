@@ -12,7 +12,7 @@ Data | Versão |  Descrição |  Autor
 Descrição | O Sistema deve manter um cadastro do loboratório de pesquisa. O laboratório tem os atributos nome, descrição, linhas de pesquisa, um coordenador, um vice-coordenador, membros discentes, docentes e colaboradores externos. O usuário administrador será quem poderá cadastrar um laboratório, alterar, consultar ou remover da lista de laboratórios.
 --------- | -----------------------------------------------
 
-Requisitos Envolvidos | ---------
+Requisitos Envolvidos |       |
 --------------------- | -------
 RF001 | Cadastrar Laboratório|
 RF002 | Consultar Laboratório|
@@ -34,7 +34,7 @@ Testador | Jeison
 Descrição | O Sistema deve manter um cadastro de linhas de pesquisa. As linhas de pesquisa tem os atributos nome, descrição, área e CNPQ. O usuário administrador será quem poderá cadastrar uma linha de pesquisa, alterar, consultar ou remover.
 --------- | -----------------------------------------------
 
-Requisitos Envolvidos | ---------
+Requisitos Envolvidos |     |
 --------------------- | -------
 RF001 | Cadastrar Linha de Pesquisa|
 RF002 | Consultar Linha de Pesquisa|
@@ -56,7 +56,7 @@ Testador | Pedro
 Descrição | O Sistema deve manter um cadastro de Membros do laboratório. Os Membros do Laboratório tem os atributos nome, email, telefone e perfil, eles podem ser Coordenador, Docente, Discente, Colaborador. O usuário administrador será quem poderá cadastrar um Membro do laboratório, alterar, consultar ou remover o mesmo.
 --------- | -----------------------------------------------
 
-Requisitos Envolvidos | ---------
+Requisitos Envolvidos |      |
 --------------------- | -------
 RF001 | Cadastrar Membro do laboratório           |
 RF002 | Consultar Membro do laboratório           |
@@ -79,7 +79,7 @@ Testador | Pedro
 Descrição | O Sistema deve manter um cadastro de projetos de Ensino, Pesquisa e Extensão. Os Projetos tem os atributos nome, descrição, coordenação e participantes. Os membros do laboratório terão permissão para cadastrar , alterar, consultar ou remover os projetos.
 --------- | -----------------------------------------------
 
-Requisitos Envolvidos | ---------
+Requisitos Envolvidos |      |
 --------------------- | -------
 RF001 | Cadastrar Projeto         |
 RF002 | Consultar Projeto         |
@@ -90,7 +90,7 @@ RF005 | Selecionar Tipo do Projeto|
 Prioridade | Essencial
 ---------- | --------
 Estimativa | 12h
-Tempo Gasto (real): | -----
+Tempo Gasto (real): |  |
 Tamanho Funcional | ?????
 Analista | Renildo
 Desenvolvedor | Breno
@@ -98,7 +98,7 @@ Revisor | Eduardo
 Testador | Jeison
 
 
-Teste de aceitação (TA) | -----
+Teste de aceitação (TA) |    |
 ----------------------- | -----
 Código | Descrição
 TA01 | 
