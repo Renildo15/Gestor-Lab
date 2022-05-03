@@ -1,29 +1,15 @@
 # GestorLab
 
 Projeto de Gestão de Laboratórios para gerenciar a equipe, as tarefas, os projetos, os artigos
-e as apresentações em no laboratório no LabCoffee MeetUp.
+e as apresentações no laboratório.
 
-* Cadastro de Laboratórios de Pesquisa;
-  * Um laboratório tem um nome, descrição, linhas de pesquisa, um coordenador, 
-  um vice-coordenador, membros discentes, docentes e colaboradores externos.
-  * Cadastro de Linhas de Pesquisa
-    * nome, descrição, área do CNPQ;
-  * Cadastro dos Membros do Laboratório
-    * nome, email, telefone, perfil;
-    * perfis: Coordenador, Docente, Discente, Colaborador;
-  * Cadastro de Projetos de Ensino, Pesquisa e Extensão
-    * nome, descrição, coordenação, participantes;
-  * Cadastro de Artigos Publicados pelos membros do Laboratório
-    * Título, autores, local de publicação, como citar no formato abnt e tex;
-  * Cadastro de Horários dos Membros do Laboratório;
-* Cadastro de Estágios;
-  * Um estágio tem as informações do estagiários, orientador, supervisor e atividades;
-* Cadastro de TCC;
-  * Um TCC tem informações do discente, do orientador, descrição, linha de pesquisa e atividades;
-* Cadastro de Apresentações
-  * Cadastro de Autores;
-  * Cadastro de Apresentações;
-  * Vincular a um Evento/Projeto (Ex.: LabCoffee MeetUp)
-* Cadastro de Evento/Revistas de Interesse
-  * titulo, descrição, áreas, site;
-  * datas de submissão ativas;
+* A tecnologia escolhida para o projeto foi o **Python** utilizando o frame work **Django**
+
+* Tutoriais da tecnologia escolhida: https://www.youtube.com/watch?v=Dzuiy-JNi-E&ab_channel=FabioRuicci, https://www.w3schools.com/django/index.php
+
+# Documentos
+
+[Documento de visão](https://github.com/Renildo15/Gestor-Lab/blob/main/docs/doc-visao.md)<br/>
+[Documento de Modelos](https://github.com/Renildo15/Gestor-Lab/blob/main/docs/doc-modelo.md)<br/>
+[Plano de Interação e Releases](https://github.com/Renildo15/Gestor-Lab/blob/main/docs/doc-interacao.md)<br/>
+[Documento de User Story base](https://github.com/Renildo15/Gestor-Lab/blob/main/docs/doc-userStory.md)<br/>
