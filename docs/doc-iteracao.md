@@ -1,8 +1,8 @@
-# Calendário de Interações
+# Calendário de Iterações
 
 ### Este plano será usado como ferramenta orientadora para manter o andamento do projeto dentro do prazo de entrega.
 
-## Plano de Interações
+## Plano de Iterações
 
 Interação | Data de início | Data final | Apresentação | Gerente | Detalhes 
 --------- | -------------- | ---------- | ------------ | ------- | --------
