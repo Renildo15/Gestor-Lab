@@ -69,14 +69,15 @@ RF028 - Deletar estágios | Deleta um estágio. | Administrador
 RF029 - Cadastrar apresentações | As apresentações possuem autores e são vinculados a um evento ou projeto. | Professor
 RF030 - Atualizar apresentações | Permite a mudança no autor(es), e a vinculação do evento. | Professor
 RF031 - Lista apresentações | Lista as apresentações que iram acontecer, que aconteceram, ou todas. | Professor
-RF032 - Cadastrar horários dos membros dos laboratórios | Os horários possuem horário de entrada, horário de saída e os dias na semana em que os membros estaram trabalhando. | Professor
-RF033 - Atulizar horários dos membros dos laboratórios | Permite a mudança do horário de entrada, horário de saída e os dias na semana em que os membros estaram trabalhando. | Professor
-RF034 - Listar horários dos membros dos laboratórios | Lista todos os horários dos membros ativos dos laboratórios | Usuário
-RF035 - Deletar horários dos membros dos laboratórios | Deleta um horário de um membro do laboratório | Professor
-RF036 - Cadastrar TCC | O TCC possui título, descrição, linha de pesquisa, informações do discente, do orientador. | Professor
-RF037 - Atulizar TCC | Permite a atualização do título, descrição, linha de pesquisa, informações do orientador. | Administrador
-RF038 - Listar TCC | Lista todos os TCC por linha de pesquisa. | Usuário 
-RF039 - Deletar TCC | Deleta um TCC. | Administrador
+RF032 - Deletar apresentação | Deleta uma apresentação. | Professor
+RF033 - Cadastrar horários dos membros dos laboratórios | Os horários possuem horário de entrada, horário de saída e os dias na semana em que os membros estaram trabalhando. | Professor
+RF034 - Atulizar horários dos membros dos laboratórios | Permite a mudança do horário de entrada, horário de saída e os dias na semana em que os membros estaram trabalhando. | Professor
+RF035 - Listar horários dos membros dos laboratórios | Lista todos os horários dos membros ativos dos laboratórios | Usuário
+RF036 - Deletar horários dos membros dos laboratórios | Deleta um horário de um membro do laboratório | Professor
+RF037 - Cadastrar TCC | O TCC possui título, descrição, linha de pesquisa, informações do discente, do orientador. | Professor
+RF038 - Atulizar TCC | Permite a atualização do título, descrição, linha de pesquisa, informações do orientador. | Administrador
+RF039 - Listar TCC | Lista todos os TCC por linha de pesquisa. | Usuário 
+RF040 - Deletar TCC | Deleta um TCC. | Administrador
  
 
 
