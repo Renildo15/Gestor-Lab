@@ -16,7 +16,7 @@ Pedro | Testador | pedro.augustohp02@gmail.com
 Membro | Competência 
 ------ | -----------
 Breno | Desenvolvedor Python(Django), JavaScript, PHP.
-Eduardo | Desenvolvedor Python(Django), JavaScript.
+Eduardo | Desenvolvedor Python(Django), JavaScript, C.
 Renildo | Desenvolvedor Python(Django), JavaScript.
 Jeison | Desenvolvedor Python, JavaScript, C.
 Leonardo | Desenvolvedor Python, JavaScript, C.
@@ -82,8 +82,6 @@ RF040 - Deletar TCC | Deleta um TCC. | Administrador
 
 
 
-
-.................
 # Requisitos não funcionais 
 Requisitos| Descrição|
 ----------| ---------|
