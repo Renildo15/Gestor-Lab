@@ -15,8 +15,8 @@ Descrição | O Sistema deve manter um cadastro do loboratório de pesquisa. O l
 Requisitos Envolvidos |       |
 --------------------- | -------
 RF001 | Cadastrar Laboratório|
-RF002 | Consultar Laboratório|
-RF003 | Alterar Laboratório  |
+RF002 | Alterar Laboratório|
+RF003 | Listar Laboratório  |
 RF004 | Excluir Laboratório  |
 
 Prioridade | Essencial
@@ -36,10 +36,10 @@ Descrição | O Sistema deve manter um cadastro de linhas de pesquisa. As linhas
 
 Requisitos Envolvidos |     |
 --------------------- | -------
-RF001 | Cadastrar Linha de Pesquisa|
-RF002 | Consultar Linha de Pesquisa|
-RF003 | Alterar Linha de Pesquisa  |
-RF004 | Excluir Linha de Pesquisa  |
+RF005 | Cadastrar Linhas de Pesquisa |
+RF006 | Alterar Linhas de Pesquisa |
+RF007 | Listar Linha de Pesquisa |
+RF008 | Excluir Linha de Pesquisa |
 
 Prioridade | Essencial
 ---------- | --------
@@ -53,16 +53,15 @@ Testador | Pedro
 
 ### User Story 003 - Manter Membros do laboratório:
 
-Descrição | O Sistema deve manter um cadastro de Membros do laboratório. Os Membros do Laboratório tem os atributos nome, email, telefone e perfil, eles podem ser Coordenador, Docente, Discente, Colaborador. O usuário administrador será quem poderá cadastrar um Membro do laboratório, alterar, consultar ou remover o mesmo.
+Descrição | O Sistema deve manter um cadastro de Membros do laboratório. Os Membros do Laboratório tem os atributos nome, email, telefone e perfil, eles podem ser Docente, Discente, Colaborador. O usuário  será quem poderá cadastrar um Membro do laboratório, alterar, consultar ou remover o mesmo.
 --------- | -----------------------------------------------
 
 Requisitos Envolvidos |      |
 --------------------- | -------
-RF001 | Cadastrar Membro do laboratório           |
-RF002 | Consultar Membro do laboratório           |
-RF003 | Alterar Membro do laboratório             |
-RF004 | Excluir Membro do laboratório             |
-RF005 | Selecionar Função do Membro do laboratório|
+RF009 | Cadastrar Membro do laboratório           |
+RF010 | Alterar Membro do laboratório           |
+RF011 | Listar Membro do laboratório             |
+RF012 | Excluir Membro do laboratório             |
 
 Prioridade | Essencial
 ---------- | --------
@@ -76,16 +75,15 @@ Testador | Pedro
 
 ### User Story 004 - Manter projetos de Ensino, Pesquisa e Extensão:
 
-Descrição | O Sistema deve manter um cadastro de projetos de Ensino, Pesquisa e Extensão. Os Projetos tem os atributos nome, descrição, coordenação e participantes. Os membros do laboratório terão permissão para cadastrar , alterar, consultar ou remover os projetos.
+Descrição | O Sistema deve manter um cadastro de projetos de Ensino, Pesquisa e Extensão. Os Projetos teram os atributos nome, descrição, coordenador e participantes. Os membros do laboratório terão permissão para cadastrar , alterar, consultar ou remover os projetos.
 --------- | -----------------------------------------------
 
 Requisitos Envolvidos |      |
 --------------------- | -------
-RF001 | Cadastrar Projeto         |
-RF002 | Consultar Projeto         |
-RF003 | Alterar Projeto           |
-RF004 | Excluir Projeto           |
-RF005 | Selecionar Tipo do Projeto|
+RF013 | Cadastrar Projeto         |
+RF014 | Alterar Projeto         |
+RF015 | Listar Projeto           |
+RF016 | Excluir Projeto           |
 
 Prioridade | Essencial
 ---------- | --------
