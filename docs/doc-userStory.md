@@ -24,9 +24,9 @@ Prioridade | Essencial
 Estimativa | 10h
 Tempo Gasto (real): | -----
 Tamanho Funcional | ?????
-Analista | Eduardo
-Desenvolvedor | Breno
-Revisor | Renildo
+Analista | Breno
+Desenvolvedor | Renildo
+Revisor | Eduardo
 Testador | Jeison
 
 ### User Story 002 - Manter linhas de pesquisa:
@@ -47,9 +47,9 @@ Estimativa | 10h
 Tempo Gasto (real): | -----
 Tamanho Funcional | ?????
 Analista | Jeison
-Desenvolvedor | Leonardo
+Desenvolvedor | Pedro
 Revisor | Breno
-Testador | Pedro
+Testador | Leonardo
 
 ### User Story 003 - Manter Membros do laboratório:
 
@@ -68,14 +68,14 @@ Prioridade | Essencial
 Estimativa | 12h
 Tempo Gasto (real): | -----
 Tamanho Funcional | ?????
-Analista | Renildo
-Desenvolvedor | Leonardo
+Analista | Pedro
+Desenvolvedor | Breno
 Revisor | Eduardo
-Testador | Pedro
+Testador | Renildo
 
 ### User Story 004 - Manter projetos de Ensino, Pesquisa e Extensão:
 
-Descrição | O Sistema deve manter um cadastro de projetos de Ensino, Pesquisa e Extensão. Os Projetos teram os atributos nome, descrição, coordenador e participantes. Os membros do laboratório terão permissão para cadastrar , alterar, consultar ou remover os projetos.
+Descrição | O Sistema deve manter um cadastro de projetos de Ensino, Pesquisa e Extensão. Os Projetos terão os atributos nome, descrição, coordenador e participantes. Os membros do laboratório terão permissão para cadastrar , alterar, consultar ou remover os projetos.
 --------- | -----------------------------------------------
 
 Requisitos Envolvidos |      |
@@ -91,9 +91,31 @@ Estimativa | 12h
 Tempo Gasto (real): |  |
 Tamanho Funcional | ?????
 Analista | Renildo
-Desenvolvedor | Breno
+Desenvolvedor | Leonardo
 Revisor | Eduardo
 Testador | Jeison
+
+### User Story 005 - Manter Eventos:
+
+Descrição | O Sistema deve manter um cadastro de eventos. Os eventos terão os atributos título, descrição, área, data de submissão, site. O usuário administrador será quem poderá cadastrar, alterar, consultar ou remover um evento.
+--------- | -----------------------------------------------
+
+Requisitos Envolvidos |      |
+--------------------- | -------
+RF017 | Cadastrar Evento         |
+RF018 | Alterar Evento        |
+RF019 | Listar Evento          |
+RF020 | Excluir Evento           |
+
+Prioridade | Essencial
+---------- | --------
+Estimativa | 12h
+Tempo Gasto (real): |  |
+Tamanho Funcional | ?????
+Analista | Jeison
+Desenvolvedor | Eduardo
+Revisor | Breno
+Testador | Renildo
 
 
 Teste de aceitação (TA) |    |
