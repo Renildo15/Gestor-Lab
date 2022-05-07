@@ -118,6 +118,28 @@ Revisor | Breno
 Testador | Renildo
 
 
+### User Story 006 - Manter Artigos publicados:
+
+Descrição | O Sistema deve manter um cadastro de artigos. Os artigos terão os atributos título, autores, local de publicação e descrição. O usuário professor será quem poderá cadastrar,e o usuário administrador poderá alterar e remover e o usuário poderá consulat o artigo.
+--------- | -----------------------------------------------
+
+Requisitos Envolvidos |      |
+--------------------- | -------
+RF021 | Cadastrar Artigos publicados         |
+RF022 | Alterar Artigos publicados        |
+RF023 | Listar Artigos publicados         |
+RF024 | Excluir Artigos publicados           |
+
+Prioridade | Essencial
+---------- | --------
+Estimativa | 12h
+Tempo Gasto (real): |  |
+Tamanho Funcional | ?????
+Analista | Breno
+Desenvolvedor | Jeison
+Revisor | Leonardo
+Testador | Pedro
+
 Teste de aceitação (TA) |    |
 ----------------------- | -----
 Código | Descrição
