@@ -24,9 +24,9 @@ Prioridade | Essencial
 Estimativa | 10h
 Tempo Gasto (real): | -----
 Tamanho Funcional | ?????
-Analista | Eduardo
-Desenvolvedor | Breno
-Revisor | Renildo
+Analista | Breno
+Desenvolvedor | Renildo
+Revisor | Eduardo
 Testador | Jeison
 
 ### User Story 002 - Manter linhas de pesquisa:
@@ -47,9 +47,9 @@ Estimativa | 10h
 Tempo Gasto (real): | -----
 Tamanho Funcional | ?????
 Analista | Jeison
-Desenvolvedor | Leonardo
+Desenvolvedor | Pedro
 Revisor | Breno
-Testador | Pedro
+Testador | Leonardo
 
 ### User Story 003 - Manter Membros do laboratório:
 
@@ -68,10 +68,10 @@ Prioridade | Essencial
 Estimativa | 12h
 Tempo Gasto (real): | -----
 Tamanho Funcional | ?????
-Analista | Renildo
-Desenvolvedor | Leonardo
+Analista | Pedro
+Desenvolvedor | Breno
 Revisor | Eduardo
-Testador | Pedro
+Testador | Renildo
 
 ### User Story 004 - Manter projetos de Ensino, Pesquisa e Extensão:
 
@@ -91,7 +91,7 @@ Estimativa | 12h
 Tempo Gasto (real): |  |
 Tamanho Funcional | ?????
 Analista | Renildo
-Desenvolvedor | Breno
+Desenvolvedor | Leonardo
 Revisor | Eduardo
 Testador | Jeison
 
