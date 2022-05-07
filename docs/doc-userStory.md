@@ -97,7 +97,7 @@ Testador | Jeison
 
 ### User Story 005 - Manter Eventos:
 
-Descrição | O Sistema deve manter um cadastro de eventos. Os eventos terão os atributos título, descrição, área, data de submissão, site. O usuário administrador será quem poderá cadastrar, alterar, consultar ou remover um evento.
+Descrição | O Sistema deve manter um cadastro de eventos. Os eventos terão os atributos título, descrição, área, data de submissão, site. O usuário profesor será quem poderá cadastrar, alterar, consultar, eo usuário administradorsrá quem poderá remover um evento.
 --------- | -----------------------------------------------
 
 Requisitos Envolvidos |      |
