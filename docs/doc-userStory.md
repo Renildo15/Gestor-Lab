@@ -31,7 +31,7 @@ Testador | Jeison
 
 ### User Story 002 - Manter linhas de pesquisa:
 
-Descrição | O Sistema deve manter um cadastro de linhas de pesquisa. As linhas de pesquisa tem os atributos nome, descrição, área e CNPQ. O usuário administrador será quem poderá cadastrar uma linha de pesquisa, alterar, consultar ou remover.
+Descrição | O Sistema deve manter um cadastro de linhas de pesquisa. As linhas de pesquisa tem os atributos nome, descrição, área e CNPQ. O professor será quem poderá cadastrar uma linha de pesquisa, alterar ou remover. O usuário poderá consultar as linhas de pesquisa.
 --------- | -----------------------------------------------
 
 Requisitos Envolvidos |     |
