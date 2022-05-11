@@ -1,4 +1,3 @@
-from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from gestorlabapp.forms import LabForm
 from gestorlabapp.models import Lab
@@ -19,3 +18,9 @@ def create(request):
     if form.is_valid():
         form.save()
         return redirect('home')
+
+
+def view(request,pk):
+    data = {}
+    data['db'] = Lab.objects.get(pk=pk)
+    return render(request, 'view.html', data)
