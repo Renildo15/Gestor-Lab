@@ -9,7 +9,7 @@ Data | Versão |  Descrição |  Autor
 
 ### User Story 001 - Manter laboratório de pesquisa:
 
-Descrição | O Sistema deve manter um cadastro do loboratório de pesquisa. O laboratório tem os atributos nome, descrição, linhas de pesquisa, um coordenador, um vice-coordenador, membros discentes, docentes e colaboradores externos. O usuário administrador será quem poderá cadastrar um laboratório, alterar, consultar ou remover da lista de laboratórios.
+Descrição | O Sistema deve manter um cadastro do loboratório de pesquisa. O laboratório tem os atributos nome, descrição, linhas de pesquisa, um coordenador, um vice-coordenador, membros discentes, docentes e colaboradores externos. O administrador será quem poderá cadastrar um laboratório, alterar ou remover, e usuário poderá consultar os laborátorios.
 --------- | -----------------------------------------------
 
 Requisitos Envolvidos |       |
