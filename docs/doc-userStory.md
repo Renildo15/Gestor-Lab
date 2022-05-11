@@ -53,7 +53,7 @@ Testador | Leonardo
 
 ### User Story 003 - Manter Membros do laboratório:
 
-Descrição | O Sistema deve manter um cadastro de Membros do laboratório. Os Membros do Laboratório tem os atributos nome, email, telefone e perfil, eles podem ser Docente, Discente, Colaborador. O usuário  será quem poderá cadastrar um Membro do laboratório, alterar, consultar ou remover o mesmo.
+Descrição | O Sistema deve manter um cadastro de Membros do laboratório. Os Membros do Laboratório tem os atributos nome, email, telefone e perfil, eles podem ser Docente, Discente, Colaborador. O professor será quem poderá cadastrar um Membro do laboratório, alterar ou remover o mesmo. O usuário poderá consultar os membros.
 --------- | -----------------------------------------------
 
 Requisitos Envolvidos |      |
