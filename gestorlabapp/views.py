@@ -28,7 +28,7 @@ def view(request,pk):
 def edit(request, pk):
     data = {}
     data['db'] = Lab.objects.get(pk = pk)
-    data['form'] = LabForm(instance=data['db'])
+    data['form'] = LabForm(instance=data['db]'])
     return render(request,'form.html', data)
 
 def update(request, pk):
@@ -38,3 +38,8 @@ def update(request, pk):
     if form.is_valid():
         form.save()
         return redirect('home')
+
+def delete(request, pk):
+    db = Lab.objects.get(pk = pk)
+    db.delete()
+    return redirect('home')
