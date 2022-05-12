@@ -77,7 +77,6 @@ Testador | Renildo
 
 
 Descrição | O Sistema deve manter um cadastro de projetos de Ensino, Pesquisa e Extensão. Os Projetos teram os atributos nome, descrição, coordenador e participantes. O professor é quem poderá cadastrar e atualizar os projetos. O usuário poderá consultar. Quem poderá deletar um projeto é o administrador.
-
 --------- | -----------------------------------------------
 
 Requisitos Envolvidos |      |
