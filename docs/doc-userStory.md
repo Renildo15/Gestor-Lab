@@ -75,7 +75,9 @@ Testador | Renildo
 
 ### User Story 004 - Manter projetos de Ensino, Pesquisa e Extensão:
 
+
 Descrição | O Sistema deve manter um cadastro de projetos de Ensino, Pesquisa e Extensão. Os Projetos teram os atributos nome, descrição, coordenador e participantes. O professor é quem poderá cadastrar e atualizar os projetos. O usuário poderá consultar. Quem poderá deletar um projeto é o administrador.
+
 --------- | -----------------------------------------------
 
 Requisitos Envolvidos |      |
@@ -98,7 +100,7 @@ Testador | Jeison
 
 ### User Story 005 - Manter Eventos:
 
-Descrição | O Sistema deve manter um cadastro de eventos. Os eventos terão os atributos título, descrição, área, data de submissão, site. O usuário profesor será quem poderá cadastrar, alterar, consultar, eo usuário administradorsrá quem poderá remover um evento.
+Descrição | O Sistema deve manter um cadastro de eventos. Os eventos terão os atributos título, descrição, área, data de submissão, site. O usuário profesor será quem poderá cadastrar, alterar, consultar, e o usuário administrador será quem poderá remover um evento.
 --------- | -----------------------------------------------
 
 Requisitos Envolvidos |      |
@@ -121,7 +123,7 @@ Testador | Renildo
 
 ### User Story 006 - Manter Artigos publicados:
 
-Descrição | O Sistema deve manter um cadastro de artigos. Os artigos terão os atributos título, autores, local de publicação e descrição. O usuário professor será quem poderá cadastrar,e o usuário administrador poderá alterar e remover e o usuário poderá consulat o artigo.
+Descrição | O Sistema deve manter um cadastro de artigos. Os artigos terão os atributos título, autores, local de publicação e descrição. O usuário professor será quem poderá cadastrar,e o usuário administrador poderá alterar e remover e o usuário poderá consultar o artigo.
 --------- | -----------------------------------------------
 
 Requisitos Envolvidos |      |
