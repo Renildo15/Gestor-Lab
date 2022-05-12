@@ -22,7 +22,7 @@ RF004 | Excluir Laboratório  |
 Prioridade | Essencial
 ---------- | --------
 Estimativa | 10h
-Tempo Gasto (real): | -----
+Tempo Gasto (real): | 3h
 Tamanho Funcional | ?????
 Analista | Breno
 Desenvolvedor | Renildo
