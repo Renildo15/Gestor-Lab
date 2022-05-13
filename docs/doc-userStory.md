@@ -5,6 +5,7 @@
 Data | Versão |  Descrição |  Autor
 ---- | ------ | ---------- | -----
 02/05/2022 | 0.0.1 | Detalhamento do User Story RF001 | Eduardo
+17/05/2022 |0.0.2|Atualização dos User Stories|Renildo
 
 
 ### User Story 001 - Manter laboratório de pesquisa:
