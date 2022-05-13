@@ -17,17 +17,20 @@
         <table class="table">
             <thead class="thead-dark">
               <tr>
+                {% block th %}
                 <th scope="col">#</th>
                 <th scope="col">Descrição</th>
                 <th scope="col">Nome</th>
                 <th scope="col">Coordenador</th>
                 <th scope="col">Vice-coordenador</th>
                 <th scope="col">Ações</th>
+                {% endblock th %}
               </tr>
             </thead>
             <tbody>
                 {% for dbs in db %}
                     <tr>
+                        {% block linhas %}
                         <th>{{dbs.id}}</th>
                         <td>{{dbs.descricao}}</td>
                         <td>{{dbs.nome}}</td>
@@ -38,6 +41,7 @@
                             <a href="/view/{{dbs.id}}" class="btn btn-dark">Visualizar</a>
                             <a href="/delete/{{dbs.id}}" class="btn btn-danger">Deletar</a>
                         </td>
+                        {% endblock linhas %}
                     </tr>
                 {% endfor %}
             </tbody>
