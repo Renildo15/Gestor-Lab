@@ -29,6 +29,18 @@ Desenvolvedor | Renildo
 Revisor | Eduardo
 Testador | Jeison
 
+### Testes de aceitação (TA) 
+Código | Descrição
+-------|----------
+TA01.01 | O usuário precisa cadastrar um laborátorio no sistema, então ele vai em "Cadastros" e depois escolhe "Cadastro Laboratório". Então será exibido uma tela onde terá uma tabela com os laboratórios já cadastrados e os botões de Adiconar, atualizar, visualizar e deletar.
+TA01.02|Ao clicar em "Adicionar Laboratório " uma tela de cadastro será exibida com todos os campos para serem preenchidos. Logo após informar as informações, o administrador clica em "Salvar", e em seguida é levado de volta à tela da tabela dos laboratórios cadastrados.
+TA01.03|O usuário não preenche todos os campos obrigatorios. Então na tela deverá ser exibida uma mensagem informando que o usuário não preencheu todos os campos obrigatorios.
+TA01.04|O usuário deseja ver os dados do laboratório cadastrado com mais detalhes. então ele clica em "Visualizar", onde será exibida uma tela com os dados do laboratório escolhido.
+TA01.05|O usuário deseja editar dados de um cadastro. Então ele clica em "editar", onde será exibida uma tela com todos os dados aptos à serem editados. O usuário faz a edição desejada e depois clica em "Salvar" onde sua alteração será salva e o usuário será levado de volta à tela principal(da tabela).
+TA01.06|No ato da edição, o usuário deixa um campo obrigatório em branco, então o sistema não permite a alteração e informa na tela que o todos os campos precisam ser preenchidos corretamente.
+TA01.07|O usuário(usuário administrador) deseja deletar um laboratório, então ele clica em "Deletar". o cadastro do laboratório é apagado instantaneamente da tabela e do sistema.
+TA01.08|Todas as telas que são exibidas decorrentes ao clique de uma opção, temum botão Voltar", que permiti o usuário voltar para a tela principal do cadastro.
+
 ### User Story 002 - Manter linhas de pesquisa:
 
 Descrição | O Sistema deve manter um cadastro de linhas de pesquisa. As linhas de pesquisa tem os atributos nome, descrição, área e CNPQ. O professor será quem poderá cadastrar uma linha de pesquisa, alterar ou remover. O usuário poderá consultar as linhas de pesquisa.
