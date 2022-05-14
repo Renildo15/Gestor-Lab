@@ -7,6 +7,7 @@ def home(request):
     data['db'] = Lab.objects.all()
     return render(request,'index.html',data)
 
+
 def form(request):
     data = {}
     data['form'] = LabForm()
