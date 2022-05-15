@@ -18,7 +18,7 @@ def create(request):
     form = LabForm(request.POST or None)
     if form.is_valid():
         form.save()
-        return redirect('home')
+        return redirect('/laboratorio/')
 
 
 def view(request,pk):
@@ -38,9 +38,9 @@ def update(request, pk):
     form = LabForm(request.POST or None, instance=data['db'])
     if form.is_valid():
         form.save()
-        return redirect('home')
+        return redirect('/laboratorio/')
 
 def delete(request, pk):
     db = Lab.objects.get(pk = pk)
     db.delete()
-    return redirect('home')
+    return redirect('/laboratorio/')
