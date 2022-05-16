@@ -6,6 +6,7 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
   }
   
   .navbar-css {
@@ -15,7 +16,7 @@ body {
   
   .navbar-css a {
     float: left;
-    font-size: 16px;
+    font-size: 20px;
     color: white;
     text-align: center;
     padding: 14px 16px;
@@ -28,7 +29,7 @@ body {
   }
   
   .dropdown-css .dropbtn-css {
-    font-size: 16px;  
+    font-size: 20px;  
     border: none;
     outline: none;
     color: white;
@@ -56,6 +57,7 @@ body {
     float: none;
     color: black;
     padding: 12px 16px;
+    font-size: 20px;
     text-decoration: none;
     display: block;
     text-align: left;
@@ -68,3 +70,51 @@ body {
   .dropdown-css:hover .dropdown-content-css {
     display: block;
   }
+.btn-add {
+    color: #fff;
+    background-color: #70CA7E;
+    border-color: #70CA7E;
+}
+
+.btn-add:hover {
+    color: #fff;
+    background-color: #559c60;
+    border-color: #559c60;
+}
+
+.btn-view {
+    color: #fff;
+    background-color: #70C4CA;
+    border-color: #70C4CA;
+}
+
+.btn-view:hover{
+    color: #fff;
+    background-color: #58969b;
+    border-color: #58969b;
+}
+
+.btn-edit {
+    color: #fff;
+    background-color: #CAC170;
+    border-color: #CAC170;
+}
+
+.btn-edit:hover {
+    color: #fff;
+    background-color: #999254;
+    border-color: #999254;
+}
+
+
+.btn-delete {
+    color: #fff;
+    background-color: #CA7070;
+    border-color: #CA7070;
+}
+
+.btn-delete:hover {
+    color: #fff;
+    background-color: #754343;
+    border-color: #754343;
+}
