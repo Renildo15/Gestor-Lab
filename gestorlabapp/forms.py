@@ -6,3 +6,4 @@ class LabForm(ModelForm):
     class Meta:
         model=Lab
         fields = ['descricao','nome','coordenador','vice_coordenador']
+
