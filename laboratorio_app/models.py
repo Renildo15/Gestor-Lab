@@ -7,6 +7,9 @@ class Lab(models.Model):
     ##como 'IntegerField()' para que o sistema funcionasse. Deve ser corrigido assim que a classe for criada.
     coordenador = models.CharField(max_length=60)
     vice_coordenador = models.CharField(max_length=60)
+    
+    def __str__(self):
+        return self.nome
 
 
 
