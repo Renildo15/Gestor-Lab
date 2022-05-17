@@ -17,4 +17,5 @@ class MembroForm(forms.ModelForm):
         
     def __init__(self, *args, **kwargs):
         super(MembroForm, self).__init__(*args, **kwargs)
-        self.fields['laboratorio', 'membro_perfil'].empty_label = "Selecione"
+        self.fields['laboratorio'].empty_label = "Selecione"
+        self.fields['membro_perfil'].empty_label = "Selecione"

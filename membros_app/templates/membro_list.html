@@ -10,7 +10,7 @@
     </div>
 
     <div class='col-8 m-auto pt-3 pb-2 text-center'>
-        <a href="{% url 'laboratorio:form'%}" class="btn btn-success">Adicionar</a>
+        <a href="{% url 'cadastrar_membro' %}" class="btn btn-success">Adicionar</a>
     </div>
 
     {% if membros %}
@@ -24,6 +24,7 @@
                 <th scope="col">Telefone</th>
                 <th scope="col">Laboratório</th>
                 <th scope="col">Perfil</th>
+                <th scope="col"></th>
               </tr>
             </thead>
             <tbody>
@@ -33,11 +34,11 @@
                         <td>{{membro.email}}</td>
                         <td>{{membro.telefone}}</td>
                         <td>{{membro.laboratorio}}</td>
-                        <td>{{membro.perfil}}</td>
+                        <td>{{membro.membro_perfil}}</td>
                         <td>
-                            <a href="{% url 'laboratorio:edit' dbs.id %}" class="btn btn-primary">Editar</a>
-                            <a href="{% url 'laboratorio:view' dbs.id %}" class="btn btn-dark">Visualizar</a>
-                            <a href="{% url 'laboratorio:delete' dbs.id %}" class="btn btn-danger">Deletar</a>
+                            <a href="{% url 'editar_membro' membro.id %}" class="btn btn-primary">Editar</a>
+                            <a href="" class="btn btn-dark">Visualizar</a>
+                            <a href="" class="btn btn-danger">Deletar</a>
                         </td>
                     </tr>
                 {% endfor %}
@@ -45,6 +46,9 @@
         </table>
     </div>
     {% else %}
+    <h1 class ='text-center mt-5'>
+        Não há membros cadastrados
+    </h1>
     {% endif %}
 
 {% endblock content %}
