@@ -37,8 +37,13 @@
                         <td>{{membro.membro_perfil}}</td>
                         <td>
                             <a href="{% url 'editar_membro' membro.id %}" class="btn btn-primary">Editar</a>
-                            <a href="" class="btn btn-dark">Visualizar</a>
-                            <a href="" class="btn btn-danger">Deletar</a>
+                            <a href="{% url 'visualizar_membro' membro.id %}" class="btn btn-dark">Visualizar</a>
+                            <form method="post" action="{% url 'excluir_membro' membro.id %}" class="btn">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-danger">
+                                    Deletar
+                                </button>
+                            </form>
                         </td>
                     </tr>
                 {% endfor %}

@@ -32,3 +32,12 @@ def form_membros(request, id = 0):
         return redirect('listar_membros')  
     
     
+def excluir_membro(request, id):
+    membro = Membro.objects.get(pk = id)
+    membro.delete()
+    return redirect('listar_membros')
+
+
+def visualizar_membro(request, id):
+    membro = Membro.objects.get(pk = id)
+    return render(request, 'membro_view.html', {'membro': membro})
