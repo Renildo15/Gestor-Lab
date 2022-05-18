@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title%} 
+    Cadastrar Membro 
+{% endblock title %}
+
+{% block content %}
+    <div class='col-8 m-auto pt-2 pb-2 text-center'>
+        <h1>Cadastrar Membro</h1>
+    </div>
+
+    <div class='col-8 m-auto pt-3 pb-2 text-center'>
+        <a href="/membros" class="btn btn-info">Voltar</a>
+    </div>
+
+    <div class='col-8 m-auto pt-4 pb-2 text-center'>
+        <form name="form" id="form" action="" method="post" autocomplete="off">
+            {% csrf_token %}
+            <div class='form-group mt-4'>Nome: {{form.nome}}</div>
+            <div class='form-group mt-4'>E-Mail: {{form.email}}</div>
+            <div class='form-group mt-4'>Telefone: {{form.telefone}}</div>
+            <div class='form-group mt-4'>Laboratório: {{form.laboratorio}}</div>
+            <div class='form-group mt-4'>Perfil: {{form.membro_perfil}}</div>
+            <div class='form-group mt-4'></div>
+            <input type="submit" class="btn btn-success" value="Salvar">
+        </form>
+    </div>
+{% endblock content %}

@@ -1,7 +1,5 @@
 from django.db import models
 
-# Create your models here.
-
 class Perfil(models.Model):
     titulo = models.CharField(max_length=50)
     
@@ -14,4 +12,8 @@ class Membro(models.Model):
     nome = models.CharField(max_length=60)
     email = models.CharField(max_length=30)
     telefone = models.CharField(max_length=20)
-    membro_perfil = models.ForeignKey(Perfil, on_delete=models.CASCADE)
+    laboratorio = models.ForeignKey(to='laboratorio_app.Lab', on_delete=models.CASCADE,null=True, blank=True)
+    membro_perfil = models.ForeignKey(Perfil, on_delete=models.CASCADE, null=True, blank=True)
+    
+    def __str__(self):
+        return self.nome

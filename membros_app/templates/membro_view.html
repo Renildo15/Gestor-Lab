@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Visualização
+{% endblock title %}
+
+{% block content %}
+    <div class='col-8 m-auto pt-2 pb-2 text-center'>
+        <h1>Visualização</h1>
+    </div>
+
+    <div class='col-8 m-auto pt-3 pb-2 text-center'>
+        <a href="/membros" class="btn btn-info">Voltar</a>
+    </div>
+
+    <div class='col-8 m-auto pt-4 pb-2 text-center'>
+        <strong>Nome: </strong>{{membro.nome}}<br>
+        <strong>E-Mail: </strong>{{membro.email}}<br>
+        <strong>Telefone: </strong>{{membro.telefone}}<br>
+        <strong>Laboratório: </strong>{{membro.laboratorio}}<br>
+        <strong>Perfil: </strong>{{membro.membro_perfil}}<br>
+    </div>
+{% endblock content %}

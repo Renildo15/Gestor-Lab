@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render
-from gestorlabapp.forms import LabForm
-from gestorlabapp.models import Lab
+from .forms import LabForm
+from .models import Lab
 
 def home(request):
     data = {}

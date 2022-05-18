@@ -1,12 +1,13 @@
 from django.db import models
-
+from membros_app.models import Membro
 class Lab(models.Model):
     descricao = models.CharField(max_length=60)
     nome = models.CharField(max_length=60)
-    ##Aqui deve ser uma chave estrangeira, com o id do membro que coordenador e vice-coordenador. Como ainda não foi cria a classe membros, coloquei
-    ##como 'IntegerField()' para que o sistema funcionasse. Deve ser corrigido assim que a classe for criada.
-    coordenador = models.CharField(max_length=60)
-    vice_coordenador = models.CharField(max_length=60)
+    coordenador = models.ForeignKey(Membro,on_delete=models.SET_NULL, related_name='coordenador', null=True, blank=True)
+    vice_coordenador = models.ForeignKey(Membro, on_delete=models.SET_NULL, related_name='vice_coordenador', null=True, blank=True)
+    
+    def __str__(self):
+        return self.nome
 
 
 
