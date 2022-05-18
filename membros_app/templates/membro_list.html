@@ -10,7 +10,7 @@
     </div>
 
     <div class='col-8 m-auto pt-3 pb-2 text-center'>
-        <a href="{% url 'cadastrar_membro' %}" class="btn btn-success">Adicionar</a>
+        <a href="{% url 'cadastrar_membro' %}" class="btn btn-add">Adicionar Membros</a>
     </div>
 
     {% if membros %}
@@ -36,11 +36,11 @@
                         <td>{{membro.laboratorio}}</td>
                         <td>{{membro.membro_perfil}}</td>
                         <td>
-                            <a href="{% url 'editar_membro' membro.id %}" class="btn btn-primary">Editar</a>
-                            <a href="{% url 'visualizar_membro' membro.id %}" class="btn btn-dark">Visualizar</a>
+                            <a href="{% url 'visualizar_membro' membro.id %}" class="btn btn-view">Visualizar</a>
+                            <a href="{% url 'editar_membro' membro.id %}" class="btn btn-edit">Editar</a>
                             <form method="post" action="{% url 'excluir_membro' membro.id %}" class="btn">
                                 {% csrf_token %}
-                                <button type="submit" class="btn btn-danger">
+                                <button type="submit" class="btn btn-delete">
                                     Deletar
                                 </button>
                             </form>

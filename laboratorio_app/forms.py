@@ -2,6 +2,19 @@ from django import forms
 from .models import Lab
 
 class LabForm(forms.ModelForm):
+
     class Meta:
-        model=Lab
-        fields = ['descricao','nome','coordenador','vice_coordenador']
+        model = Lab
+        fields = '__all__'
+        labels = {
+            'descricao': 'Descricao',
+            'nome': 'Nome',
+            'coordenador': 'Coordenador',
+            'vice_coordenador': 'Vice Coordenador',
+        }
+        
+    def __init__(self, *args, **kwargs):
+        super(LabForm, self).__init__(*args, **kwargs)
+        self.fields['coordenador'].required = False
+        self.fields['vice_coordenador'].required = False
+        
