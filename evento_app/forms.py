@@ -1,10 +1,20 @@
-from dataclasses import fields
-from tkinter import E
 from django.forms import ModelForm
-from evento_app.models import Evento
+from .models import Evento
 
 class EventForm(ModelForm):
     class Meta:
-        model=Evento
-        fields = ['titulo','descricao','area','site']
+
+        model = Evento
+        fields = '__all__'
+        labels = {
+                'titulo': 'Nome',
+                'descricao': 'E-Mail',
+                'area': 'Telefone',
+                'laboratorio': 'Laboratório',
+                'site': 'Perfil'
+        }
+
+        def __init__(self, *args, **kwargs):
+            super(EventForm, self).__init__(*args, **kwargs)
+            self.fields['laboratorio'].empty_label = "Selecione"
 
