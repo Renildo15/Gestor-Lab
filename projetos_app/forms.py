@@ -1,5 +1,3 @@
-from dataclasses import fields
-from tkinter import E
 from django.forms import ModelForm
 from projetos_app.models import Projeto
 

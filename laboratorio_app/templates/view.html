@@ -3,7 +3,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Cadastrar Laboratório</title>
+    <title>Ver Laboratórios</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -25,6 +25,7 @@
             <a href="/membros/">Cadastro Membros</a>
             <a href="/evento/">Cadastro Eventos</a>
             <a href="/projeto/">Cadastro Projetos</a>
+            <a href="/artigo/">Cadastro Artigos</a>
           </div>
         </div> 
         <a href="#">
@@ -34,7 +35,7 @@
     </div>
     <div class='col-8 m-auto pt-2 pb-2 text-center'>
         {% block view %}
-        <h1>Visualização</h1>
+        <h1>Visualização do Laboratório</h1>
         {% endblock view %}
     </div>
     
