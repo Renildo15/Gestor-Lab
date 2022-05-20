@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestor Lab - Projeto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+    <link rel="stylesheet" href="{% static 'css/line.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="navbar-css">
+        <a href="/">
+            <i class="fa fa-home" aria-hidden="true"></i>
+            Inicio
+        </a>
+        <div class="dropdown-css">
+          <button class="dropbtn-css">
+            <i class="fa fa-plus-square" aria-hidden="true"></i>
+            Cadastros 
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content-css">
+            <a href="/laboratorio/">Cadastro Laborátorios</a>
+            <a href="/membros/">Cadastro Membros</a>
+            <a href="/evento/">Cadastro Eventos</a>
+            <a href="/projeto/">Cadastro Projetos</a>
+          </div>
+        </div> 
+        <a href="#">
+            <i class="fa fa-info-circle" aria-hidden="true"></i>
+            Sobre
+        </a>
+    </div>
+    <div class='col-8 m-auto pt-2 pb-2 text-center'>
+        <h1>Projetos</h1>
+    </div>
+    
+    <div class='col-8 m-auto pt-3 pb-2 text-center'>
+        <a href="{% url 'projeto:projectForm' %}" class="btn btn-add">Adicionar Projetos</a>
+    </div>
+    {% if pjt %}
+    <div class='col-8 m-auto pt-4 pb-2 text-center'>
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Descrição</th>
+                <th scope="col">Coordenador</th>
+                <th scope="col">Participantes</th>
+                <th scope="col">Laboratório</th>
+                <th scope="col"></th>
+                
+              </tr>
+            </thead>
+            <tbody>
+                {% for pjts in pjt %}
+                    <tr>
+                        
+                        <td>{{pjts.nome}}</td>
+                        <td>{{pjts.descricao}}</td>
+                        <td>{{pjts.coordenador_projeto}}</td>
+                        <td>{{pjts.participantes}}</td>
+                        <td>{{pjts.laboratorio_projeto}}</td>
+
+                        <td>
+                            <a href="{% url 'projeto:projectView' pjts.id %}" class="btn btn-view">Visualizar</a>
+                            <a href="{% url 'projeto:projectEdit' pjts.id %}" class="btn btn-edit">Editar</a></th>
+                            <form method="post" action="{% url 'projeto:projectDelete' pjts.id %}" class="btn">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-delete">
+                                    Deletar
+                                </button>
+                            </form>
+                        </td>
+                        
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <h1 class ='text-center mt-5'>
+        Não há projetos cadastrados
+    </h1>
+    {% endif %}
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+</html>
