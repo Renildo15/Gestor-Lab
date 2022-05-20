@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'membros_app',
     'laboratorio_app',
     'evento_app',
+    'projetos_app',
 ]
 
 MIDDLEWARE = [
