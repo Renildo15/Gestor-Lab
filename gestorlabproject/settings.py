@@ -38,8 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'gestorlabapp',
-    'laboratorio_app',
     'membros_app',
+    'laboratorio_app',
+    'evento_app',
 ]
 
 MIDDLEWARE = [
