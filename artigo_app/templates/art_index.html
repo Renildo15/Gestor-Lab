@@ -42,15 +42,17 @@
     <div class='col-8 m-auto pt-3 pb-2 text-center'>
         <a href="{% url 'artigo:artForm' %}" class="btn btn-add">Adicionar Artigos</a>
     </div>
-    {% if arts %}
+    {% if art %}
     <div class='col-8 m-auto pt-4 pb-2 text-center'>
         <table class="table">
             <thead class="thead-dark">
               <tr>
                 <th scope="col">Título</th>
-                <th scope="col">Autores/th>
+                <th scope="col">Autores</th>
                 <th scope="col">Local de Publicação</th>
                 <th scope="col">Descrição</th>
+                <th scope="col">Laboratório</th>
+                <th scope="col"></th>
               </tr>
             </thead>
             <tbody>
@@ -60,6 +62,7 @@
                         <td>{{arts.autores}}</td>
                         <td>{{arts.local_Publi}}</td>
                         <td>{{arts.descricao}}<a></td>
+                        <td>{{arts.laboratorio_art}}<a></td>
                         <td>
                             <a href="{% url 'artigo:artView' arts.id %}" class="btn btn-view">Visualizar</a>
                             <a href="{% url 'artigo:artEdit' arts.id %}" class="btn btn-edit">Editar</a>

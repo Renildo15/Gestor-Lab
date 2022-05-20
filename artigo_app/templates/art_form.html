@@ -47,13 +47,14 @@
         {% endblock  %}
     </div>
     <div class='col-8 m-auto pt-4 pb-2 text-center'>
-        <form name="form" id="form" action="{%if art %}{% url 'artigo:artUpdate' evt.id %}{%else%}{% url 'artigo:artCreate' %}{%endif%}" method="post">
+        <form name="form" id="form" action="{%if art %}{% url 'artigo:artUpdate' art.id %}{%else%}{% url 'artigo:artCreate' %}{%endif%}" method="post">
             {% block form %}
             {% csrf_token %}
             <div class='form-group mt-4'>Título: {{form.titulo}}</div>
             <div class='form-group mt-4'>Autores: {{form.autores}}</div>
             <div class='form-group mt-4'>Local de Pubicação: {{form.local_Publi}}</div>
             <div class='form-group mt-4'>Descrição: {{form.descricao}}</div>
+            <div class='form-group mt-4'>Laboratório {{form.laboratorio_art}}</div>
             <div class='form-group mt-4'></div>
             <input type="submit" class="btn btn-success" value="Salvar">
             {% endblock form %}
