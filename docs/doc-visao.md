@@ -97,8 +97,9 @@ RNF006 - Proteção de dados | O sistema deve garantir proteção aos dados cole
 
 Data | Risco | Prioridade | Responsável | status | Providência/Solução
 ---- | ----- | ---------- | ----------- | ------ | ------------------
-02/05/2022 | Má divisão de tarefas | Baixa | Gerente | Vigente | acompanhar o trabalho realizado pelos membros
-02/05/2022 | Algum membro precisar se ausêntar por motivo pessoal | Alta | Gerente | Vigente |Passar as funções do membro afastado para os demais membros
-02/05/2022 | Problemas com a aprendizagem das ferramentas usadas pelo componentes do grupo | Alta | Todos | Vigente | Contatar os colegas para um possível esclarecimento do erro, e procurar soluções online 
-
+02/05/2022 | Má divisão de tarefas | Baixa | Gerente | Resolvido | acompanhar o trabalho realizado pelos membros
+02/05/2022 | Algum membro precisar se ausêntar por motivo pessoal | Alta | Gerente | Resolvido |Passar as funções do membro afastado para os demais membros
+02/05/2022 | Problemas com a aprendizagem das ferramentas usadas pelo componentes do grupo | Alta | Todos | Resolvido | Contatar os colegas para um possível esclarecimento do erro, e procurar soluções online 
+24/05/2022 | Problemas com a ferramenta de versionamento de códigos (git) | Média | Gerente | Resolvido | Buscar soluções de forma online ou contatar membros da equipe |
+24/05/2022 | O código do projeto não rodar na máquina de um dos membros da equipe | Baixa | Todos | Resolvido | Os responsáveis devem Orientar a forma correta de executar o código do projeto |
 
