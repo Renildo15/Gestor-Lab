@@ -23,5 +23,6 @@ urlpatterns = [
     path('projeto/', include('projetos_app.urls')),
     path('membros/', include('membros_app.urls')),
     path('artigo/', include('artigo_app.urls')),
+    path('linhapesquisa/', include('linhapesquisa_app.urls')),
     path('', include('gestorlabapp.urls')),
 ]
