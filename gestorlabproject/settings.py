@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'laboratorio_app',
     'evento_app',
     'projetos_app',
-    'artigo_app',
 ]
 
 MIDDLEWARE = [
