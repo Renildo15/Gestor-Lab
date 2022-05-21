@@ -22,5 +22,6 @@ urlpatterns = [
     path('evento/', include('evento_app.urls')),
     path('projeto/', include('projetos_app.urls')),
     path('membros/', include('membros_app.urls')),
+    path('artigo/', include('artigo_app.urls')),
     path('', include('gestorlabapp.urls')),
 ]
