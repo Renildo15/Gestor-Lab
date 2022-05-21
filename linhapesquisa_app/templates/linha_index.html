@@ -52,6 +52,7 @@
                 <th scope="col">Descrição</th>
                 <th scope="col">Área</th>
                 <th scope="col">CNPQ</th>
+                <th scope="col">Laboratório</th>
                 <th scope="col"></th>
                 {% endblock th %}
               </tr>
@@ -64,6 +65,7 @@
                         <td>{{dbs.descricao}}</td>
                         <td>{{dbs.area}}</td>
                         <td>{{dbs.cnpq}}</td>
+                        <td>{{dbs.laboratorio_pesq}}</td>
                         <td>
                             <a href="{% url 'linhapesquisa:linhaView' dbs.id %}" class="btn btn-view">Visualizar</a>
                             <a href="{% url 'linhapesquisa:linhaEdit' dbs.id %}" class="btn btn-edit">Editar</a>

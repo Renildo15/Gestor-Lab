@@ -12,6 +12,11 @@ class linhaForm(forms.ModelForm):
             'descricao': 'Descrição',
             'area': 'Área',
             'cnpq': 'CNPQ',
+            'laboratório': 'Laboratório'
         }
+
+        def __init__(self, *args, **kwargs):
+            super(linhaForm, self).__init__(*args, **kwargs)
+            self.fields['laboratorio'].empty_label = "Selecione"
         
     
