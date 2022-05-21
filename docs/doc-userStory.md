@@ -33,14 +33,15 @@ Testador | Jeison
 ### Testes de aceitação (TA) 
 Código | Descrição
 -------|----------
-TA01.01 | O usuário precisa cadastrar um laborátorio no sistema, então ele vai em "Cadastros" e depois escolhe "Cadastro Laboratório". Então será exibido uma tela onde terá uma tabela com os laboratórios já cadastrados e os botões de Adiconar, atualizar, visualizar e deletar.
+TA01.01 | O usuário precisa cadastrar um laborátorio no sistema, então ele vai em "Cadastros" e depois escolhe "Cadastro Laboratórios". Então será exibido uma tela onde terá uma tabela com os laboratórios já cadastrados e os botões de Adiconar, atualizar, visualizar e deletar. Caso não tenha nenhum cadastro, será exibida uma mensagem informando que não há nada cadastrado.
 TA01.02|Ao clicar em "Adicionar Laboratório " uma tela de cadastro será exibida com todos os campos para serem preenchidos. Logo após informar as informações, o administrador clica em "Salvar", e em seguida é levado de volta à tela da tabela dos laboratórios cadastrados.
 TA01.03|O usuário não preenche todos os campos obrigatorios. Então na tela deverá ser exibida uma mensagem informando que o usuário não preencheu todos os campos obrigatorios.
-TA01.04|O usuário deseja ver os dados do laboratório cadastrado com mais detalhes. então ele clica em "Visualizar", onde será exibida uma tela com os dados do laboratório escolhido.
-TA01.05|O usuário deseja editar dados de um cadastro. Então ele clica em "editar", onde será exibida uma tela com todos os dados aptos à serem editados. O usuário faz a edição desejada e depois clica em "Salvar" onde sua alteração será salva e o usuário será levado de volta à tela principal(da tabela).
-TA01.06|No ato da edição, o usuário deixa um campo obrigatório em branco, então o sistema não permite a alteração e informa na tela que o todos os campos precisam ser preenchidos corretamente.
-TA01.07|O usuário(usuário administrador) deseja deletar um laboratório, então ele clica em "Deletar". o cadastro do laboratório é apagado instantaneamente da tabela e do sistema.
-TA01.08|Todas as telas que são exibidas decorrentes ao clique de uma opção, temum botão Voltar", que permiti o usuário voltar para a tela principal do cadastro.
+TA01.04|Os campos "coordenador" e "vice coordenador" não são obrigatórios, sendo possível  cadastrar um laboratório sem informar esses dados. Onde posteriormente no ato da edição, poderá adicioná-los.
+TA01.05|O usuário deseja ver os dados do laboratório cadastrado com mais detalhes. então ele clica em "Visualizar", onde será exibida uma tela com os dados do laboratório escolhido.
+TA01.06|O usuário deseja editar dados de um cadastro. Então ele clica em "editar", onde será exibida uma tela com todos os dados aptos à serem editados. O usuário faz a edição desejada e depois clica em "Salvar" onde sua alteração será salva e o usuário será levado de volta à tela principal(da tabela).
+TA01.07|No ato da edição, o usuário deixa um campo obrigatório em branco, então o sistema não permite a alteração e informa na tela que o todos os campos precisam ser preenchidos corretamente.
+TA01.08|O usuário(usuário administrador) deseja deletar um laboratório, então ele clica em "Deletar". o cadastro do laboratório é apagado instantaneamente da tabela e do sistema.
+TA01.09|Em todas as telas que são exibidas decorrentes ao clique de uma opção, há um botão Voltar", que permiti o usuário voltar para a tela principal do cadastro.
 
 ### User Story 002 - Manter linhas de pesquisa:
 
@@ -64,6 +65,20 @@ Desenvolvedor | Pedro
 Revisor | Breno
 Testador | Leonardo
 
+### Testes de aceitação (TA) 
+Código | Descrição
+-------|----------
+TA02.01 | O usuário precisa cadastrar um linha de pesquisa no sistema, então ele vai em "Cadastros" e depois escolhe "Cadastro Pesquisas". Então será exibido uma tela onde terá uma tabela com as linhas de pesquisa já cadastradas e os botões de Adicionar, atualizar, visualizar e deletar.Caso não tenha nenhum cadastro, será exibida uma mensagem informando que não há nada cadastrado.
+TA02.02 | Ao clicar em "Adicionar Linhas de Pesquisa " uma tela de cadastro será exibida com todos os campos para serem preenchidos.Logo após informar as informações, o administrador clica em "Salvar", e em seguida é levado de volta à tela da tabela das linhas de pesquisas cadastradas, onde deve ser exibido automaticamente a linha de pesquisa cadastrada.
+TA02.03 |O usuário não preenche todos os campos obrigatorios. Então na tela deverá ser exibida uma mensagem informando que o usuário não preencheu todos os campos obrigatorios.
+TA02.04 | Para cadastrar uma linha de pesquisa é necessário que um laboratório já tenha sido cadastrado, caso contrário, não será possível realizar a ação.
+TA02.05 | O usuário deseja ver os dados da linha de pesquisa cadastrado com mais detalhes. então ele clica em "Visualizar", onde será exibida uma tela com os dados da linha de pesquisa escolhida.
+TA02.06 | O usuário deseja editar dados de um cadastro. Então ele clica em "editar", onde será exibida uma tela com todos os dados aptos à serem editados. O usuário faz a edição desejada e depois clica em "Salvar" onde sua alteração será salva e o usuário será levado de volta à tela principal(da tabela).
+TA02.07 | Nesse caso, no ato da edição, o usuário deixa um campo obrigatório em branco, então o sistema não permite a alteração e informa na tela que o todos os campos precisam ser preenchidos corretamente.
+TA02.08 | O usuário(usuário administrador) deseja deletar uma linha de pesquisa, então ele clica em "Deletar". O cadastro da linha de pesquisa  é apagada instantaneamente da tabela e do sistema.
+TA02.09 | Em todas as telas que são exibidas decorrentes ao clique de uma opção, há um botão Voltar", que permiti o usuário voltar para a tela principal do cadastro.
+
+
 ### User Story 003 - Manter Membros do laboratório:
 
 Descrição | O Sistema deve manter um cadastro de Membros do laboratório. Os Membros do Laboratório tem os atributos nome, email, telefone e perfil, eles podem ser Docente, Discente, Colaborador. O professor será quem poderá cadastrar um Membro do laboratório, alterar ou remover o mesmo. O usuário poderá consultar os membros.
@@ -85,6 +100,19 @@ Analista | Pedro
 Desenvolvedor | Breno
 Revisor | Eduardo
 Testador | Renildo
+
+### Testes de aceitação (TA) 
+Código | Descrição
+-------|----------
+TA03.01 | O usuário precisa cadastrar um Membro no sistema, então ele vai em "Cadastros" e depois escolhe "Cadastro Membros". Então será exibido uma tela onde terá uma tabela com todos os membros já cadastradas e os botões de Adicionar, atualizar, visualizar e deletar.Caso não tenha nenhum cadastro, será exibida uma mensagem informando que não há nada cadastrado.
+TA03.02 |Ao clicar em "Adicionar Membro " uma tela de cadastro será exibida com todos os campos para serem preenchidos. Logo após informar as informações, o administrador clica em "Salvar", e em seguida é levado de volta à tela da tabela dos membros cadastrados. Onde deve ser exibido automaticamente o membro cadastrado.
+TA03.03 |O usuário não preenche todos os campos obrigatorios. Então na tela deverá ser exibida uma mensagem informando que o usuário não preencheu todos os campos obrigatorios.
+TA03.04 | Para cadastrar um membro não é necessário que um laboratório já tenha sido cadastrado.
+TA03.05 | O usuário deseja ver os dados de um membro cadastrado com mais detalhes. então ele clica em "Visualizar", onde será exibida uma tela com os dados do membro escolhido.
+TA03.06 | O usuário deseja editar dados de um cadastro. Então ele clica em "editar", onde será exibida uma tela com todos os dados aptos à serem editados. 
+TA03.07 | No ato da edição, o usuário deixa um campo obrigatório em branco, então o sistema não permite a alteração e informa na tela que o todos os campos precisam ser preenchidos corretamente.
+TA03.08 | O usuário(usuário administrador) deseja deletar membro, então ele clica em "Deletar". O cadastro dmembro é apagado instantaneamente da tabela e do sistema.
+TA03.09 | Em todas as telas que são exibidas decorrentes ao clique de uma opção, há um botão Voltar", que permiti o usuário voltar para a tela principal do cadastro.
 
 ### User Story 004 - Manter projetos de Ensino, Pesquisa e Extensão:
 
