@@ -23,8 +23,8 @@ RF004 | Excluir Laboratório  |
 Prioridade | Essencial
 ---------- | --------
 Estimativa | 10h
-Tempo Gasto (real): | 3h
-Tamanho Funcional | ?????
+Tempo Gasto (real): | 5h
+Tamanho Funcional | 34 PF
 Analista | Breno
 Desenvolvedor | Renildo
 Revisor | Eduardo
@@ -57,8 +57,8 @@ RF008 | Excluir Linha de Pesquisa |
 Prioridade | Essencial
 ---------- | --------
 Estimativa | 10h
-Tempo Gasto (real): | -----
-Tamanho Funcional | ?????
+Tempo Gasto (real): | 5h
+Tamanho Funcional | 34 PF
 Analista | Jeison
 Desenvolvedor | Pedro
 Revisor | Breno
@@ -79,8 +79,8 @@ RF012 | Excluir Membro do laboratório             |
 Prioridade | Essencial
 ---------- | --------
 Estimativa | 12h
-Tempo Gasto (real): | -----
-Tamanho Funcional | ?????
+Tempo Gasto (real): | 5h
+Tamanho Funcional | 34 PF
 Analista | Pedro
 Desenvolvedor | Breno
 Revisor | Eduardo
@@ -102,8 +102,8 @@ RF016 | Excluir Projeto           |
 Prioridade | Essencial
 ---------- | --------
 Estimativa | 12h
-Tempo Gasto (real): |  |
-Tamanho Funcional | ?????
+Tempo Gasto (real): | 5h |
+Tamanho Funcional | 34 PF
 Analista | Renildo
 Desenvolvedor | Leonardo
 Revisor | Eduardo
@@ -125,8 +125,8 @@ RF020 | Excluir Evento           |
 Prioridade | Essencial
 ---------- | --------
 Estimativa | 12h
-Tempo Gasto (real): |  |
-Tamanho Funcional | ?????
+Tempo Gasto (real): | 5h |
+Tamanho Funcional | 34 PF
 Analista | Jeison
 Desenvolvedor | Eduardo
 Revisor | Breno
@@ -148,8 +148,8 @@ RF024 | Excluir Artigos publicados           |
 Prioridade | Essencial
 ---------- | --------
 Estimativa | 12h
-Tempo Gasto (real): |  |
-Tamanho Funcional | ?????
+Tempo Gasto (real): | 6h |
+Tamanho Funcional | 34 PF
 Analista | Breno
 Desenvolvedor | Jeison
 Revisor | Leonardo
