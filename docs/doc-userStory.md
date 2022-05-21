@@ -111,7 +111,7 @@ TA03.04 | Para cadastrar um membro não é necessário que um laboratório já t
 TA03.05 | O usuário deseja ver os dados de um membro cadastrado com mais detalhes. então ele clica em "Visualizar", onde será exibida uma tela com os dados do membro escolhido.
 TA03.06 | O usuário deseja editar dados de um cadastro. Então ele clica em "editar", onde será exibida uma tela com todos os dados aptos à serem editados. 
 TA03.07 | No ato da edição, o usuário deixa um campo obrigatório em branco, então o sistema não permite a alteração e informa na tela que o todos os campos precisam ser preenchidos corretamente.
-TA03.08 | O usuário(usuário administrador) deseja deletar membro, então ele clica em "Deletar". O cadastro dmembro é apagado instantaneamente da tabela e do sistema.
+TA03.08 | O usuário(usuário administrador) deseja deletar membro, então ele clica em "Deletar". O cadastro do membro é apagado instantaneamente da tabela e do sistema.
 TA03.09 | Em todas as telas que são exibidas decorrentes ao clique de uma opção, há um botão Voltar", que permiti o usuário voltar para a tela principal do cadastro.
 
 ### User Story 004 - Manter projetos de Ensino, Pesquisa e Extensão:
@@ -137,6 +137,21 @@ Desenvolvedor | Leonardo
 Revisor | Eduardo
 Testador | Jeison
 
+### Testes de aceitação (TA) 
+Código | Descrição
+-------|----------
+TA04.01 | O usuário precisa cadastrar um projeto no sistema, então ele vai em "Cadastros" e depois escolhe "Cadastro projetos". Então será exibido uma tela onde terá uma tabela com todos osprojetos já cadastradas e os botões de Adicionar, atualizar, visualizar e deletar.Caso não tenha nenhum cadastro, será exibida uma mensagem informando que não há nada cadastrado.
+TA04.02 |Ao clicar em "Adicionar Projeto" uma tela de cadastro será exibida com todos os campos para serem preenchidos. Logo após informar as informações, o administrador clica em "Salvar", e em seguida é levado de volta à tela da tabela dos projetos cadastrados. Onde deve ser exibido automaticamente o projeto cadastrado.
+TA04.03 |O usuário não preenche todos os campos obrigatorios. Então na tela deverá ser exibida uma mensagem informando que o usuário não preencheu todos os campos obrigatorios.
+TA04.04 | Para cadastrar um projeto é necessário que um laboratório já tenha sido cadastrado, caso contrário, não será possível realizar a ação.
+TA04.05 | Para cadastrar um projeto é necessário que um membro já tenha sido cadastrado, caso contrário, não será possível realizar a ação.
+TA04.06 | O usuário deseja ver os dados de um membro cadastrado com mais detalhes. então ele clica em "Visualizar", onde será exibida uma tela com os dados do membro escolhido.
+TA04.07 | O usuário deseja editar dados de um cadastro. Então ele clica em "editar", onde será exibida uma tela com todos os dados aptos à serem editados. 
+TA04.08 | No ato da edição, o usuário deixa um campo obrigatório em branco, então o sistema não permite a alteração e informa na tela que o todos os campos precisam ser preenchidos corretamente.
+TA04.09 | O usuário(usuário administrador) deseja deletar membro, então ele clica em "Deletar". O cadastro do projeto é apagado instantaneamente da tabela e do sistema.
+TA04.10 | Em todas as telas que são exibidas decorrentes ao clique de uma opção, há um botão Voltar", que permiti o usuário voltar para a tela principal do cadastro.
+
+
 
 ### User Story 005 - Manter Eventos:
 
@@ -159,6 +174,19 @@ Analista | Jeison
 Desenvolvedor | Eduardo
 Revisor | Breno
 Testador | Renildo
+
+### Testes de aceitação (TA) 
+Código | Descrição
+-------|----------
+TA05.01 | O usuário precisa cadastrar um eventono sistema, então ele vai em "Cadastros" e depois escolhe "Cadastro eventos". Então será exibido uma tela onde terá uma tabela com todos os eventos já cadastradas e os botões de Adicionar, atualizar, visualizar e deletar.Caso não tenha nenhum cadastro, será exibida uma mensagem informando que não há nada cadastrado.
+TA05.02 |Ao clicar em "Adicionar Evento" uma tela de cadastro será exibida com todos os campos para serem preenchidos. Logo após informar as informações, o administrador clica em "Salvar", e em seguida é levado de volta à tela da tabela dos eventos cadastrados. Onde deve ser exibido automaticamente o evento cadastrado.
+TA05.03 |O usuário não preenche todos os campos obrigatorios. Então na tela deverá ser exibida uma mensagem informando que o usuário não preencheu todos os campos obrigatorios.
+TA05.04 | Para cadastrar um evento é necessário que um laboratório já tenha sido cadastrado, caso contrário, não será possível realizar a ação.
+TA05.05 | O usuário deseja ver os dados de um evento cadastrado com mais detalhes. então ele clica em "Visualizar", onde será exibida uma tela com os dados do evento escolhido.
+TA05.06 | O usuário deseja editar dados de um cadastro. Então ele clica em "editar", onde será exibida uma tela com todos os dados aptos à serem editados. 
+TA05.07 | No ato da edição, o usuário deixa um campo obrigatório em branco, então o sistema não permite a alteração e informa na tela que o todos os campos precisam ser preenchidos corretamente.
+TA05.08| O usuário(usuário administrador) deseja deletar um evento, então ele clica em "Deletar". O cadastro do evento é apagado instantaneamente da tabela e do sistema.
+TA05.09 | Em todas as telas que são exibidas decorrentes ao clique de uma opção, há um botão Voltar", que permiti o usuário voltar para a tela principal do cadastro.
 
 
 ### User Story 006 - Manter Artigos publicados:
