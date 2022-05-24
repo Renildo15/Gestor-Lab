@@ -1,4 +1,3 @@
-from tkinter import CASCADE
 from django.db import models
 from laboratorio_app.models import Lab
 
