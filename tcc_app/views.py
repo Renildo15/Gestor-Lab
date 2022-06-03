@@ -25,7 +25,7 @@ def view(request,pk):
     data['db'] = Tcc.objects.get(pk=pk)
     return render(request, 'tcc_view.html', data)
 
-""""
+
 
 
 def edit(request, pk):
@@ -45,7 +45,7 @@ def update(request, pk):
 def delete(request, pk):
     db = Tcc.objects.get(pk = pk)
     db.delete()
-    return redirect('/tcc/') """
+    return redirect('/tcc/')
 
 
 # Create your views here.

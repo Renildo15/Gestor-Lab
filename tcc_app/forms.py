@@ -1,6 +1,7 @@
 from django import forms
 from .models import Tcc
-
+class DateInput(forms.DateInput):
+     input_type = 'date'
 class TccForm(forms.ModelForm):
 
     class Meta:
@@ -14,7 +15,7 @@ class TccForm(forms.ModelForm):
         }
         widgets = {
 
-            "dtpublicacao":   forms.DateInput(),
+            "dtpublicacao":   DateInput(),
         }
         
     def __init__(self, *args, **kwargs):
