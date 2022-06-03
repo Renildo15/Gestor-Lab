@@ -20,11 +20,13 @@ def create(request):
         form.save()
         return redirect('/tcc/')
 
-""""
 def view(request,pk):
     data = {}
     data['db'] = Tcc.objects.get(pk=pk)
     return render(request, 'tcc_view.html', data)
+
+""""
+
 
 def edit(request, pk):
     data = {}
