@@ -269,6 +269,39 @@ TA07.10 | Em todas as telas que são exibidas decorrentes ao clique de uma opç�
 
 
 
+### User Story 008 - Manter Horário:
+
+Descrição | O Sistema deve manter um cadastro de Horários. Os horários cadastrados deverão seguir o seguinte padrão: Caracteres numericos que corresponem ao dia da semana, caracter informando o turno, e caracteres numericos informando o horario, exemplo "35T34". O usuário professor será quem poderá cadastrar, alterar e remover e o usuário poderá consultar o horário.
+--------- | -----------------------------------------------
+
+Requisitos Envolvidos |      |
+--------------------- | -------
+RF026 | Cadastrar Horário         |
+RF027 | Alterar Horário        |
+RF028 | Listar Horário        |
+RF029 | Excluir Horário           |
+
+Prioridade | Essencial
+---------- | --------
+Estimativa | 12h
+Tempo Gasto (real): | XX Hr |
+Tamanho Funcional | 34 PF
+Analista | Jeison
+Desenvolvedor | Pedro
+Revisor | Eduardo
+Testador | Breno
+
+### Testes de aceitação (TA) 
+Código | Descrição
+-------|----------
+TA08.01 | O usuário precisa cadastrar um Horário no sistema, então ele vai em "Cadastros" e depois escolhe "Cadastro de Horários". Então será exibido uma tela onde terá uma tabela com todos os Horários já previamente cadastrados, e os botões de Adicionar, atualizar, visualizar e deletar. Caso não tenha nenhum cadastro, será exibida uma mensagem informando que não há nenhum Horário cadastrado.
+TA08.02 |Ao clicar em "Adicionar Horário" uma tela de cadastro será exibida com todos os campos para serem preenchidos. Logo após informar as informações, o administrador clica em "Salvar", caso haja um conflito de horários uma mensagem é exibida informando o usuario, a necessidade da mudança, caso não haja conflito o cadastro é realizado e o sistema retorna de volta à tela da tabela dos Horários cadastrados. Onde deve ser exibido automaticamente o horário cadastrado. 
+TA08.03 |O usuário não preenche todos os campos obrigatorios. Então na tela deverá ser exibida uma mensagem informando que o usuário não preencheu todos os campos obrigatorios.
+TA08.04 | Para cadastrar um Horário, é necessário que um laboratório já tenha sido cadastrado, caso contrário, não será possível realizar a ação.
+TA08.05| O usuário deseja editar dados de um cadastro. Então ele clica em "editar", onde será exibida uma tela com todos os dados aptos à serem editados. 
+TA08.06 | No ato da edição, o usuário deixa um campo obrigatório em branco, então o sistema não permite a alteração e informa na tela que o todos os campos precisam ser preenchidos corretamente.
+TA08.07 | O usuário(usuário administrador) deseja deletar um artigo, então ele clica em "Deletar". O cadastro do horário é apagado instantaneamente da tabela e do sistema.
+TA08.08 | Em todas as telas que são exibidas decorrentes ao clique de uma opção, há um botão Voltar", que permiti o usuário voltar para a tela principal do cadastro.
 
 
 
