@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'evento_app',
     'projetos_app',
     'artigo_app',
-    'linhapesquisa_app'
+    'linhapesquisa_app',
+    'tcc_app'
 ]
 
 MIDDLEWARE = [
