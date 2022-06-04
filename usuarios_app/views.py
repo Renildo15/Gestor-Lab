@@ -1,7 +1,7 @@
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, PasswordChangeForm
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate,login as login_process, logout as logout_process
+from django.contrib.auth import authenticate,login as login_process, logout as logout_process, update_session_auth_hash
 # Create your views here.
 def cadastro(request):
     if request.method == "POST":
@@ -32,6 +32,19 @@ def login(request):
 def logout(request):
     logout_process(request)
     return redirect('login')
+
+def alterar_senha(request):
+    if request.method == "POST":
+        form_senha = PasswordChangeForm(request.user, request.POST)
+        if form_senha.is_valid():
+            user = form_senha.save()
+            update_session_auth_hash(request, user)
+            return redirect('PaginaInicial')
+    else:
+        form_senha = PasswordChangeForm(request.user)
+    return render(request, 'usuarios/alterar_senha.html', {'form_senha': form_senha})
+
+
     
 
            

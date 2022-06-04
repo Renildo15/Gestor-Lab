@@ -3,7 +3,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Cadastrar Usuário</title>
+    <title>Alterar Senha</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -38,7 +38,7 @@
     <div class='col-8 m-auto pt-2 pb-2 text-center'>
 
         {% block titulo %}
-        <h1>Cadastro do usuário</h1>
+        <h1>Alterar Senha</h1>
         {% endblock  %}
         
     </div>
@@ -48,21 +48,21 @@
             {% block form %}
             {% csrf_token %}
             <div class="form-group">
-                {{form_usuario.username.errors}}
-                <label>Username: </label>
-                {{form_usuario.username}}
+                {{form_senha.old_password.errors}}
+                <label>Senha antiga: </label>
+                {{form_senha.old_password}}
             </div>
         
             <div class="form-group">
-                {{form_usuario.password1.errors}}
-                <label>Senha: </label>
-                {{form_usuario.password1}}
+                {{form_senha.new_password1.errors}}
+                <label>Nova senha: </label>
+                {{form_senha.new_password1}}
             </div>
         
             <div class="form-group">
-                {{form_usuario.password2.errors}}
+                {{form_senha.new_password2.errors}}
                 <label>Confirmação de senha: </label>
-                {{form_usuario.password2}}
+                {{form_senha.new_password2}}
             </div>
             <input type="submit" class="btn btn-success" value="Salvar">
             {% endblock form %}
