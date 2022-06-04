@@ -1,7 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate,login as login_process
+from django.contrib.auth import authenticate,login as login_process, logout as logout_process
 # Create your views here.
 def cadastro(request):
     if request.method == "POST":
@@ -28,6 +28,10 @@ def login(request):
     else:
         form_login = AuthenticationForm()
     return render(request, 'usuarios/login_user.html', {'form_login': form_login})
+
+def logout(request):
+    logout_process(request)
+    return redirect('login')
     
 
            
