@@ -35,6 +35,15 @@
             <i class="fa fa-info-circle" aria-hidden="true"></i>
             Sobre
         </a>
+        <ul>
+            {% if user.is_authenticated %}
+            <a href="{% url 'account_email' %}">Mudar o email</a>
+            <a href="{% url 'account_logout' %}">Sair</a>
+            {% else %}
+            <a href="{% url 'account_login' %}">Entrar</a>
+            <a href="{% url 'account_signup' %}">Cadastro</a>
+            {% endif %}
+          </ul>
     </div>
     <div class='col-8 m-auto pt-2 pb-2 text-center'>
         <h1>Artigos</h1>
