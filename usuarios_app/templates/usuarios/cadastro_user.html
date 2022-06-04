@@ -55,6 +55,13 @@
             <br>
             <br>
             <div class="form-group">
+                {{form_usuario.email.errors}}
+                <label>Email: </label>
+                {{form_usuario.email}}
+            </div>
+            <br>
+            <br>
+            <div class="form-group">
                 {{form_usuario.password1.errors}}
                 <label>Senha: </label>
                 {{form_usuario.password1}}

@@ -3,7 +3,7 @@ from projetos_app.forms import ProjectForm
 from projetos_app.models import Projeto
 from django.contrib.auth.decorators import login_required
 
-@login_required(login_url="/auth/login")
+
 def home(request):
     data = {}
     data['pjt'] = Projeto.objects.all()
