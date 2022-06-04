@@ -4,7 +4,7 @@ from .models import Lab
 from django.contrib.auth.decorators import login_required
 
 
-
+@login_required(login_url='account_login')
 def home(request):
     data = {}
     data['db'] = Lab.objects.all()
