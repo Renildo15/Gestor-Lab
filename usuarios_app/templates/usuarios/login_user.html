@@ -47,10 +47,18 @@
         <form name="form" id="form" action="{% url 'login'%}" method="post">
             {% block form %}
             {% csrf_token %}
-            <input type="text" placeholder="Username..." name="username">
+            <div class="form-group">
+                {{form_login.username.errors}}
+                <label>Username: </label>
+                {{form_login.username}}
+            </div>
             <br>
             <br>
-            <input type="password" placeholder="Senha..." name="senha">
+            <div class="form-group">
+                {{form_login.password.errors}}
+                <label>Senha: </label>
+                {{form_login.password}}
+            </div>
             <br>
             <br>
             <input type="submit" class="btn btn-success" value="Login">
