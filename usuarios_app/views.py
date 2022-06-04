@@ -1,4 +1,5 @@
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, PasswordChangeForm
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login as login_process, logout as logout_process, update_session_auth_hash
@@ -28,11 +29,11 @@ def login(request):
     else:
         form_login = AuthenticationForm()
     return render(request, 'usuarios/login_user.html', {'form_login': form_login})
-
+@login_required(login_url="/auth/login")
 def logout(request):
     logout_process(request)
     return redirect('login')
-
+@login_required(login_url="/auth/login")
 def alterar_senha(request):
     if request.method == "POST":
         form_senha = PasswordChangeForm(request.user, request.POST)
@@ -43,6 +44,9 @@ def alterar_senha(request):
     else:
         form_senha = PasswordChangeForm(request.user)
     return render(request, 'usuarios/alterar_senha.html', {'form_senha': form_senha})
+
+
+
 
 
     

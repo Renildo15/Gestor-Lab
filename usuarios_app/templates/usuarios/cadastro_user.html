@@ -52,18 +52,22 @@
                 <label>Username: </label>
                 {{form_usuario.username}}
             </div>
-        
+            <br>
+            <br>
             <div class="form-group">
                 {{form_usuario.password1.errors}}
                 <label>Senha: </label>
                 {{form_usuario.password1}}
             </div>
-        
+            <br>
+            <br>
             <div class="form-group">
                 {{form_usuario.password2.errors}}
                 <label>Confirmação de senha: </label>
                 {{form_usuario.password2}}
             </div>
+            <br>
+            <br>
             <input type="submit" class="btn btn-success" value="Salvar">
             {% endblock form %}
         </form>

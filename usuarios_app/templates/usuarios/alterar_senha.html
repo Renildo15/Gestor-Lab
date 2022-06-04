@@ -52,18 +52,22 @@
                 <label>Senha antiga: </label>
                 {{form_senha.old_password}}
             </div>
-        
+            <br>
+            <br>
             <div class="form-group">
                 {{form_senha.new_password1.errors}}
                 <label>Nova senha: </label>
                 {{form_senha.new_password1}}
             </div>
-        
+            <br>
+            <br>
             <div class="form-group">
                 {{form_senha.new_password2.errors}}
                 <label>Confirmação de senha: </label>
                 {{form_senha.new_password2}}
             </div>
+            <br>
+            <br>
             <input type="submit" class="btn btn-success" value="Salvar">
             {% endblock form %}
         </form>
