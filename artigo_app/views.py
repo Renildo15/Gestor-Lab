@@ -5,20 +5,20 @@ from django.contrib.auth.decorators import login_required
 
 
 
-
+@login_required(login_url='account_login')
 def home(request):
     data = {}
     data['art'] = Artigo.objects.all()
     return render(request,'art_index.html',data)
 
-
+@login_required(login_url='account_login')
 def form(request):
     data = {}
     data['form'] = ArtForm()
     return render(request,'art_form.html',data)
     
 
-
+@login_required(login_url='account_login')
 def create(request):
     form = ArtForm(request.POST or None)
     if form.is_valid():
@@ -26,21 +26,21 @@ def create(request):
         return redirect('/artigo/')
 
 
-
+@login_required(login_url='account_login')
 def view(request,pk):
     data = {}
     data['art'] = Artigo.objects.get(pk=pk)
     return render(request, 'art_view.html', data)
   
 
-
+@login_required(login_url='account_login')
 def edit(request, pk):
     data = {}
     data['art'] = Artigo.objects.get(pk = pk)
     data['form'] = ArtForm(instance=data['art'])
     return render(request,'art_form.html', data)
 
-
+@login_required(login_url='account_login')
 def update(request, pk):
     data = {}
     data['art'] = Artigo.objects.get(pk = pk)
@@ -49,7 +49,7 @@ def update(request, pk):
         form.save()
         return redirect('/artigo/')
   
-
+@login_required(login_url='account_login')
 def delete(request, pk):
     db = Artigo.objects.get(pk = pk)
     db.delete()
