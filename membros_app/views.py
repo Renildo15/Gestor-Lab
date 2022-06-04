@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from .models import Membro
 from .forms import MembroForm
 
 # Create your views here.
-
+@login_required(login_url='account_login')
 def listar_membros(request):
     membros = Membro.objects.all()
     
@@ -11,7 +12,7 @@ def listar_membros(request):
 
 
 #Criar view do formulário
-
+@login_required(login_url='account_login')
 def form_membros(request, id = 0):
     if request.method == 'GET':
         if id == 0:
@@ -31,13 +32,13 @@ def form_membros(request, id = 0):
             form.save()
         return redirect('listar_membros')  
     
-    
+@login_required(login_url='account_login')
 def excluir_membro(request, id):
     membro = Membro.objects.get(pk = id)
     membro.delete()
     return redirect('listar_membros')
 
-
+@login_required(login_url='account_login')
 def visualizar_membro(request, id):
     membro = Membro.objects.get(pk = id)
     return render(request, 'membro_view.html', {'membro': membro})

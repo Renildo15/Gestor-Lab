@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Login do Usuário</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="navbar-css">
+        <a href="/">
+            <i class="fa fa-home" aria-hidden="true"></i>
+            Inicio
+        </a>
+        <div class="dropdown-css">
+          <button class="dropbtn-css">
+            <i class="fa fa-plus-square" aria-hidden="true"></i>  
+            Cadastros 
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content-css">
+            <a href="/laboratorio/">Cadastro Laborátorios</a>
+            <a href="/membros/">Cadastro Membros</a>
+            <a href="/evento/">Cadastro Eventos</a>
+            <a href="/projeto/">Cadastro Projetos</a>
+            <a href="/artigo/">Cadastro Artigos</a>
+            <a href="/linhapesquisa/">Cadastro Pesquisas</a>
+
+          </div>
+        </div> 
+        <a href="#">
+            <i class="fa fa-info-circle" aria-hidden="true"></i>
+            Sobre
+        </a>
+    </div>
+    <div class='col-8 m-auto pt-2 pb-2 text-center'>
+
+        {% block titulo %}
+        <h1>Login</h1>
+        {% endblock  %}
+        
+    </div>
+    
+    <div class='col-8 m-auto pt-4 pb-2 text-center'>
+        <form name="form" id="form" action="{% url 'login'%}" method="post">
+            {% block form %}
+            {% csrf_token %}
+            <div class="form-group">
+                {{form_login.username.errors}}
+                <label>Username: </label>
+                {{form_login.username}}
+            </div>
+            <br>
+            <br>
+            <div class="form-group">
+                {{form_login.password.errors}}
+                <label>Senha: </label>
+                {{form_login.password}}
+            </div>
+            <br>
+            <br>
+            <input type="submit" class="btn btn-success" value="Entrar">
+            <br>
+            <br>
+            <p>
+                <a href="cadastro">
+                    Novo no site? Cadastre-se aqui!
+                </a>
+            </p>
+            <br>
+            <p>
+                <a href="alterar_senha">
+                    Esqueceu a senha? Clique aqui!
+                </a>
+            </p>
+            {% endblock form %}
+        </form>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+</html>

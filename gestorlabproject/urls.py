@@ -24,5 +24,6 @@ urlpatterns = [
     path('membros/', include('membros_app.urls')),
     path('artigo/', include('artigo_app.urls')),
     path('linhapesquisa/', include('linhapesquisa_app.urls')),
+    path("accounts/", include('allauth.urls')),
     path('', include('gestorlabapp.urls')),
 ]
