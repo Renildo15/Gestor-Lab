@@ -11,7 +11,9 @@ class TccForm(forms.ModelForm):
             'titulo': 'Titulo',
             'autores': 'Autores',
             'orientadores': 'Orientadores',
+            'instituicao': 'Instituicao',
             'descricao': 'Descricao',
+            'pesquisa': 'Pesquisa',
         }
         widgets = {
 
@@ -22,3 +24,4 @@ class TccForm(forms.ModelForm):
             super(TccForm, self).__init__(*args, **kwargs)
             self.fields['autores'].empty_label = "Selecione"
             self.fields['orientadores'].empty_label = "Selecione"
+            self.fields['pesquisa'].empty_label = "Selecione"
