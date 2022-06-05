@@ -28,6 +28,20 @@ def view(request,pk):
 
 
 
+def edit(request, pk):
+    data = {}
+    data['db'] = Horario.objects.get(pk = pk)
+    data['form'] = HorarioForm(instance=data['db'])
+    return render(request,'horario_form.html', data)
+
+def update(request, pk):
+    data = {}
+    data['db'] = Horario.objects.get(pk = pk)
+    form = HorarioForm(request.POST or None, instance=data['db'])
+    if form.is_valid():
+        form.save()
+        return redirect('/horario/')
+
 
 
 

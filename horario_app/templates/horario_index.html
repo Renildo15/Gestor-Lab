@@ -69,7 +69,7 @@
                         <td>{{dbs.membro}}</td>
                         <td>
                             <a href="{% url 'horario:view' dbs.id %}" class="btn btn-view">Visualizar</a>
-
+                            <a href="{% url 'horario:edit' dbs.id %}" class="btn btn-edit">Editar</a>
                         </td>
                         {% endblock linhas %}
                     </tr>
