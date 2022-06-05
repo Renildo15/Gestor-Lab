@@ -306,3 +306,37 @@ TA08.08 | Em todas as telas que são exibidas decorrentes ao clique de uma opç�
 
 
 
+### User Story 009 - Manter Apresentação:
+
+Descrição | O Sistema deve manter um cadastro de Apresentações. As apresentações cadastradas terão os seguntes atributos título, autores, Data da Apresentação, e descrição,as apresentações devem estar vinculadas aos seus autores e a projetos/eventos. O usuário professor será quem poderá cadastrar, e o usuário administrador poderá alterar e remover e o usuário poderá consultar.
+--------- | -----------------------------------------------
+
+Requisitos Envolvidos |      |
+--------------------- | -------
+RF022 | Cadastrar Apresentação         |
+RF023 | Alterar Apresentação       |
+RF024 | Listar Apresentação         |
+RF025 | Excluir TCCApresentação           |
+
+Prioridade | Essencial
+---------- | --------
+Estimativa | 12h
+Tempo Gasto (real): | XX Hr |
+Tamanho Funcional | 34 PF
+Analista | Jeison
+Desenvolvedor | Pedro e leonardo
+Revisor | Renildo
+Testador | Eduardo
+
+### Testes de aceitação (TA) 
+Código | Descrição
+-------|----------
+TA09.01 | O usuário precisa cadastrar uma apresentação no sistema, então ele vai em "Cadastros" e depois escolhe "Cadastro de Apresentação". Então será exibido uma tela onde terá uma tabela com todas as apresentações já previamente cadastradas, e os botões de Adicionar, atualizar, visualizar e deletar. Caso não tenha nenhum cadastro, será exibida uma mensagem informando que não há nenhuma apresentação cadastrado.
+TA09.02 |Ao clicar em "Adicionar Apresentação" uma tela de cadastro será exibida com todos os campos para serem preenchidos. Logo após informar as informações, o administrador clica em "Salvar", e em seguida é levado de volta à tela da tabela das apresentações cadastradas. Onde deve ser exibido automaticamente a apresentação cadastrada. 
+TA09.03 |O usuário não preenche todos os campos obrigatorios. Então na tela deverá ser exibida uma mensagem informando que o usuário não preencheu todos os campos obrigatorios.
+TA09.04 | Para cadastrar uma apresentação é necessário que um membro já tenha sido cadastrado, caso contrário, não será possível realizar a ação.
+TA09.05 | O usuário que deseja ver os dados de uma apresentação cadastrada com mais detalhes. então ele clica em "Visualizar", onde será exibida uma tela com os dados da apresentação escolhida.
+TA09.06 | O usuário deseja editar dados de um cadastro. Então ele clica em "editar", onde será exibida uma tela com todos os dados aptos à serem editados. 
+TA09.07 | No ato da edição, o usuário deixa um campo obrigatório em branco, então o sistema não permite a alteração e informa na tela que o todos os campos precisam ser preenchidos corretamente.
+TA09.08 | O usuário(usuário administrador) deseja deletar uma apresentação, então ele clica em "Deletar". O cadastro é apagado instantaneamente da tabela e do sistema.
+TA09.09 | Em todas as telas que são exibidas decorrentes ao clique de uma opção, há um botão Voltar", que permiti o usuário voltar para a tela principal do cadastro.
