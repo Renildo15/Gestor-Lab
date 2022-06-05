@@ -42,7 +42,10 @@ def update(request, pk):
         form.save()
         return redirect('/horario/')
 
-
+def delete(request, pk):
+    db = Horario.objects.get(pk = pk)
+    db.delete()
+    return redirect('/horario/')
 
 
 # Create your views here.
