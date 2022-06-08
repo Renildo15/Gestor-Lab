@@ -51,9 +51,10 @@
             <thead class="thead-dark">
               <tr>
                 {% block th %}
-                <th scope="col">Dia</th>
+                <th scope="col">Hora Entrada</th>
+                <th scope="col">Hora Saída</th>
                 <th scope="col">Turno</th>
-                <th scope="col">Horários</th>
+                <th scope="col">Dia</th>
                 <th scope="col">Membro</th>
                 <th scope="col"></th>
                 {% endblock th %}
@@ -63,9 +64,10 @@
                 {% for dbs in db %}
                     <tr>
                         {% block linhas %}
-                        <td>{{dbs.dia}}</td>
+                        <td>{{dbs.horario_entrada}}</td>
+                        <td>{{dbs.horario_saida}}</td>
                         <td>{{dbs.turno}}</td>
-                        <td>{{dbs.horario}}</td>
+                        <td>{{dbs.dia_semana}}</td>
                         <td>{{dbs.membro}}</td>
                         <td>
                             <a href="{% url 'horario:view' dbs.id %}" class="btn btn-view">Visualizar</a>
