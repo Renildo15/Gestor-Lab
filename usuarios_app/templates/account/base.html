@@ -16,24 +16,26 @@
           <i class="fa fa-home" aria-hidden="true"></i>
           Inicio
       </a>
-      <div class="dropdown-css">
-        <button class="dropbtn-css">
-          <i class="fa fa-plus-square" aria-hidden="true"></i>  
-          Cadastros 
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content-css">
-          <a href="/laboratorio/">Cadastro Laborátorios</a>
-          <a href="/membros/">Cadastro Membros</a>
-          <a href="/evento/">Cadastro Eventos</a>
-          <a href="/projeto/">Cadastro Projetos</a>
-          <a href="/artigo/">Cadastro Artigos</a>
-          <a href="/linhapesquisa/">Cadastro Pesquisas</a>
-          <a href="/tcc/">Cadastro TCC</a>
-          <a href="/horario/">Cadastro Horários</a>
-        </div>
-  
-      </div> 
+      {% if user.is_authenticated %}
+          <div class="dropdown-css">
+            <button class="dropbtn-css">
+              <i class="fa fa-plus-square" aria-hidden="true"></i>
+              Cadastros 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content-css">
+              <a href="/laboratorio/">Laborátorios</a>
+              <a href="/membros/">Membros</a>
+              <a href="/evento/">Eventos</a>
+              <a href="/projeto/">Projetos</a>
+              <a href="/artigo/">Artigos</a>
+              <a href="/linhapesquisa/">Pesquisas</a>
+              <a href="/tcc/">TCC</a>
+              <a href="/horario/">Horários</a>
+            </div>
+          </div> 
+          {% else %}
+          {% endif %}
       <a href="#">
           <i class="fa fa-info-circle" aria-hidden="true"></i>
           Sobre
