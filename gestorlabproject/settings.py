@@ -48,8 +48,9 @@ INSTALLED_APPS = [
     'projetos_app',
     'artigo_app',
     'linhapesquisa_app',
-    'tcc_app'
+    'tcc_app',
     'usuarios_app',
+    'horario_app',
 
     "allauth",
     "allauth.account",

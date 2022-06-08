@@ -3,11 +3,12 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Gestor Lab - Projeto</title>
+    <title>Gestor Lab - Horários</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
     <link rel="stylesheet" href="{% static 'css/line.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
 </head>
 <body>
     <div class="navbar-css">
@@ -36,58 +37,42 @@
             <i class="fa fa-info-circle" aria-hidden="true"></i>
             Sobre
         </a>
-        <ul>
-            {% if user.is_authenticated %}
-            <a href="{% url 'account_email' %}">Mudar o email</a>
-            <a href="{% url 'account_logout' %}">Sair</a>
-            {% else %}
-            <a href="{% url 'account_login' %}">Entrar</a>
-            <a href="{% url 'account_signup' %}">Cadastro</a>
-            {% endif %}
-          </ul>
     </div>
     <div class='col-8 m-auto pt-2 pb-2 text-center'>
-        <h1>Projetos</h1>
+        <h1>Horários</h1>
     </div>
     
     <div class='col-8 m-auto pt-3 pb-2 text-center'>
-        <a href="{% url 'projeto:projectForm' %}" class="btn btn-add">Adicionar Projetos</a>
+        <a href="{% url 'horario:form'%}" class="btn btn-add">Adicionar Horário</a>
     </div>
-    {% if pjt %}
+    {% if db %}
     <div class='col-8 m-auto pt-4 pb-2 text-center'>
         <table class="table">
             <thead class="thead-dark">
               <tr>
-                <th scope="col">Nome</th>
-                <th scope="col">Descrição</th>
-                <th scope="col">Coordenador</th>
-                <th scope="col">Participantes</th>
-                <th scope="col">Laboratório</th>
+                {% block th %}
+                <th scope="col">Dia</th>
+                <th scope="col">Turno</th>
+                <th scope="col">Horários</th>
+                <th scope="col">Membro</th>
                 <th scope="col"></th>
-                
+                {% endblock th %}
               </tr>
             </thead>
             <tbody>
-                {% for pjts in pjt %}
+                {% for dbs in db %}
                     <tr>
-                        
-                        <td>{{pjts.nome}}</td>
-                        <td>{{pjts.descricao}}</td>
-                        <td>{{pjts.coordenador_projeto}}</td>
-                        <td>{{pjts.participantes}}</td>
-                        <td>{{pjts.laboratorio_projeto}}</td>
-
+                        {% block linhas %}
+                        <td>{{dbs.dia}}</td>
+                        <td>{{dbs.turno}}</td>
+                        <td>{{dbs.horario}}</td>
+                        <td>{{dbs.membro}}</td>
                         <td>
-                            <a href="{% url 'projeto:projectView' pjts.id %}" class="btn btn-view">Visualizar</a>
-                            <a href="{% url 'projeto:projectEdit' pjts.id %}" class="btn btn-edit">Editar</a></th>
-                            <form method="post" action="{% url 'projeto:projectDelete' pjts.id %}" class="btn">
-                                {% csrf_token %}
-                                <button type="submit" class="btn btn-delete">
-                                    Deletar
-                                </button>
-                            </form>
+                            <a href="{% url 'horario:view' dbs.id %}" class="btn btn-view">Visualizar</a>
+                            <a href="{% url 'horario:edit' dbs.id %}" class="btn btn-edit">Editar</a>
+                            <a href="{% url 'horario:delete' dbs.id %}" class="btn btn-delete">Deletar</a>
                         </td>
-                        
+                        {% endblock linhas %}
                     </tr>
                 {% endfor %}
             </tbody>
@@ -95,7 +80,7 @@
     </div>
     {% else %}
     <h1 class ='text-center mt-5'>
-        Não há projetos cadastrados
+        Não há Horários cadastrados
     </h1>
     {% endif %}
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
