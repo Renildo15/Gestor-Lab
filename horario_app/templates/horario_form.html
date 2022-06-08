@@ -21,14 +21,14 @@
             <i class="fa fa-caret-down"></i>
           </button>
           <div class="dropdown-content-css">
-            <a href="/laboratorio/">Cadastro Laborátorios</a>
-            <a href="/membros/">Cadastro Membros</a>
-            <a href="/evento/">Cadastro Eventos</a>
-            <a href="/projeto/">Cadastro Projetos</a>
-            <a href="/artigo/">Cadastro Artigos</a>
-            <a href="/linhapesquisa/">Cadastro Pesquisas</a>
-            <a href="/tcc/">Cadastro TCC</a>
-            <a href="/horario/">Cadastro Horários</a>
+            <a href="/laboratorio/">Laborátorios</a>
+            <a href="/membros/">Membros</a>
+            <a href="/evento/">Eventos</a>
+            <a href="/projeto/">Projetos</a>
+            <a href="/artigo/">Artigos</a>
+            <a href="/linhapesquisa/">Pesquisas</a>
+            <a href="/tcc/">TCC</a>
+            <a href="/horario/">Horários</a>
           </div>
         </div> 
         <a href="#">
@@ -53,9 +53,10 @@
         <form name="form" id="form" action="{%if db %}{% url 'horario:update' db.id %}{%else%}{% url 'horario:create' %}{%endif%}" method="post">
             {% block form %}
             {% csrf_token %}
-            <div class='form-group mt-4'>Dia: {{form.dia}}</div>
+            <div class='form-group mt-4'>Hora Entrada: {{form.horario_entrada}}</div>
+            <div class='form-group mt-4'>Hora Saída: {{form.horario_saida}}</div>
             <div class='form-group mt-4'>Turno: {{form.turno}}</div>
-            <div class='form-group mt-4'>Horários: {{form.horario}}</div>
+            <div class='form-group mt-4'>Dia: {{form.dia_semana}}</div>
             <div class='form-group mt-4'>Membro: {{form.membro}}</div>
             <div class='form-group mt-4'></div>
             <input type="submit" class="btn btn-success" value="Salvar">

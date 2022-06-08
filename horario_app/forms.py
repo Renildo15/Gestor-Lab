@@ -1,17 +1,28 @@
 from django import forms
 from .models import Horario
 
+
+
+class TimeInput(forms.TimeInput):
+     input_type = 'time'
+
 class HorarioForm(forms.ModelForm):
 
     class Meta:
         model = Horario
         fields = '__all__'
         labels = {
-            'dia': 'Dia',
+            'horario_entrada': 'Hora Entrada',
+            'horario_saida': 'Hora Saída',
             'turno': 'Turno',
-            'horario': 'Horario',
+            'dia_semana': 'Dia',
             'membro': 'Membro',
+        }
 
+        widgets = {
+
+            "horario_entrada": TimeInput(),
+            "horario_saida": TimeInput(),
         }
 
         
