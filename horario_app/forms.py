@@ -7,9 +7,10 @@ class HorarioForm(forms.ModelForm):
         model = Horario
         fields = '__all__'
         labels = {
-            'dia': 'Dia',
+            'horario_entrada': 'Hora Entrada',
+            'horario_saida': 'Hora Saída',
             'turno': 'Turno',
-            'horario': 'Horario',
+            'dia_semana': 'Dia',
             'membro': 'Membro',
 
         }
