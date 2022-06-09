@@ -20,11 +20,14 @@ def create(request):
         form.save()
         return redirect('/apresentacao/')
 
-""""
+
 def view(request,pk):
     data = {}
     data['db'] = Apresentacao.objects.get(pk=pk)
     return render(request, 'apresentacao_view.html', data)
+
+
+"""
 def edit(request, pk):
     data = {}
     data['db'] = Apresentacao.objects.get(pk = pk)
