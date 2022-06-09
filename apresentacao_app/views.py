@@ -27,7 +27,7 @@ def view(request,pk):
     return render(request, 'apresentacao_view.html', data)
 
 
-"""
+
 def edit(request, pk):
     data = {}
     data['db'] = Apresentacao.objects.get(pk = pk)
@@ -43,4 +43,4 @@ def update(request, pk):
 def delete(request, pk):
     db = Apresentacao.objects.get(pk = pk)
     db.delete()
-    return redirect('/apresentacao/') """
+    return redirect('/apresentacao/')

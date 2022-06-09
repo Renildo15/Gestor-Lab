@@ -1,6 +1,9 @@
 from django import forms
 from .models import Apresentacao
 
+class DateInput(forms.DateInput):
+     input_type = 'date'
+
 class ApresentacaoForm(forms.ModelForm):
 
     class Meta:
@@ -14,7 +17,7 @@ class ApresentacaoForm(forms.ModelForm):
         }
         widgets = {
 
-            "dataApresentacao":   forms.DateInput(),
+            "dataApresentacao":   DateInput(),
         }
 
 
