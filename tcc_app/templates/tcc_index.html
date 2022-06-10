@@ -58,6 +58,7 @@
                 <th scope="col">Instituição</th>
                 <th scope="col">Data</th>
                 <th scope="col">Descrição</th>
+                <th scope="col">Pesquisa</th>
                 <th scope="col"></th>
                 {% endblock th %}
               </tr>
@@ -72,6 +73,7 @@
                         <td>{{dbs.instituicao}}</td>
                         <td>{{dbs.dtpublicacao}}</td>
                         <td>{{dbs.descricao}}</td>
+                        <td>{{dbs.pesquisa}}</td>
                         <td>
                             <a href="{% url 'tcc:view' dbs.id %}" class="btn btn-view">Visualizar</a>
                             <a href="{% url 'tcc:edit' dbs.id %}" class="btn btn-edit">Editar</a>
