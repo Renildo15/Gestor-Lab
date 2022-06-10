@@ -60,10 +60,10 @@
             <thead class="thead-dark">
               <tr>
                 <th scope="col">Nome</th>
-                <th scope="col">Descrição</th>
                 <th scope="col">Coordenador</th>
                 <th scope="col">Participantes</th>
                 <th scope="col">Laboratório</th>
+                <th scope="col">Descrição</th>
                 <th scope="col"></th>
                 
               </tr>
@@ -73,10 +73,10 @@
                     <tr>
                         
                         <td>{{pjts.nome}}</td>
-                        <td>{{pjts.descricao}}</td>
                         <td>{{pjts.coordenador_projeto}}</td>
                         <td>{{pjts.participantes}}</td>
                         <td>{{pjts.laboratorio_projeto}}</td>
+                        <td>{{pjts.descricao}}</td>
 
                         <td>
                             <a href="{% url 'projeto:projectView' pjts.id %}" class="btn btn-view">Visualizar</a>

@@ -60,11 +60,11 @@
             <thead class="thead-dark">
               <tr>
                 <th scope="col">Título</th>
-                <th scope="col">Descrição</th>
                 <th scope="col">Área</th>
                 <th scope="col">Laboratório</th>
                 <th scope="col">Site</th>
                 <th scope="col">Data de submissão</th>
+                <th scope="col">Descrição</th>
                 <th scope="col"></th>
                 
               </tr>
@@ -74,11 +74,11 @@
                     <tr>
                         
                         <td>{{evts.titulo}}</td>
-                        <td>{{evts.descricao}}</td>
                         <td>{{evts.area}}</td>
                         <td>{{evts.laboratorio}}</td>
                         <td><a href ="#">{{evts.site}}<a></td>
                         <td>{{evts.data_sbm}}</td>
+                        <td>{{evts.descricao}}</td>
 
                         <td>
                             <a href="{% url 'evento:eventView' evts.id %}" class="btn btn-view">Visualizar</a>

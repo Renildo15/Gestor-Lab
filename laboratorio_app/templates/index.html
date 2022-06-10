@@ -61,10 +61,11 @@
             <thead class="thead-dark">
               <tr>
                 {% block th %}
-                <th scope="col">Descrição</th>
                 <th scope="col">Nome</th>
+                <th scope="col">Sigla</th>
                 <th scope="col">Coordenador</th>
                 <th scope="col">Vice-coordenador</th>
+                <th scope="col">Descrição</th>
                 <th scope="col"></th>
                 {% endblock th %}
               </tr>
@@ -73,10 +74,11 @@
                 {% for dbs in db %}
                     <tr>
                         {% block linhas %}
-                        <td>{{dbs.descricao}}</td>
                         <td>{{dbs.nome}}</td>
+                        <td>{{dbs.sigla}}</td>
                         <td>{{dbs.coordenador}}</td>
                         <td>{{dbs.vice_coordenador}}</td>
+                        <td>{{dbs.descricao}}</td>
                         <td>
                             <a href="{% url 'laboratorio:view' dbs.id %}" class="btn btn-view">Visualizar</a>
                             <a href="{% url 'laboratorio:edit' dbs.id %}" class="btn btn-edit">Editar</a>
