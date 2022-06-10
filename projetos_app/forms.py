@@ -1,5 +1,3 @@
-from dataclasses import fields
-from tkinter import E
 from django.forms import ModelForm
 from projetos_app.models import Projeto
 
@@ -10,13 +8,13 @@ class ProjectForm(ModelForm):
         labels = {
             'nome': 'Nome',
             'descricao': 'Descrição',
-            'coordenador': 'Coordenador',
+            'coordenador_projeto ': 'Coordenador',
             'participantes': 'Participantes',
-            'laboratorio': 'Laboratório'
+            'laboratorio_projeto': 'Laboratório'
         }
 
-        def __init__(self, *args, **kwargs):
-            super(ProjectForm, self).__init__(*args, **kwargs)
-            self.fields['coordenador'].empty_label = "Selecione"
-            self.fields['participantes'].empty_label = "Selecione"
-            self.fields['laboratorio'].empty_label = "Selecione"
+    def __init__(self, *args, **kwargs):
+        super(ProjectForm, self).__init__(*args, **kwargs)
+        self.fields['coordenador_projeto'].empty_label = "Selecione"
+        self.fields['participantes'].empty_label = "Selecione"
+        self.fields['laboratorio_projeto'].empty_label = "Selecione"
