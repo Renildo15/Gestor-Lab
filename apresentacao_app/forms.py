@@ -13,6 +13,7 @@ class ApresentacaoForm(forms.ModelForm):
             'titulo': 'Titulo',
             'autores': 'Autores',
             'descricao': 'Descricao',
+            'pesquisa': 'Pesquisa',
 
         }
         widgets = {
@@ -24,3 +25,4 @@ class ApresentacaoForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
             super(ApresentacaoForm, self).__init__(*args, **kwargs)
             self.fields['autores'].empty_label = "Selecione"
+            self.fields['pesquisa'].empty_label = "Selecione"

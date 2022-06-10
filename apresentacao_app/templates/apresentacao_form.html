@@ -21,14 +21,14 @@
             <i class="fa fa-caret-down"></i>
           </button>
           <div class="dropdown-content-css">
-            <a href="/laboratorio/">Cadastro Laborátorios</a>
-            <a href="/membros/">Cadastro Membros</a>
-            <a href="/evento/">Cadastro Eventos</a>
-            <a href="/projeto/">Cadastro Projetos</a>
-            <a href="/artigo/">Cadastro Artigos</a>
-            <a href="/linhapesquisa/">Cadastro Pesquisas</a>
-            <a href="/tcc/">Cadastro TCC</a>
-            <a href="/apresentacao/">Cadastro Apresentações</a>
+            <a href="/laboratorio/">Laborátorios</a>
+            <a href="/membros/">Membros</a>
+            <a href="/evento/">Eventos</a>
+            <a href="/projeto/">Projetos</a>
+            <a href="/artigo/">Artigos</a>
+            <a href="/linhapesquisa/">Pesquisas</a>
+            <a href="/tcc/">TCC</a>
+            <a href="/apresentacao/">Apresentações</a>
           </div>
         </div> 
         <a href="#">
@@ -39,7 +39,7 @@
     <div class='col-8 m-auto pt-2 pb-2 text-center'>
 
         {% block titulo %}
-        <h1>Cadastrar Apresentacao</h1>
+        <h1>Cadastrar Apresentacão</h1>
         {% endblock  %}
 
     </div>
@@ -55,8 +55,9 @@
             {% csrf_token %}
             <div class='form-group mt-4'>Título: {{form.titulo}}</div>
             <div class='form-group mt-4'>Autores: {{form.autores}}</div>
-            <div class='form-group mt-4'>Data da Apresentação (dd-mm-aa): {{form.dataApresentacao}}</div>
+            <div class='form-group mt-4'>Data da Apresentação: {{form.dataApresentacao}}</div>
             <div class='form-group mt-4'>Descrição: {{form.descricao}}</div>
+            <div class='form-group mt-4'>Pesquisa: {{form.pesquisa}}</div>
             <div class='form-group mt-4'></div>
             <input type="submit" class="btn btn-success" value="Salvar">
             {% endblock form %}
