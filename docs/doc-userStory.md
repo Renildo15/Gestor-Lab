@@ -316,7 +316,7 @@ Requisitos Envolvidos |      |
 RF022 | Cadastrar Apresentação         |
 RF023 | Alterar Apresentação       |
 RF024 | Listar Apresentação         |
-RF025 | Excluir TCCApresentação           |
+RF025 | Excluir Apresentação           |
 
 Prioridade | Essencial
 ---------- | --------
