@@ -65,10 +65,10 @@
             {% block form %}
             {% csrf_token %}
             <div class='form-group mt-4'>Nome: {{form.nome}}</div>
-            <div class='form-group mt-4'>Descrição: {{form.descricao}}</div>
-            <div class='form-group mt-4'>Área: {{form.area}}</div>
-            <div class='form-group mt-4'>CNPQ: {{form.cnpq}}</div>
+            <div class='form-group mt-4'>Área CNPQ: {{form.areaCNPQ}}</div>
+            <div class='form-group mt-4'>Subárea CNPQ: {{form.subAreaCNPQ}}</div>
             <div class='form-group mt-4'>Laboratório: {{form.laboratorio_pesq}}</div>
+            <div class='form-group mt-4'>Descrição: {{form.descricao}}</div>
             <div class='form-group mt-4'></div>
             <input type="submit" class="btn btn-success" value="Salvar">
             {% endblock form %}

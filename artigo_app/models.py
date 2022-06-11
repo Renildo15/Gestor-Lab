@@ -5,8 +5,8 @@ from membros_app.models import Membro
 class Artigo(models.Model):
     titulo = models.CharField(max_length=50)
     autores = models.ForeignKey(Membro, on_delete=models.CASCADE, related_name='autores')
-    local_Publi = models.CharField(max_length=150)
-    descricao = models.CharField(max_length=150)
+    local_Publi = models.URLField(max_length=200)
+    descricao = models.TextField()
     laboratorio_art = models.ForeignKey(Lab, on_delete=models.CASCADE, related_name='laboratorio_art')
     
  

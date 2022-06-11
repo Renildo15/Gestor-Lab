@@ -17,4 +17,6 @@ class LabForm(forms.ModelForm):
         super(LabForm, self).__init__(*args, **kwargs)
         self.fields['coordenador'].required = False
         self.fields['vice_coordenador'].required = False
+        self.fields['coordenador'].empty_label = "Selecione"
+        self.fields['vice_coordenador'].empty_label = "Selecione"
         

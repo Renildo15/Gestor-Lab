@@ -64,8 +64,8 @@
                 <th scope="col">Título</th>
                 <th scope="col">Autores</th>
                 <th scope="col">Data da Apresentação</th>
-                <th scope="col">Descrição</th>
                 <th scope="col">Pesquisa</th>
+                <th scope="col">Descrição</th>
                 <th scope="col"></th>
                 {% endblock th %}
               </tr>
@@ -77,8 +77,8 @@
                         <td>{{dbs.titulo}}</td>
                         <td>{{dbs.autores}}</td>
                         <td>{{dbs.dataApresentacao}}</td>
-                        <td>{{dbs.descricao}}</td>
                         <td>{{dbs.pesquisa}}</td>
+                        <td>{{dbs.descricao}}</td>
                         <td>
                             <a href="{% url 'apresentacao:view' dbs.id %}" class="btn btn-view">Visualizar</a>
                             <a href="{% url 'apresentacao:edit' dbs.id %}" class="btn btn-edit">Editar</a>

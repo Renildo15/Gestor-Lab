@@ -63,8 +63,8 @@
                 <th scope="col">Título</th>
                 <th scope="col">Autores</th>
                 <th scope="col">Local de Publicação</th>
-                <th scope="col">Descrição</th>
                 <th scope="col">Laboratório</th>
+                <th scope="col">Descrição</th>
                 <th scope="col"></th>
               </tr>
             </thead>
@@ -73,9 +73,9 @@
                     <tr>
                         <td>{{arts.titulo}}</td>
                         <td>{{arts.autores}}</td>
-                        <td>{{arts.local_Publi}}</td>
-                        <td>{{arts.descricao}}<a></td>
+                        <td><a href={{arts.local_Publi}}>{{arts.local_Publi}}</a></td>
                         <td>{{arts.laboratorio_art}}<a></td>
+                            <td>{{arts.descricao}}<a></td>
                         <td>
                             <a href="{% url 'artigo:artView' arts.id %}" class="btn btn-view">Visualizar</a>
                             <a href="{% url 'artigo:artEdit' arts.id %}" class="btn btn-edit">Editar</a>

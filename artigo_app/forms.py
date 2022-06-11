@@ -3,7 +3,6 @@ from .models import Artigo
 
 class ArtForm(ModelForm):
     class Meta:
-
         model = Artigo
         fields = '__all__'
         labels = {
@@ -11,10 +10,10 @@ class ArtForm(ModelForm):
                 'autores': 'Autores',
                 'local_publi': 'Local Da Publicação',
                 'descricao': 'Descrição',
-                'laboratorio': 'Laboratório'
+                'laboratorio_art': 'Laboratório'
         }
 
-        def __init__(self, *args, **kwargs):
-            super(ArtForm, self).__init__(*args, **kwargs)
-            self.fields['autores'].empty_label = "Selecione"
-            self.fields['laboratorio'].empty_label = "Selecione"
+    def __init__(self, *args, **kwargs):
+        super(ArtForm, self).__init__(*args, **kwargs)
+        self.fields['autores'].empty_label = "Selecione"
+        self.fields['laboratorio_art'].empty_label = "Selecione"
