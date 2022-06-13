@@ -245,7 +245,7 @@ RF025 | Excluir TCC           |
 Prioridade | Essencial
 ---------- | --------
 Estimativa | 12h
-Tempo Gasto (real): | 05 Hr |
+Tempo Gasto (real): | 06 Hr |
 Tamanho Funcional | 34 PF
 Analista | Jeison
 Desenvolvedor | Pedro
