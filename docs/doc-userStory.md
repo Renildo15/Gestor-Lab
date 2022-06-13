@@ -6,7 +6,7 @@ Data | Versão |  Descrição |  Autor
 ---- | ------ | ---------- | -----
 02/05/2022 | 0.0.1 | Detalhamento do User Story RF001 | Eduardo
 17/05/2022 |0.0.2|Atualização dos User Stories|Renildo
-
+13/06/2022 |0.0.3|Atualização dos User Stories|Jeison
 
 ### User Story 001 - Manter laboratório de pesquisa:
 
@@ -245,7 +245,7 @@ RF025 | Excluir TCC           |
 Prioridade | Essencial
 ---------- | --------
 Estimativa | 12h
-Tempo Gasto (real): | XX Hr |
+Tempo Gasto (real): | 06 Hr |
 Tamanho Funcional | 34 PF
 Analista | Jeison
 Desenvolvedor | Pedro
@@ -284,7 +284,7 @@ RF029 | Excluir Horário           |
 Prioridade | Essencial
 ---------- | --------
 Estimativa | 12h
-Tempo Gasto (real): | XX Hr |
+Tempo Gasto (real): | 04 Hr |
 Tamanho Funcional | 34 PF
 Analista | Jeison
 Desenvolvedor | Pedro
@@ -321,7 +321,7 @@ RF025 | Excluir Apresentação           |
 Prioridade | Essencial
 ---------- | --------
 Estimativa | 12h
-Tempo Gasto (real): | XX Hr |
+Tempo Gasto (real): | 04 Hr |
 Tamanho Funcional | 34 PF
 Analista | Jeison
 Desenvolvedor | Pedro e leonardo
