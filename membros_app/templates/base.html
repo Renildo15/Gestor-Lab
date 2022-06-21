@@ -41,15 +41,39 @@
               <i class="fa fa-info-circle" aria-hidden="true"></i>
               Sobre
             </a>
-            <ul>
-              {% if user.is_authenticated %}
-              <a href="{% url 'account_email' %}">Mudar o email</a>
-              <a href="{% url 'account_logout' %}">Sair</a>
-              {% else %}
-              <a href="{% url 'account_login' %}">Entrar</a>
-              <a href="{% url 'account_signup' %}">Cadastro</a>
-              {% endif %}
-            </ul>
+            <div class="dropdown-css">
+              <button class="dropbtn-css">
+                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                {% if user.is_authenticated%}
+                {{user.username}} 
+                {% else %}
+                Login
+                {% endif %}
+                <i class="fa fa-caret-down"></i>
+      
+              </button>
+              <div class="dropdown-content-css">
+                  {% if user.is_authenticated %}
+                  <a href="{% url 'account_email' %}">
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                    Mudar o email
+                  </a>
+                  <a href="{% url 'account_logout' %}">
+                    <i class="fa fa-sign-out" aria-hidden="true"></i>
+                    Sair
+                  </a>
+                  {% else %}
+                  <a href="{% url 'account_login' %}">
+                    <i class="fa fa-sign-in" aria-hidden="true"></i>
+                    Entrar
+                  </a>
+                  <a href="{% url 'account_signup' %}">
+                    <i class="fa fa-user"></i>
+                    Cadastro
+                  </a>
+                  {% endif %}
+              </div>
+            </div>
         </div>
     </header>
 
