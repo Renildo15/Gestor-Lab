@@ -2,7 +2,7 @@ from django import forms
 from .models import LinhaPesquisa
 
 
-class linhaForm(forms.ModelForm):
+class LinhaForm(forms.ModelForm):
     
     class Meta:
         model = LinhaPesquisa
@@ -16,7 +16,7 @@ class linhaForm(forms.ModelForm):
         }
 
     def __init__(self, *args, **kwargs):
-        super(linhaForm, self).__init__(*args, **kwargs)
+        super(LinhaForm, self).__init__(*args, **kwargs)
         self.fields['laboratorio_pesq'].empty_label = "Selecione"
         
     
