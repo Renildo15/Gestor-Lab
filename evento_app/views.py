@@ -3,6 +3,8 @@ from evento_app.forms import EventForm
 from evento_app.models import Evento
 from django.contrib.auth.decorators import login_required
 
+redirLink = '/evento/'
+
 @login_required(login_url='account_login')
 def home(request):
     data = {}
@@ -20,7 +22,7 @@ def create(request):
     form = EventForm(request.POST or None)
     if form.is_valid():
         form.save()
-        return redirect('/evento/')
+        return redirect(redirLink)
 
 @login_required(login_url='account_login')
 def view(request,pk):
@@ -44,10 +46,10 @@ def update(request, pk):
     form = EventForm(request.POST or None, instance=data['evt'])
     if form.is_valid():
         form.save()
-        return redirect('/evento/')
+        return redirect(redirLink)
 
 @login_required(login_url='account_login')
-def delete(request, pk):
+def delete(pk):
     db = Evento.objects.get(pk = pk)
     db.delete()
-    return redirect('/evento/')
+    return redirect(redirLink)
