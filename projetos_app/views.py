@@ -3,6 +3,8 @@ from projetos_app.forms import ProjectForm
 from projetos_app.models import Projeto
 from django.contrib.auth.decorators import login_required
 
+redirLink = '/projeto/'
+
 @login_required(login_url='account_login')
 def home(request):
     data = {}
@@ -20,7 +22,7 @@ def create(request):
     form = ProjectForm(request.POST or None)
     if form.is_valid():
         form.save()
-        return redirect('/projeto/')
+        return redirect(redirLink)
 
 @login_required(login_url='account_login')
 def view(request,pk):
@@ -41,10 +43,10 @@ def update(request, pk):
     form = ProjectForm(request.POST or None, instance=data['pjt'])
     if form.is_valid():
         form.save()
-        return redirect('/projeto/')
+        return redirect(redirLink)
 
 @login_required(login_url='account_login')
-def delete(request, pk):
+def delete(pk):
     db = Projeto.objects.get(pk = pk)
     db.delete()
-    return redirect('/projeto/') 
+    return redirect(redirLink) 
