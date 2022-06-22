@@ -3,6 +3,7 @@ from .forms import LabForm
 from .models import Lab
 from django.contrib.auth.decorators import login_required
 
+redirLink = '/laboratorio/'
 
 @login_required(login_url='account_login')
 def home(request):
@@ -21,7 +22,7 @@ def create(request):
     form = LabForm(request.POST or None)
     if form.is_valid():
         form.save()
-        return redirect('/laboratorio/')
+        return redirect(redirLink)
 
 @login_required(login_url='account_login')
 def view(request,pk):
@@ -43,10 +44,10 @@ def update(request, pk):
     form = LabForm(request.POST or None, instance=data['db'])
     if form.is_valid():
         form.save()
-        return redirect('/laboratorio/')
+        return redirect(redirLink)
 
 @login_required(login_url='account_login')
-def delete(request, pk):
+def delete(pk):
     db = Lab.objects.get(pk = pk)
     db.delete()
-    return redirect('/laboratorio/')
+    return redirect(redirLink)
