@@ -2,6 +2,8 @@ from django.shortcuts import redirect, render
 from .forms import ApresentacaoForm
 from .models import Apresentacao
 
+redirLink = '/apresentacao/'
+
 def home(request):
     data = {}
     data['db'] = Apresentacao.objects.all()
@@ -18,7 +20,7 @@ def create(request):
     form = ApresentacaoForm(request.POST or None)
     if form.is_valid():
         form.save()
-        return redirect('/apresentacao/')
+        return redirect(redirLink)
 
 
 def view(request,pk):
@@ -39,8 +41,8 @@ def update(request, pk):
     form = ApresentacaoForm(request.POST or None, instance=data['db'])
     if form.is_valid():
         form.save()
-        return redirect('/apresentacao/')
+        return redirect(redirLink)
 def delete(request, pk):
     db = Apresentacao.objects.get(pk = pk)
     db.delete()
-    return redirect('/apresentacao/')
+    return redirect(redirLink)

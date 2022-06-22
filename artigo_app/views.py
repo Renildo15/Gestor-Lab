@@ -4,6 +4,8 @@ from artigo_app.models import Artigo
 from django.contrib.auth.decorators import login_required
 
 
+redirLink = '/artigo/'
+
 
 @login_required(login_url='account_login')
 def home(request):
@@ -23,7 +25,7 @@ def create(request):
     form = ArtForm(request.POST or None)
     if form.is_valid():
         form.save()
-        return redirect('/artigo/')
+        return redirect(redirLink)
 
 
 @login_required(login_url='account_login')
@@ -47,10 +49,10 @@ def update(request, pk):
     form = ArtForm(request.POST or None, instance=data['art'])
     if form.is_valid():
         form.save()
-        return redirect('/artigo/')
+        return redirect(redirLink)
   
 @login_required(login_url='account_login')
 def delete(request, pk):
     db = Artigo.objects.get(pk = pk)
     db.delete()
-    return redirect('/artigo/')
+    return redirect(redirLink)
