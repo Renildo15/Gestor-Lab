@@ -42,7 +42,7 @@ def update(request, pk):
     if form.is_valid():
         form.save()
         return redirect(redirLink)
-def delete(pk):
+def delete(request, pk):
     db = Apresentacao.objects.get(pk = pk)
     db.delete()
     return redirect(redirLink)

@@ -52,7 +52,7 @@ def update(request, pk):
         return redirect(redirLink)
   
 @login_required(login_url='account_login')
-def delete(pk):
+def delete(request, pk):
     db = Artigo.objects.get(pk = pk)
     db.delete()
     return redirect(redirLink)
