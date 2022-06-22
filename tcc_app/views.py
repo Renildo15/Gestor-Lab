@@ -3,6 +3,8 @@ from .forms import TccForm
 from .models import Tcc
 from django.contrib.auth.decorators import login_required
 
+redirLink = '/tcc/'
+
 @login_required(login_url='account_login')
 def home(request):
     data = {}
@@ -20,7 +22,7 @@ def create(request):
     form = TccForm(request.POST or None)
     if form.is_valid():
         form.save()
-        return redirect('/tcc/')
+        return redirect(redirLink)
 
 @login_required(login_url='account_login')
 def view(request,pk):
@@ -42,13 +44,13 @@ def update(request, pk):
     form = TccForm(request.POST or None, instance=data['db'])
     if form.is_valid():
         form.save()
-        return redirect('/tcc/')
+        return redirect(redirLink)
 
 @login_required(login_url='account_login')
-def delete(request, pk):
+def delete(pk):
     db = Tcc.objects.get(pk = pk)
     db.delete()
-    return redirect('/tcc/')
+    return redirect(redirLink)
 
 
 # Create your views here.
