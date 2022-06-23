@@ -29,8 +29,6 @@ def create(request):
     return render(request, 'form.html', { 'form': form, 'error': True})
         
     
-         
-
 @login_required(login_url='account_login')
 def view(request,pk):
     data = {}
