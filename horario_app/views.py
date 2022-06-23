@@ -4,6 +4,8 @@ from .models import Horario
 from django.contrib.auth.decorators import login_required
 
 
+redirLink = '/horario/'
+
 @login_required(login_url='account_login')
 def home(request):
     data = {}
@@ -23,7 +25,7 @@ def create(request):
     form = HorarioForm(request.POST or None)
     if form.is_valid():
         form.save()
-        return redirect('/horario/')
+        return redirect(redirLink)
 
 @login_required(login_url='account_login')
 def view(request,pk):
@@ -45,13 +47,13 @@ def update(request, pk):
     form = HorarioForm(request.POST or None, instance=data['db'])
     if form.is_valid():
         form.save()
-        return redirect('/horario/')
+        return redirect(redirLink)
 
 @login_required(login_url='account_login')
 def delete(request, pk):
     db = Horario.objects.get(pk = pk)
     db.delete()
-    return redirect('/horario/')
+    return redirect(redirLink)
 
 
 # Create your views here.
