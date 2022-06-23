@@ -1,5 +1,3 @@
-from mailbox import FormatError
-from tkinter import CASCADE
 from django.db import models
 from membros_app.models import Membro
 from laboratorio_app.models import Lab
