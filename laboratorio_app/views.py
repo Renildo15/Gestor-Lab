@@ -22,7 +22,7 @@ def create(request):
     form = LabForm(request.POST or None)
     if form.is_valid():
         form.save()
-        return render(request,'/laboratorio/')
+        return redirect(redirLink)
 
 @login_required(login_url='account_login')
 def view(request,pk):
