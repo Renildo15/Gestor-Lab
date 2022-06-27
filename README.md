@@ -41,6 +41,7 @@ docker run --name pgadmin-server -p 15432:80 -e "PGADMIN_DEFAULT_EMAIL=admin@adm
 ```
 6. Instale o docker compose [link](https://docs.docker.com/compose/install/)
 <br>
+
 8. Rodando o Gestor lab
 
 ```console
