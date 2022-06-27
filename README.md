@@ -25,7 +25,7 @@ git clone https://github.com/Renildo15/Gestor-Lab.git
 2. Caso não tenha o docker instalado clique no link e o baixe. Se já possui, pule para o passo 3. [Baixar o Docker Desktop](https://docs.docker.com/desktop/windows/install/)
 <br>
 
-3. Se já possui o docker o seguinte passo é Criar a network
+3. Se já possui o docker o seguinte passo é criar a network
 ```console
 docker network create -d bridge imd-network
 ```
