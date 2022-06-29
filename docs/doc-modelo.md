@@ -2,9 +2,9 @@
 
 ## Modelo de Dados
 
-### Modelo ER feito no BrModeloWeb
+### Modelo ER feito no BrModelo
 
-![Modelo ER](./images/Modelo_ER.png)
+![Modelo ER](/docs//images/Modelo_ER.png)
 
 
 ## Dicionário de Dados
