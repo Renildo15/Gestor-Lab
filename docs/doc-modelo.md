@@ -85,3 +85,47 @@
 | data_sbm      | data do evento                   | DATE | --- | Not Null |
 | descricao     | detalhes sobre o evento           | VARCHAR| 250    | --- |
 
+
+|   Tabela   | Projeto |
+| ---------- | ----------- |
+| Descrição  | Armazena as informações de um projeto. |
+| Observação | |
+
+|  Nome         | Descrição                        | Tipo de Dado | Tamanho | Restrições de Domínio |
+| ------------- | -------------------------------- | ------------ | ------- | --------------------- |
+| id            | identificador gerado pelo SGBD   | SERIAL       | ---     | PK / Identity |
+| nome          | nome do projeto                  | VARCHAR | 50 | Not Null |
+| coordenador_projeto| coordenador responsavel pelo projeto| INT | --- | FK/Not Null |
+| participante  | participantes do projeto         |  INT | --- | FK/Not Null |
+| laboratorio_projeto| laboratório o qual o projeto está vinculado | INT | --- | FK/Not Null |
+| descricao     | detalhes sobre o projeto           | VARCHAR| 250    | --- |
+
+|   Tabela   | Apresentação |
+| ---------- | ----------- |
+| Descrição  | Armazena as informações de uma apresentação. |
+| Observação | |
+
+|  Nome         | Descrição                        | Tipo de Dado | Tamanho | Restrições de Domínio |
+| ------------- | -------------------------------- | ------------ | ------- | --------------------- |
+| id            | identificador gerado pelo SGBD   | SERIAL       | ---     | PK / Identity |
+| titulo        | titulo da apresentação           | VARCHAR      | 50      | Not Null |
+| autor         | autor da apresentação            | INT          | ---     | FK/Not Null |
+| dataApresentacao| data da apresentação           | DATE         | ---     | Not Null |
+| descricao     | detalhes sobre o projeto         | VARCHAR      | 250     | --- |
+| pesquisa      | pesquisa a qual a apresentação está vinculada   | INT     | ---    | FK/Not Null |
+
+
+|   Tabela   | Horário |
+| ---------- | ----------- |
+| Descrição  | Armazena as informações dos horários dos membros. |
+| Observação | |
+
+|  Nome         | Descrição                        | Tipo de Dado | Tamanho | Restrições de Domínio |
+| ------------- | -------------------------------- | ------------ | ------- | --------------------- |
+| id            | identificador gerado pelo SGBD   | SERIAL       | ---     | PK / Identity |
+| horario_entrada| hora de entrada                 | DATETIME     | ---     | Not Null |
+| horario_saida  | hora de saída                   | DATETIME     | ---     | Not Null |
+| turno         | turnos(matutino, vespertino, noturno)| VARCHAR  | 50      | Not Null |
+| dia_semana    | dias da semana                  | VARCHAR  | 50      | Not Null |
+| membro        | nome do membro                  | INT     | ---    | FK/Not Null |
+
