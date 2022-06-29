@@ -4,7 +4,7 @@
 
 ### Modelo ER feito no BrModeloWeb
 
-![Modelo ER](./images/modelo_ER.png)
+![Modelo ER](./images/Modelo_ER.png)
 
 
 ## Dicionário de Dados
