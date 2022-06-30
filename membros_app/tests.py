@@ -1,7 +1,7 @@
 from django.test import TestCase
 from membros_app.models import Membro, Perfil
 
-class MembroTest(TestCase):
+class MembroTest(TestCase): 
     
     @classmethod
     def setUpTestData(cls):
