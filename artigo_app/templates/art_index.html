@@ -6,7 +6,9 @@
 </div>
 
 <div class='col-8 m-auto pt-3 pb-2 text-center'>
+  {% if user.is_authenticated %}
   <a href="{% url 'artigo:artForm' %}" class="btn btn-add">Adicionar Artigos</a>
+  {% endif %}
 </div>
 {% if art %}
 <div class='col-8 m-auto pt-4 pb-2 text-center'>
@@ -29,11 +31,15 @@
                   <td><a href={{arts.local_Publi}}>{{arts.local_Publi}}</a></td>
                   <td>{{arts.laboratorio_art}}<a></td>
                       <td>{{arts.descricao}}<a></td>
-                  <td>
-                      <a href="{% url 'artigo:artView' arts.id %}" class="btn btn-view">Visualizar</a>
-                      <a href="{% url 'artigo:artEdit' arts.id %}" class="btn btn-edit">Editar</a>
-                      <a href="{% url 'artigo:artDelete' arts.id %}" class="btn btn-delete">Deletar</a>
-                  </td>
+                 {% if user.is_authenticated %}
+                 <td>
+                  <a href="{% url 'artigo:artView' arts.id %}" class="btn btn-view">Visualizar</a>
+                  <a href="{% url 'artigo:artEdit' arts.id %}" class="btn btn-edit">Editar</a>
+                  <a href="{% url 'artigo:artDelete' arts.id %}" class="btn btn-delete">Deletar</a>
+                </td>
+                 {% else %}
+                 <td></td>
+                 {% endif %}
               </tr>
           {% endfor %}
       </tbody>

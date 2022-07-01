@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 redirLink = '/artigo/'
 
 
-@login_required(login_url='account_login')
+
 def home(request):
     data = {}
     data['art'] = Artigo.objects.all()
