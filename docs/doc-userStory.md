@@ -344,7 +344,7 @@ TA09.09 | Em todas as telas que são exibidas decorrentes ao clique de uma opç�
 
 ### User Story 010 - Manter Estágio:
 
-Descrição | O Sistema deve manter um cadastro de estágios. Os estágios cadastradas terão os seguintes atributos estagiario, orientador, supervisor e atividade.Os estágos devem estar vinculadas ao laboratorio, discente e docente responsáveis. O usuário professor será quem poderá cadastrar, e o usuário administrador poderá alterar e remover e o usuário poderá consultar.
+Descrição | O Sistema deve manter um cadastro de estágios. Os estágios cadastradas terão os seguintes atributos estagiário, orientador, supervisor e atividade.Os estágios devem estar vinculados ao laboratorio, discente e docente responsáveis. O usuário professor será quem poderá cadastrar, e o usuário administrador poderá alterar e remover e o usuário poderá consultar.
 --------- | -----------------------------------------------
 
 Requisitos Envolvidos |      |
