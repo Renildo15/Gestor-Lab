@@ -5,7 +5,9 @@
   <div class='center text-center form-group' id = "home">
     <h1>Gestor Lab - Sistema de Gerenciamento de Laboratórios</h1>
     <h2>CERES - Campus Caicó</h2>
-    <h3>Seja bem vindo ao Gestor Lab, <strong>{{user.username}}</strong>!</h3>
+    {% if user.is_authenticated %}
+      <h3>Seja bem vindo ao Gestor Lab, <strong>{{user.username}}</strong>!</h3>
+    {% endif %}
     <hr>
   </div>
 
