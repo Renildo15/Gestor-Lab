@@ -3,3 +3,7 @@ from django.contrib.auth.decorators import login_required
 
 def PaginaInicial(request):
     return render(request,'PageInicial.html')
+
+
+def sobre(request):
+    return render(request, 'sobre.html')
