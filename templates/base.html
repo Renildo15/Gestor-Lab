@@ -19,6 +19,7 @@
               <i class="fa fa-home" aria-hidden="true"></i>
               Inicio
             </a>
+            {% if user.is_authenticated %}
             <div class="dropdown-css">
               <button class="dropbtn-css">
                 <i class="fa fa-plus-square" aria-hidden="true"></i>
@@ -34,9 +35,10 @@
                 <a href="/linhapesquisa/">Pesquisas</a>
                 <a href="/tcc/">TCC</a>
                 <a href="/horario/">Horários</a>
-                <a href="/apresentacao/">Apresentações</a>
               </div>
             </div> 
+          {% else %}
+          {% endif %}
             <a href="/sobre/">
               <i class="fa fa-info-circle" aria-hidden="true"></i>
               Sobre
@@ -79,7 +81,10 @@
 
     {% block content %}
     {% endblock content %}
-
+    <br>
+    <br>
+    <br>
+    
     <div class="py-5 bg-dark">
       <div class="container text-center">
         <span class="m-0 text-center text-white">
