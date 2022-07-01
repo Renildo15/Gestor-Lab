@@ -127,7 +127,8 @@
 | horario_saida  | hora de saída                   | DATETIME     | ---     | Not Null |
 | turno         | turnos(matutino, vespertino, noturno)| VARCHAR  | 50      | Not Null |
 | dia_semana    | dias da semana                  | VARCHAR  | 50      | Not Null |
-| membro        | nome do membro                  | INT     | ---    | FK/Not Null |
+| discente      | nome do discente                | INT     | ---    | FK/Not Null |
+| docente       | nome do docente                 | INT     | ---    | FK/Not Null |
 
 
 |   Tabela   | Estágio |
