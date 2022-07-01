@@ -6,7 +6,7 @@ class Artigo(models.Model):
     titulo = models.CharField(max_length=50)
     autores = models.ForeignKey(Membro, on_delete=models.CASCADE, related_name='autores')
     local_Publi = models.URLField(max_length=200)
-    descricao = models.TextField()
+    descricao = models.TextField(max_length=200)
     laboratorio_art = models.ForeignKey(Lab, on_delete=models.CASCADE, related_name='laboratorio_art')
     
  
