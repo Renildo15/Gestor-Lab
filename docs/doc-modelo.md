@@ -26,7 +26,7 @@
 |   Tabela   | Linha de Pesquisa |
 | ---------- | ----------- |
 | Descrição  | Armazena as informações de uma pesquisa. |
-| Observação | |
+| Observação |---- |
 
 |  Nome         | Descrição                        | Tipo de Dado | Tamanho | Restrições de Domínio |
 | ------------- | -------------------------------- | ------------ | ------- | --------------------- |
@@ -41,7 +41,7 @@
 |   Tabela   | TCC |
 | ---------- | ----------- |
 | Descrição  | Armazena as informações de um TCC. |
-| Observação | |
+| Observação |---- |
 
 |  Nome         | Descrição                        | Tipo de Dado | Tamanho | Restrições de Domínio |
 | ------------- | -------------------------------- | ------------ | ------- | --------------------- |
@@ -58,7 +58,7 @@
 |   Tabela   | Artigo |
 | ---------- | ----------- |
 | Descrição  | Armazena as informações de um artigo. |
-| Observação | |
+| Observação | ----|
 
 |  Nome         | Descrição                        | Tipo de Dado | Tamanho | Restrições de Domínio |
 | ------------- | -------------------------------- | ------------ | ------- | --------------------- |
@@ -73,7 +73,7 @@
 |   Tabela   | Evento |
 | ---------- | ----------- |
 | Descrição  | Armazena as informações de um evento. |
-| Observação | |
+| Observação | ----|
 
 |  Nome         | Descrição                        | Tipo de Dado | Tamanho | Restrições de Domínio |
 | ------------- | -------------------------------- | ------------ | ------- | --------------------- |
@@ -89,7 +89,7 @@
 |   Tabela   | Projeto |
 | ---------- | ----------- |
 | Descrição  | Armazena as informações de um projeto. |
-| Observação | |
+| Observação |---- |
 
 |  Nome         | Descrição                        | Tipo de Dado | Tamanho | Restrições de Domínio |
 | ------------- | -------------------------------- | ------------ | ------- | --------------------- |
@@ -103,7 +103,7 @@
 |   Tabela   | Apresentação |
 | ---------- | ----------- |
 | Descrição  | Armazena as informações de uma apresentação. |
-| Observação | |
+| Observação | -----|
 
 |  Nome         | Descrição                        | Tipo de Dado | Tamanho | Restrições de Domínio |
 | ------------- | -------------------------------- | ------------ | ------- | --------------------- |
@@ -118,7 +118,7 @@
 |   Tabela   | Horário |
 | ---------- | ----------- |
 | Descrição  | Armazena as informações dos horários dos membros. |
-| Observação | |
+| Observação |----- |
 
 |  Nome         | Descrição                        | Tipo de Dado | Tamanho | Restrições de Domínio |
 | ------------- | -------------------------------- | ------------ | ------- | --------------------- |
@@ -128,4 +128,66 @@
 | turno         | turnos(matutino, vespertino, noturno)| VARCHAR  | 50      | Not Null |
 | dia_semana    | dias da semana                  | VARCHAR  | 50      | Not Null |
 | membro        | nome do membro                  | INT     | ---    | FK/Not Null |
+
+
+|   Tabela   | Estágio |
+| ---------- | ----------- |
+| Descrição  | Armazena as informações dos estágios. |
+| Observação | ----|
+
+|  Nome         | Descrição                        | Tipo de Dado | Tamanho | Restrições de Domínio |
+| ------------- | -------------------------------- | ------------ | ------- | --------------------- |
+| id            | identificador gerado pelo SGBD   | SERIAL       | ---     | PK / Identity |
+| estagiario    | nome do estagiario               | INT          | ---     | FK/Not Null |
+| orientador    | nome do orientador               | INT          | ---     | FK/Not Null |
+| supervisor    | nome do supervisor               | INT          | ---     | FK/Not Null |
+| atividade     | atividade de estagio             | VARCHAR      | 250     | Not Null |
+| laboratório   | Laboratório o qual o estágio está vinculado|  INT      | --- | FK/Not Null |
+
+
+|   Tabela   | Discente |
+| ---------- | ----------- |
+| Descrição  | Armazena as informações do discente. |
+| Observação | ----|
+
+|  Nome         | Descrição                        | Tipo de Dado | Tamanho | Restrições de Domínio |
+| ------------- | -------------------------------- | ------------ | ------- | --------------------- |
+| id            | identificador gerado pelo SGBD   | SERIAL       | ---     | PK / Identity         |
+| matricula     | matricula do discente            | INT          | ---     | UNIQUE                |
+| nome_discente | nome do discente                 | VARCHAR      | 100     | Not Null              |
+| sexo          | sexo do discente                 | VARCHAR      | 15      | ---                   |
+| ano_ingresso  | ano do ingresso                  | INT          | ---     | Not Null              |
+| periodo_ingresso| periodo do ingresso            | INT          | ---     | Not Null              |
+| forma_ingresso| Forma de ingresso na universidade| VARCHAR      | 250     | Not Null              |
+| tipo_discente | Tipo de discente (regular ou especial)| VARCHAR | 60      | Not Null              |
+| status        | Status do discente (Ativo ou Concluído)| VARCHAR | 60     | Not Null              |
+| sigla_nivel_ensino| Sigla do nível de ensino do discente| VARCHAR| 60     | Not Null              |
+| nivel_ensino  | Nível de ensino do discente      | VARCHAR      | 60      | Not Null              |
+| id_curso      | Identificador do curso do discente| VARCHAR     | 60      | Not Null              |
+| nome_curso    | Nome do curso do discente        | VARCHAR      | 60      | Not Null              |
+| usuario       | Nome do usuario do discente      | INT          | 60      | ---                   |
+| laboratório   | Laboratório o qual o discente está vinculado|  INT      | --- | FK/Not Null       |
+
+
+|   Tabela   | Docente |
+| ---------- | ----------- |
+| Descrição  | Armazena as informações do docente. |
+| Observação | ----|
+
+|  Nome         | Descrição                        | Tipo de Dado | Tamanho | Restrições de Domínio |
+| ------------- | -------------------------------- | ------------ | ------- | --------------------- |
+| id            | identificador gerado pelo SGBD   | SERIAL       | ---     | PK / Identity         |
+| siape         | Matrícula SIAPE do docente       | INT          | ---     | UNIQUE                |
+| nome_discente | Nome do docente                  | VARCHAR      | 100     | Not Null              |
+| sexo          | Sexo do docente                  | VARCHAR      | 15      | ---                   |
+| formacao      | Denominação da formação/titulação do docente    | VARCHAR | 60     | Not Null     |
+| tipo_jornada_trabalho| Regime de trabalho do docente | VARCHAR  | 60      | Not Null              |
+| vinculo       | Vínculo do docente               | VARCHAR      | 60      | Not Null              |
+| categoria     | Cargo do docente                 | VARCHAR      | 60      | Not Null              |
+| classe_funcional | Classe funcional do docente   | VARCHAR      | 60      | Not Null              |
+| id_unidade_lotacao| Identificador da unidade de lotação do docente| INT | ---     | ---           |
+| lotacao       | Unidade de lotação do docente    | VARCHAR      | 60      | ---                   |
+| admissao      | Data em que o docente foi admitido na instituição| DATE     | ---      | Not Null |
+| usuario       | Nome do usuario do docente      | INT          | 60      | ---                    |
+| laboratório   | Laboratório o qual o docente está vinculado|  INT      | --- | FK/Not Null        |
 
