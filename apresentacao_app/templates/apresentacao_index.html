@@ -6,38 +6,44 @@
 </div>
 
 <div class='col-8 m-auto pt-3 pb-2 text-center'>
+  {% if user.is_authenticated %}
   <a href="{% url 'apresentacao:form'%}" class="btn btn-add">Adicionar Apresentação</a>
+  {% endif %}
+  
 </div>
 {% if db %}
 <div class='col-8 m-auto pt-4 pb-2 text-center'>
   <table class="table">
       <thead class="thead-dark">
         <tr>
-          {% block th %}
+
           <th scope="col">Título</th>
           <th scope="col">Autores</th>
           <th scope="col">Data da Apresentação</th>
           <th scope="col">Pesquisa</th>
           <th scope="col">Descrição</th>
           <th scope="col"></th>
-          {% endblock th %}
+
         </tr>
       </thead>
       <tbody>
           {% for dbs in db %}
               <tr>
-                  {% block linhas %}
                   <td>{{dbs.titulo}}</td>
                   <td>{{dbs.autores}}</td>
                   <td>{{dbs.dataApresentacao}}</td>
                   <td>{{dbs.pesquisa}}</td>
                   <td>{{dbs.descricao}}</td>
+                  {% if user.is_authenticated %}
                   <td>
-                      <a href="{% url 'apresentacao:view' dbs.id %}" class="btn btn-view">Visualizar</a>
-                      <a href="{% url 'apresentacao:edit' dbs.id %}" class="btn btn-edit">Editar</a>
-                      <a href="{% url 'apresentacao:delete' dbs.id %}" class="btn btn-delete">Deletar</a>
+                    <a href="{% url 'apresentacao:view' dbs.id %}" class="btn btn-view">Visualizar</a>
+                    <a href="{% url 'apresentacao:edit' dbs.id %}" class="btn btn-edit">Editar</a>
+                    <a href="{% url 'apresentacao:delete' dbs.id %}" class="btn btn-delete">Deletar</a>
                   </td>
-                  {% endblock linhas %}
+                  {% else %}
+                  <td></td>
+                  {% endif %}
+                  
               </tr>
           {% endfor %}
       </tbody>

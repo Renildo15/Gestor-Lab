@@ -6,7 +6,9 @@
 </div>
 
 <div class='col-8 m-auto pt-3 pb-2 text-center'>
+  {% if user.is_authenticated %}
   <a href="{% url 'projeto:projectForm' %}" class="btn btn-add">Adicionar Projetos</a>
+  {% endif %}
 </div>
 {% if pjt %}
 <div class='col-8 m-auto pt-4 pb-2 text-center'>
@@ -32,7 +34,8 @@
                   <td>{{pjts.laboratorio_projeto}}</td>
                   <td>{{pjts.descricao}}</td>
 
-                  <td>
+                  {% if user.is_authenticated %}
+                    <td>
                       <a href="{% url 'projeto:projectView' pjts.id %}" class="btn btn-view">Visualizar</a>
                       <a href="{% url 'projeto:projectEdit' pjts.id %}" class="btn btn-edit">Editar</a></th>
                       <form method="post" action="{% url 'projeto:projectDelete' pjts.id %}" class="btn">
@@ -41,7 +44,10 @@
                               Deletar
                           </button>
                       </form>
-                  </td>
+                    </td>
+                  {% else %}
+                  <td></td>
+                  {% endif %}
                   
               </tr>
           {% endfor %}

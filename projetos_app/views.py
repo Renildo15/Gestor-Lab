@@ -5,7 +5,6 @@ from django.contrib.auth.decorators import login_required
 
 redirLink = '/projeto/'
 
-@login_required(login_url='account_login')
 def home(request):
     data = {}
     data['pjt'] = Projeto.objects.all()
