@@ -9,10 +9,7 @@ body {
     font-size: 18px;
 }
  /* navbar e dropdown*/ 
-.navbar-css {
-  overflow: hidden;
-  background-color: #70C4CA;
-}
+
   
 .navbar-css a {
   float: left;

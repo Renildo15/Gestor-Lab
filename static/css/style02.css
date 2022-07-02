@@ -40,3 +40,42 @@ a:hover{
     background-color: #58969b!important;
 }
 
+.navbar-css {
+    overflow: hidden;
+    background-color: #70C4CA;
+    height: 50px;
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #70C4CA;
+}
+  
+div.navbar-css ul li {
+    float: left;
+    line-height: 10px;
+}
+  
+li a.link {
+    display: block;
+    color: black;
+    text-decoration: none;
+}
+
+li a.link:hover:not(.active) {
+    background-color: #70C4CA;
+}
+
+.login{
+    margin-left: 200px;
+}
+
+li a.logo{
+    position: relative;
+    left: 5px;
+    bottom:15px;
+}
