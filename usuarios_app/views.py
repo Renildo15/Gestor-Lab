@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render
 from django.contrib import messages
 from django.http import HttpResponse
-from django.contrib.auth.models import User
+from .forms import RegisterUserForm
 from django.contrib.auth import authenticate,login, logout , update_session_auth_hash
 # Create your views here.
 
@@ -17,9 +17,9 @@ def logar_user(request):
             messages.success(request, 'Usuário logado com sucesso.')
             return redirect('/')
         else:
-            messages.error(request, "Erro ao logqar usuário.")
+            messages.error(request, "Username ou senha incorretos! Tente novamente!")
             form_login = AuthenticationForm()
-            return redirect('login.html')
+            return redirect('/auth/login/')
     else:
         form_login = AuthenticationForm()
     return render(request, "login.html", {'form_login': form_login})
@@ -28,7 +28,7 @@ def logar_user(request):
 
 def cadastrar_user(request):
     if request.method == "POST":
-       form_usuario = UserCreationForm(request.POST)
+       form_usuario = RegisterUserForm(request.POST)
        if form_usuario.is_valid():
            form_usuario.save()
            username = form_usuario.cleaned_data['username']
@@ -38,7 +38,7 @@ def cadastrar_user(request):
            messages.success(request,("Cadastrado com sucesso!"))
            return redirect('/')
     else:
-       form_usuario = UserCreationForm()
+       form_usuario = RegisterUserForm()
     return render(request,'cadastro.html', {'form_usuario': form_usuario})
 
 

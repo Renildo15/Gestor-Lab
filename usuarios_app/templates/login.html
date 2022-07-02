@@ -3,13 +3,23 @@
 
 
 {% block content %}
+{% if messages%}
+        {% for message in messages %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            {{message}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" arial-label="close"></button>
+            </div>
+        {% endfor %}
+{% endif %}
 <div class="container">
+    
     <div class="row">
         <div class="col-md-3">
             
         </div>
 
         <div class="col-md">
+            
             <h1>Login</h1>
             <hr>
 
