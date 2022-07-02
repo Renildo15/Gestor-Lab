@@ -19,15 +19,15 @@
         <div class="navbar-css">
           <ul>
             {% block logo %}
-            <li><a class="logo" href="/"><img src="/static/img/logo.png" width="50"></a></li>
-            <li>
+            <li class='li-pr'><a class="logo" href="/"><img src="/static/img/logo.png" width="50"></a></li>
+            <li class='li-pr'>
             {% endblock logo %}
               <a href="/">
                 <i class="fa fa-home" aria-hidden="true"></i>
                 Inicio
               </a>
           </li>
-            <li>{% if user.is_authenticated %}
+            <li class='li-pr'>{% if user.is_authenticated %}
               <div class="dropdown-css">
                 <button class="dropbtn-css">
                   <i class="fa fa-plus-square" aria-hidden="true"></i>
@@ -48,11 +48,11 @@
               </div> 
             {% else %}
             {% endif %}</li>
-            <li><a href="/sobre/">
+            <li  class='li-pr'><a href="/sobre/">
               <i class="fa fa-info-circle" aria-hidden="true"></i>
               Sobre
             </a></li>
-            <li style="float:right;" class = "login">
+            <li  class='li-pr' style="float:right;" class = "login">
               <div class="dropdown-css">
               <button class="dropbtn-css">
                 <i class="fa fa-user-circle-o" aria-hidden="true"></i>
