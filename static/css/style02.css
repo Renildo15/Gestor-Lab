@@ -1,0 +1,42 @@
+h1.titulo{
+    font-size: 35px;
+    text-transform: capitalize;
+    line-height: 1;
+    font-weight: bold;
+}
+
+h2.subtitulo{
+    font-size: 30px;
+    line-height: 2;
+}
+
+span.gl{
+    font-weight: bold;
+    color: #70C4CA;
+}
+
+h3{
+    font-size: 20px;
+}
+
+.bg-dark {
+    background-color: #70C4CA!important;
+}
+
+a{
+    text-decoration: none;
+    color: #70C4CA;
+}
+
+a:hover{
+    color: #58969b
+}
+
+.content{
+    margin-bottom: 50px;
+}
+
+.bg-primary {
+    background-color: #58969b!important;
+}
+

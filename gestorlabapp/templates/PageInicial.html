@@ -4,17 +4,16 @@
 <div class="container">
   <div class='center text-center form-group' id = "home">
     <br>
-    <br>
-    <h1>Gestor Lab - Sistema de Gerenciamento de Laboratórios</h1>
-    <h2>CERES - Campus Caicó</h2>
+    <h1 class="titulo">Gestor Lab - Sistema de Gerenciamento de Laboratórios</h1>
+    <h2 class="subtitulo">CERES - Campus Caicó</h2>
     {% if user.is_authenticated %}
-      <h3>Seja bem vindo ao Gestor Lab, <strong>{{user.username}}</strong>!</h3>
+      <h3>Seja bem vindo ao <span class="gl">Gestor Lab</span>, <strong>{{user.username}}</strong>!</h3>
     {% endif %}
     <hr>
   </div>
-
+  <br>
   <div class="row">
-    <div class="col-md-8 mb-5 text-justify">
+    <div class="content">
         <p>
           O <strong>Gestor Lab</strong> é um rojeto de Gestão de Laboratórios para gerenciar a equipe, as tarefas, os projetos, os artigos e as apresentações em no laboratório no LabCoffee MeetUp.
       </p>
