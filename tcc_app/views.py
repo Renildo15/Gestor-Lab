@@ -2,21 +2,24 @@ from django.shortcuts import redirect, render
 from .forms import TccForm
 from .models import Tcc
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.http import require_safe, require_http_methods
 
 redirLink = '/tcc/'
 
-
+@require_safe
 def home(request):
     data = {}
     data['db'] = Tcc.objects.all()
     return render(request,'tcc_index.html',data)
 
+@require_safe
 @login_required(login_url='account_login')
 def form(request):
     data = {}
     data['form'] = TccForm()
     return render(request,'tcc_form.html',data)
 
+@require_http_methods(["POST"])
 @login_required(login_url='account_login')
 def create(request):
     form = TccForm(request.POST or None)
@@ -24,12 +27,14 @@ def create(request):
         form.save()
         return redirect(redirLink)
 
+@require_safe
 @login_required(login_url='account_login')
 def view(request,pk):
     data = {}
     data['db'] = Tcc.objects.get(pk=pk)
     return render(request, 'tcc_view.html', data)
 
+@require_safe
 @login_required(login_url='account_login')
 def edit(request, pk):
     data = {}
@@ -37,6 +42,7 @@ def edit(request, pk):
     data['form'] = TccForm(instance=data['db'])
     return render(request,'tcc_form.html', data)
 
+@require_http_methods(["POST"])
 @login_required(login_url='account_login')
 def update(request, pk):
     data = {}
@@ -46,6 +52,7 @@ def update(request, pk):
         form.save()
         return redirect(redirLink)
 
+@require_safe
 @login_required(login_url='account_login')
 def delete(request, pk):
     db = Tcc.objects.get(pk = pk)
