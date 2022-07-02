@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <br>
+    {% if form_usuario.errors %}
+    <p>Há um erro no formulário!</p>
+    {% endif %}
+
+    <div class="col-md">
+        <h1>Cadastre-se</h1>
+        <hr>
+
+        <form method="POST" action="{% url 'cadastrar_user' %}">
+            {% csrf_token %}
+            {{form_usuario.as_p}}
+           
+            <input class="btn btn-info btn-lg" type="submit" value="Enviar">
+            <a href="{% url 'logar_user' %}" class="btn btn-warning btn-lg">Login</a>
+        </form>
+    </div>
+
+    <div class="col-md-3">
+        
+</div>
+
+{% endblock content %}
+
+{% block footer %}{% endblock footer %}

@@ -13,7 +13,7 @@ def listar_membros(request):
 
 
 @require_http_methods(["GET", "POST"])
-@login_required(login_url='account_login')
+@login_required(login_url='logar_user')
 def form_membros(request, id = 0):
     if request.method == 'GET':
         if id == 0:
@@ -34,14 +34,14 @@ def form_membros(request, id = 0):
         return redirect('listar_membros')  
 
 @require_http_methods(["POST"])
-@login_required(login_url='account_login')
+@login_required(login_url='logar_user')
 def excluir_membro(request, id):
     membro = Membro.objects.get(pk = id)
     membro.delete()
     return redirect('listar_membros')
 
 @require_safe
-@login_required(login_url='account_login')
+@login_required(login_url='logar_user')
 def visualizar_membro(request, id):
     membro = Membro.objects.get(pk = id)
     return render(request, 'membro_view.html', {'membro': membro})

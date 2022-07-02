@@ -13,7 +13,7 @@ def home(request):
     return render(request,'tcc_index.html',data)
 
 @require_safe
-@login_required(login_url='account_login')
+@login_required(login_url='logar_user')
 def form(request):
     data = {}
     data['form'] = TccForm()
