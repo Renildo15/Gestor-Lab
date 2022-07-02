@@ -5,46 +5,54 @@
     <meta charset="UTF-8">
     <title>
         {% block title %}
+        Gestor Lab - Pagina Inicial
         {% endblock title %}
     </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
-    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <header>
         <div class="navbar-css">
-            <a href="/">
-              <i class="fa fa-home" aria-hidden="true"></i>
-              Inicio
-            </a>
-            {% if user.is_authenticated %}
-            <div class="dropdown-css">
-              <button class="dropbtn-css">
-                <i class="fa fa-plus-square" aria-hidden="true"></i>
-                Cadastros 
-                <i class="fa fa-caret-down"></i>
-              </button>
-              <div class="dropdown-content-css">
-                <a href="/laboratorio/">Laborátorios</a>
-                <a href="/membros/">Membros</a>
-                <a href="/evento/">Eventos</a>
-                <a href="/projeto/">Projetos</a>
-                <a href="/artigo/">Artigos</a>
-                <a href="/linhapesquisa/">Pesquisas</a>
-                <a href="/tcc/">TCC</a>
-                <a href="/horario/">Horários</a>
-                <a href="/apresentacao/">Apresentações</a>
-              </div>
-            </div> 
-          {% else %}
-          {% endif %}
-            <a href="/sobre/">
+          <ul>
+            {% block logo %}
+            <li><a class="logo" href="#"><img src="./static/img/logo.png" width="50"></a></li>
+            <li>
+            {% endblock logo %}
+              <a href="/">
+                <i class="fa fa-home" aria-hidden="true"></i>
+                Inicio
+              </a>
+          </li>
+            <li>{% if user.is_authenticated %}
+              <div class="dropdown-css">
+                <button class="dropbtn-css">
+                  <i class="fa fa-plus-square" aria-hidden="true"></i>
+                  Cadastros 
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content-css">
+                  <a class="link" href="/laboratorio/">Laborátorios</a>
+                  <a class="link" href="/membros/">Membros</a>
+                  <a class="link" href="/evento/">Eventos</a>
+                  <a class="link" href="/projeto/">Projetos</a>
+                  <a class="link" href="/artigo/">Artigos</a>
+                  <a class="link" href="/linhapesquisa/">Pesquisas</a>
+                  <a class="link" href="/tcc/">TCC</a>
+                  <a class="link" href="/horario/">Horários</a>
+                  <a class="link" href="/apresentacao/">Apresentações</a>
+                </div>
+              </div> 
+            {% else %}
+            {% endif %}</li>
+            <li><a href="/sobre/">
               <i class="fa fa-info-circle" aria-hidden="true"></i>
               Sobre
-            </a>
-            <div class="dropdown-css">
+            </a></li>
+            <li style="float:right" class = "login">
+              <div class="dropdown-css">
               <button class="dropbtn-css">
                 <i class="fa fa-user-circle-o" aria-hidden="true"></i>
                 {% if user.is_authenticated%}
@@ -76,7 +84,8 @@
                   </a>
                   {% endif %}
               </div>
-            </div>
+            </li>
+          </ul>
         </div>
     </header>
 
