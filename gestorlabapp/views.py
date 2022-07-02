@@ -10,9 +10,11 @@ from bo.pesquisa import get_pesquisa
 from bo.projeto import get_projeto
 from bo.tcc import get_tcc
 from bo.horario import get_horario
+from django.views.decorators.http import require_safe
 
 
-def PaginaInicial(request):
+@require_safe
+def pagina_inicial(request):
     laboratorio = get_laboratorio()
     apresentacao = get_apresentacao()
     artigo = get_artigo()
@@ -36,6 +38,6 @@ def PaginaInicial(request):
     }
     return render(request,'PageInicial.html', context)
 
-
+@require_safe
 def sobre(request):
     return render(request, 'sobre.html')

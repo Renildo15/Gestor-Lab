@@ -2,20 +2,24 @@ from django.shortcuts import redirect, render
 from projetos_app.forms import ProjectForm
 from projetos_app.models import Projeto
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.http import require_safe, require_http_methods
 
 redirLink = '/projeto/'
 
+@require_safe
 def home(request):
     data = {}
     data['pjt'] = Projeto.objects.all()
     return render(request,'project_index.html',data)
-    
+
+@require_safe
 @login_required(login_url='account_login')
 def form(request):
     data = {}
     data['form'] = ProjectForm()
     return render(request,'project_form.html',data)
 
+@require_http_methods(["POST"])
 @login_required(login_url='account_login')
 def create(request):
     form = ProjectForm(request.POST or None)
@@ -23,18 +27,22 @@ def create(request):
         form.save()
         return redirect(redirLink)
 
+@require_safe
 @login_required(login_url='account_login')
 def view(request,pk):
     data = {}
     data['pjt'] = Projeto.objects.get(pk=pk)
     return render(request, 'project_view.html', data)
 
+@require_safe
 @login_required(login_url='account_login')
 def edit(request, pk):
     data = {}
     data['pjt'] = Projeto.objects.get(pk = pk)
     data['form'] = ProjectForm(instance=data['pjt'])
+    return render(request,'project_form.html', data)
 
+@require_http_methods(["POST"])
 @login_required(login_url='account_login')
 def update(request, pk):
     data = {}
@@ -44,6 +52,7 @@ def update(request, pk):
         form.save()
         return redirect(redirLink)
 
+@require_http_methods(["POST"])
 @login_required(login_url='account_login')
 def delete(request, pk):
     db = Projeto.objects.get(pk = pk)

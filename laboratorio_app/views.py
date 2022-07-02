@@ -2,21 +2,26 @@ from django.shortcuts import redirect, render
 from .forms import LabForm
 from .models import Lab
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.http import require_safe, require_http_methods
 
 
 redirLink = '/laboratorio/'
+formHtml = 'form.html'
 
+@require_safe
 def home(request):
     data = {}
     data['db'] = Lab.objects.all()
     return render(request,'index.html',data)
 
+@require_safe
 @login_required(login_url='account_login')
 def form(request):
     data = {}
     data['form'] = LabForm()
-    return render(request,'form.html',data)
+    return render(request,formHtml,data)
 
+@require_http_methods(["POST"])
 @login_required(login_url='account_login')
 def create(request):
     form = LabForm(request.POST or None)
@@ -25,22 +30,24 @@ def create(request):
         form.save()
         return redirect(redirLink)
     
-    return render(request, 'form.html', { 'form': form, 'error': True})
+    return render(request, formHtml, { 'form': form, 'error': True})
         
-    
+@require_safe
 @login_required(login_url='account_login')
 def view(request,pk):
     data = {}
     data['db'] = Lab.objects.get(pk=pk)
     return render(request, 'view.html', data)
 
+@require_safe
 @login_required(login_url='account_login')
 def edit(request, pk):
     data = {}
     data['db'] = Lab.objects.get(pk = pk)
     data['form'] = LabForm(instance=data['db'])
-    return render(request,'form.html', data)
+    return render(request,formHtml, data)
 
+@require_http_methods(["POST"])
 @login_required(login_url='account_login')
 def update(request, pk):
     data = {}
@@ -50,6 +57,7 @@ def update(request, pk):
         form.save()
         return redirect(redirLink)
 
+@require_safe
 @login_required(login_url='account_login')
 def delete(request, pk):
     db = Lab.objects.get(pk = pk)

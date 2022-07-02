@@ -2,16 +2,17 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Membro
 from .forms import MembroForm
+from django.views.decorators.http import require_safe, require_http_methods
 
 # Create your views here.
-
+@require_safe
 def listar_membros(request):
     membros = Membro.objects.all()
     
     return render(request, 'membro_list.html', {'membros': membros})
 
 
-#Criar view do formulário
+@require_http_methods(["GET", "POST"])
 @login_required(login_url='account_login')
 def form_membros(request, id = 0):
     if request.method == 'GET':
@@ -31,13 +32,15 @@ def form_membros(request, id = 0):
         if form.is_valid():
             form.save()
         return redirect('listar_membros')  
-    
+
+@require_http_methods(["POST"])
 @login_required(login_url='account_login')
 def excluir_membro(request, id):
     membro = Membro.objects.get(pk = id)
     membro.delete()
     return redirect('listar_membros')
 
+@require_safe
 @login_required(login_url='account_login')
 def visualizar_membro(request, id):
     membro = Membro.objects.get(pk = id)

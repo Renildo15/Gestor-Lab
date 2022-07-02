@@ -2,24 +2,27 @@ from django.shortcuts import redirect, render
 from artigo_app.forms import ArtForm
 from artigo_app.models import Artigo
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.http import require_safe, require_http_methods
 
 
 redirLink = '/artigo/'
 
 
-
+@require_safe
 def home(request):
     data = {}
     data['art'] = Artigo.objects.all()
     return render(request,'art_index.html',data)
 
+
+@require_safe
 @login_required(login_url='account_login')
 def form(request):
     data = {}
     data['form'] = ArtForm()
     return render(request,'art_form.html',data)
     
-
+@require_http_methods(["POST"])
 @login_required(login_url='account_login')
 def create(request):
     form = ArtForm(request.POST or None)
@@ -27,7 +30,7 @@ def create(request):
         form.save()
         return redirect(redirLink)
 
-
+@require_http_methods(["POST"])
 @login_required(login_url='account_login')
 def view(request,pk):
     data = {}
@@ -35,6 +38,7 @@ def view(request,pk):
     return render(request, 'art_view.html', data)
   
 
+@require_safe
 @login_required(login_url='account_login')
 def edit(request, pk):
     data = {}
@@ -42,6 +46,7 @@ def edit(request, pk):
     data['form'] = ArtForm(instance=data['art'])
     return render(request,'art_form.html', data)
 
+@require_http_methods(["POST"])
 @login_required(login_url='account_login')
 def update(request, pk):
     data = {}
@@ -50,7 +55,8 @@ def update(request, pk):
     if form.is_valid():
         form.save()
         return redirect(redirLink)
-  
+
+@require_safe
 @login_required(login_url='account_login')
 def delete(request, pk):
     db = Artigo.objects.get(pk = pk)
