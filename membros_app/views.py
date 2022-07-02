@@ -4,7 +4,7 @@ from .models import Membro
 from .forms import MembroForm
 
 # Create your views here.
-@login_required(login_url='account_login')
+
 def listar_membros(request):
     membros = Membro.objects.all()
     

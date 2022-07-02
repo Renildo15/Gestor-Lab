@@ -6,7 +6,6 @@ from django.contrib.auth.decorators import login_required
 
 redirLink = '/horario/'
 
-@login_required(login_url='account_login')
 def home(request):
     data = {}
     data['db'] = Horario.objects.all()

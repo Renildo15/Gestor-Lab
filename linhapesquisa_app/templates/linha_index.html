@@ -6,7 +6,9 @@
 </div>
 
 <div class='col-8 m-auto pt-3 pb-2 text-center'>
+  {% if user.is_authenticated %}
   <a href="{% url 'linhapesquisa:linhaForm' %}" class="btn btn-add">Adicionar Linha de Pesquisa</a>
+  {% endif %}
 </div>
 {% if db %}
 <div class='col-8 m-auto pt-4 pb-2 text-center'>
@@ -32,11 +34,15 @@
                   <td>{{dbs.subAreaCNPQ}}</td>
                   <td>{{dbs.laboratorio_pesq}}</td>
                   <td>{{dbs.descricao}}</td>
+                  {% if user.is_authenticated%}
                   <td>
-                      <a href="{% url 'linhapesquisa:linhaView' dbs.id %}" class="btn btn-view">Visualizar</a>
-                      <a href="{% url 'linhapesquisa:linhaEdit' dbs.id %}" class="btn btn-edit">Editar</a>
-                      <a href="{% url 'linhapesquisa:linhaDelete' dbs.id %}" class="btn btn-delete">Deletar</a>
+                    <a href="{% url 'linhapesquisa:linhaView' dbs.id %}" class="btn btn-view">Visualizar</a>
+                    <a href="{% url 'linhapesquisa:linhaEdit' dbs.id %}" class="btn btn-edit">Editar</a>
+                    <a href="{% url 'linhapesquisa:linhaDelete' dbs.id %}" class="btn btn-delete">Deletar</a>
                   </td>
+                  {% else %}
+                  <td></td>
+                  {% endif %}
                   {% endblock linhas %}
               </tr>
           {% endfor %}
