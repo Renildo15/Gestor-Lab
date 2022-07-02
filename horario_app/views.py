@@ -2,23 +2,25 @@ from django.shortcuts import redirect, render
 from .forms import HorarioForm
 from .models import Horario
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.http import require_safe, require_http_methods
 
 
 redirLink = '/horario/'
 
+@require_safe
 def home(request):
     data = {}
     data['db'] = Horario.objects.all()
     return render(request,'horario_index.html',data)
 
-
+@require_safe
 @login_required(login_url='account_login')
 def form(request):
     data = {}
     data['form'] = HorarioForm()
     return render(request,'horario_form.html',data)
 
-
+@require_http_methods(["POST"])
 @login_required(login_url='account_login')
 def create(request):
     form = HorarioForm(request.POST or None)
@@ -26,12 +28,14 @@ def create(request):
         form.save()
         return redirect(redirLink)
 
+@require_safe
 @login_required(login_url='account_login')
 def view(request,pk):
     data = {}
     data['db'] = Horario.objects.get(pk=pk)
     return render(request, 'horario_view.html', data)
 
+@require_safe
 @login_required(login_url='account_login')
 def edit(request, pk):
     data = {}
@@ -39,6 +43,7 @@ def edit(request, pk):
     data['form'] = HorarioForm(instance=data['db'])
     return render(request,'horario_form.html', data)
 
+@require_http_methods(["POST"])
 @login_required(login_url='account_login')
 def update(request, pk):
     data = {}
@@ -48,6 +53,7 @@ def update(request, pk):
         form.save()
         return redirect(redirLink)
 
+@require_safe
 @login_required(login_url='account_login')
 def delete(request, pk):
     db = Horario.objects.get(pk = pk)
