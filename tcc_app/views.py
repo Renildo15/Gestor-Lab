@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render
 from .forms import TccForm
 from .models import Tcc
+from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_safe, require_http_methods
 
@@ -8,9 +9,11 @@ redirLink = '/tcc/'
 
 @require_safe
 def home(request):
-    data = {}
-    data['db'] = Tcc.objects.all()
-    return render(request,'tcc_index.html',data)
+    tcc = Tcc.objects.all()
+    usuario_paginator = Paginator(tcc, 3)
+    page_num = request.GET.get('page')
+    page = usuario_paginator.get_page(page_num)
+    return render(request,'tcc_index.html',{'page':page})
 
 @require_safe
 @login_required(login_url='logar_user')

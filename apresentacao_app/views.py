@@ -1,5 +1,6 @@
 from django.shortcuts import redirect, render
 from .forms import ApresentacaoForm
+from django.core.paginator import Paginator
 from .models import Apresentacao
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_safe, require_http_methods
@@ -8,9 +9,11 @@ redirLink = '/apresentacao/'
 
 @require_safe
 def home(request):
-    data = {}
-    data['db'] = Apresentacao.objects.all()
-    return render(request,'apresentacao_index.html',data)
+    apresentacoes = Apresentacao.objects.all()
+    usuario_paginator = Paginator(apresentacoes, 3)
+    page_num = request.GET.get('page')
+    page = usuario_paginator.get_page(page_num)
+    return render(request,'apresentacao_index.html',{'page': page})
 
 @require_safe
 @login_required(login_url='logar_user')

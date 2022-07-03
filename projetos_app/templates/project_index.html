@@ -10,7 +10,7 @@
   <a href="{% url 'projeto:projectForm' %}" class="btn btn-add">Adicionar Projetos</a>
   {% endif %}
 </div>
-{% if pjt %}
+{% if page %}
 <div class='col-8 m-auto pt-4 pb-2 text-center'>
   <table class="table">
       <thead class="thead-dark">
@@ -25,7 +25,7 @@
         </tr>
       </thead>
       <tbody>
-          {% for pjts in pjt %}
+          {% for pjts in page %}
               <tr>
                   
                   <td>{{pjts.nome}}</td>
@@ -53,6 +53,14 @@
           {% endfor %}
       </tbody>
   </table>
+  <div class="page-links">
+    {% if page.has_previous %}
+      <a href="{% url 'projeto:home' %}?page={{page.previous_page_number}}">Anterior</a>
+    {% endif %}
+    {% if page.has_next %}
+      <a href="{% url 'projeto:home' %}?page={{page.next_page_number}}">Próximo</a>
+    {% endif %}
+  </div>
 </div>
 {% else %}
 <h1 class ='text-center mt-5'>

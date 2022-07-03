@@ -1,5 +1,6 @@
 from django.shortcuts import redirect, render
 from artigo_app.forms import ArtForm
+from django.core.paginator import Paginator
 from artigo_app.models import Artigo
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_safe, require_http_methods
@@ -10,9 +11,11 @@ redirLink = '/artigo/'
 
 @require_safe
 def home(request):
-    data = {}
-    data['art'] = Artigo.objects.all()
-    return render(request,'art_index.html',data)
+    artigo = Artigo.objects.all()
+    usuario_paginator = Paginator(artigo, 3)
+    page_num = request.GET.get('page')
+    page = usuario_paginator.get_page(page_num)
+    return render(request,'art_index.html',{'page': page})
 
 
 @require_safe

@@ -1,5 +1,6 @@
 from django.shortcuts import redirect, render
 from evento_app.forms import EventForm
+from django.core.paginator import Paginator
 from evento_app.models import Evento
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_safe, require_http_methods
@@ -8,9 +9,11 @@ redirLink = '/evento/'
 
 @require_safe
 def home(request):
-    data = {}
-    data['evt'] = Evento.objects.all()
-    return render(request,'event_index.html',data)
+    evento = Evento.objects.all()
+    usuario_paginator = Paginator(evento, 3)
+    page_num = request.GET.get('page')
+    page = usuario_paginator.get_page(page_num)
+    return render(request,'event_index.html',{'page' : page})
 
 @require_safe
 @login_required(login_url='logar_user')

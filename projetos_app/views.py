@@ -1,5 +1,6 @@
 from django.shortcuts import redirect, render
 from projetos_app.forms import ProjectForm
+from django.core.paginator import Paginator
 from projetos_app.models import Projeto
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_safe, require_http_methods
@@ -8,9 +9,11 @@ redirLink = '/projeto/'
 
 @require_safe
 def home(request):
-    data = {}
-    data['pjt'] = Projeto.objects.all()
-    return render(request,'project_index.html',data)
+    projeto = Projeto.objects.all()
+    usuario_paginator = Paginator(projeto, 3)
+    page_num = request.GET.get('page')
+    page = usuario_paginator.get_page(page_num)
+    return render(request,'project_index.html',{'page': page})
 
 @require_safe
 @login_required(login_url='logar_user')

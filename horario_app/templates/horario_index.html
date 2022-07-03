@@ -9,7 +9,7 @@
   <a href="{% url 'horario:form'%}" class="btn btn-add">Adicionar Horário</a>
   {% endif %}
 </div>
-{% if db %}
+{% if page %}
 <div class='col-8 m-auto pt-4 pb-2 text-center'>
   <table class="table">
       <thead class="thead-dark">
@@ -25,7 +25,7 @@
         </tr>
       </thead>
       <tbody>
-          {% for dbs in db %}
+          {% for dbs in page %}
               <tr>
                   {% block linhas %}
                   <td>{{dbs.horario_entrada}}h</td>
@@ -47,6 +47,14 @@
           {% endfor %}
       </tbody>
   </table>
+  <div class="page-links">
+    {% if page.has_previous %}
+      <a href="{% url 'horario:home' %}?page={{page.previous_page_number}}">Anterior</a>
+    {% endif %}
+    {% if page.has_next %}
+      <a href="{% url 'horario:home' %}?page={{page.next_page_number}}">Próximo</a>
+    {% endif %}
+  </div>
 </div>
 {% else %}
 <h1 class ='text-center mt-5'>
