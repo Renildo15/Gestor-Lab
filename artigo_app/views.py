@@ -33,7 +33,7 @@ def create(request):
         form.save()
         return redirect(redirLink)
 
-@require_http_methods(["POST"])
+@require_safe
 @login_required(login_url='logar_user')
 def view(request,pk):
     data = {}
