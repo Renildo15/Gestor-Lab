@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render
 from django.contrib import messages
 from django.http import HttpResponse
-from .forms import RegisterUserForm
+from .forms import RegisterUserForm, PasswordChangingForm
 from django.contrib.auth import authenticate,login, logout , update_session_auth_hash
 # Create your views here.
 
@@ -48,6 +48,20 @@ def deslogar_usuario(request):
     messages.success(request, 'Usuário deslogado com sucesso.')
     return redirect('/')
 
+def mudar_senha(request):
+    if request.method == "POST":
+        form_senha = PasswordChangingForm(request.user, request.POST)
+        if form_senha.is_valid():
+            user = form_senha.save()
+            update_session_auth_hash(request, user)
+            messages.success(request, 'Usuário atualizado com sucesso.')
+            return redirect('/auth/mudar_senha_sucesso/')
+    else:
+        form_senha = PasswordChangingForm(request.user)
+    return render(request, 'mudar_senha.html', {'form_senha': form_senha})
+
+def mudar_senha_sucesso(request):
+    return render(request, 'mudar_senha_sucesso.html')
 
 
 

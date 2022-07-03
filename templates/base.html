@@ -66,9 +66,9 @@
               </button>
               <div class="dropdown-content-css">
                   {% if user.is_authenticated %}
-                  <a href="#">
+                  <a href="{% url 'mudar_senha' %}">
                     <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                    Mudar o email
+                    Mudar senha
                   </a>
                   <a href="{% url 'deslogar_usuario' %}">
                     <i class="fa fa-sign-out" aria-hidden="true"></i>
