@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if form_senha.errors %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        Preencha o formulário de forma correta!
+        <button type="button" class="btn-close" data-bs-dismiss="alert" arial-label="close"></button>
+    </div>
+
+{% endif %}
+<div class="container">
+    <br>
+    <div class="row">
+        <div class="col-md-3">
+                
+        </div>
+
+        <div class=" shadow p-4 bg-body rounded mb-5 col-md">
+            <h1>Alterar Senha</h1>
+            <hr>
+
+            <form method="POST" action="{% url 'mudar_senha' %}">
+                {% csrf_token %}
+                {{form_senha.as_p}}
+            
+                <input class="btn btn-info btn-lg" type="submit" value="Enviar">
+                <a href="{% url 'logar_user' %}" class="btn btn-warning btn-lg">Login</a>
+            </form>
+        </div>
+
+        <div class="col-md-3">
+        </div>
+    </div>
+        
+</div>
+
+{% endblock content %}
+
+{% block footer %}{% endblock footer %}

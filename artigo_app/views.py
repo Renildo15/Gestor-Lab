@@ -16,14 +16,14 @@ def home(request):
 
 
 @require_safe
-@login_required(login_url='account_login')
+@login_required(login_url='logar_user')
 def form(request):
     data = {}
     data['form'] = ArtForm()
     return render(request,'art_form.html',data)
     
 @require_http_methods(["POST"])
-@login_required(login_url='account_login')
+@login_required(login_url='logar_user')
 def create(request):
     form = ArtForm(request.POST or None)
     if form.is_valid():
@@ -31,7 +31,7 @@ def create(request):
         return redirect(redirLink)
 
 @require_http_methods(["POST"])
-@login_required(login_url='account_login')
+@login_required(login_url='logar_user')
 def view(request,pk):
     data = {}
     data['art'] = Artigo.objects.get(pk=pk)
@@ -39,7 +39,7 @@ def view(request,pk):
   
 
 @require_safe
-@login_required(login_url='account_login')
+@login_required(login_url='logar_user')
 def edit(request, pk):
     data = {}
     data['art'] = Artigo.objects.get(pk = pk)
@@ -47,7 +47,7 @@ def edit(request, pk):
     return render(request,'art_form.html', data)
 
 @require_http_methods(["POST"])
-@login_required(login_url='account_login')
+@login_required(login_url='logar_user')
 def update(request, pk):
     data = {}
     data['art'] = Artigo.objects.get(pk = pk)
@@ -57,7 +57,7 @@ def update(request, pk):
         return redirect(redirLink)
 
 @require_safe
-@login_required(login_url='account_login')
+@login_required(login_url='logar_user')
 def delete(request, pk):
     db = Artigo.objects.get(pk = pk)
     db.delete()

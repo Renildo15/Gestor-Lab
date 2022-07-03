@@ -61,18 +61,18 @@ ul {
     background-color: #70C4CA;
 }
   
-div.navbar-css ul li {
+div.navbar-css ul li.li-pr {
     float: left;
     line-height: 10px;
 }
   
-li a.link {
+li.li-pr a.link {
     display: block;
     color: black;
     text-decoration: none;
 }
 
-li a.link:hover:not(.active) {
+li.li-pr a.link:hover:not(.active) {
     background-color: #70C4CA;
 }
 
@@ -80,7 +80,7 @@ li a.link:hover:not(.active) {
     margin-left: 200px;
 }
 
-li a.logo{
+li.li-pr a.logo{
     position: relative;
     left: 5px;
     bottom:15px;

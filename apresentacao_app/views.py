@@ -13,7 +13,7 @@ def home(request):
     return render(request,'apresentacao_index.html',data)
 
 @require_safe
-@login_required(login_url='account_login')
+@login_required(login_url='logar_user')
 def form(request):
     data = {}
     data['form'] = ApresentacaoForm()
@@ -21,7 +21,7 @@ def form(request):
 
 
 @require_http_methods(["POST"])
-@login_required(login_url='account_login')
+@login_required(login_url='logar_user')
 def create(request):
     form = ApresentacaoForm(request.POST or None)
     if form.is_valid():
@@ -29,14 +29,14 @@ def create(request):
         return redirect(redirLink)
     
 @require_safe
-@login_required(login_url='account_login')
+@login_required(login_url='logar_user')
 def view(request,pk):
     data = {}
     data['db'] = Apresentacao.objects.get(pk=pk)
     return render(request, 'apresentacao_view.html', data)
 
 @require_safe
-@login_required(login_url='account_login')
+@login_required(login_url='logar_user')
 def edit(request, pk):
     data = {}
     data['db'] = Apresentacao.objects.get(pk = pk)
@@ -45,7 +45,7 @@ def edit(request, pk):
 
 
 @require_http_methods(["POST"])
-@login_required(login_url='account_login')
+@login_required(login_url='logar_user')
 def update(request, pk):
     data = {}
     data['db'] = Apresentacao.objects.get(pk = pk)
@@ -55,7 +55,7 @@ def update(request, pk):
         return redirect(redirLink)
     
 @require_safe    
-@login_required(login_url='account_login')
+@login_required(login_url='logar_user')
 def delete(request, pk):
     db = Apresentacao.objects.get(pk = pk)
     db.delete()

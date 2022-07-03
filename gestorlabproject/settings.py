@@ -53,10 +53,6 @@ INSTALLED_APPS = [
     'horario_app',
     'apresentacao_app',
 
-    "allauth",
-    "allauth.account",
-    "allauth.socialaccount",
-    "phonenumber_field",
 ]
 
 MIDDLEWARE = [
@@ -146,12 +142,9 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # django-allauth
 
-AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
-]
 
 SITE_ID = 1
 LOGIN_REDIRECT_URL = "PaginaInicial"
 ACCOUNT_SESSION_REMEMBER = True
+
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

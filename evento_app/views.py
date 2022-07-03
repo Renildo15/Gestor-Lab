@@ -13,14 +13,14 @@ def home(request):
     return render(request,'event_index.html',data)
 
 @require_safe
-@login_required(login_url='account_login')
+@login_required(login_url='logar_user')
 def form(request):
     data = {}
     data['form'] = EventForm()
     return render(request,'event_form.html',data)
 
 @require_http_methods(["POST"])
-@login_required(login_url='account_login')
+@login_required(login_url='logar_user')
 def create(request):
     form = EventForm(request.POST or None)
     if form.is_valid():
@@ -28,14 +28,14 @@ def create(request):
         return redirect(redirLink)
 
 @require_safe
-@login_required(login_url='account_login')
+@login_required(login_url='logar_user')
 def view(request,pk):
     data = {}
     data['evt'] = Evento.objects.get(pk=pk)
     return render(request, 'event_view.html', data)
 
 @require_safe
-@login_required(login_url='account_login')
+@login_required(login_url='logar_user')
 def edit(request, pk):
     data = {}
     data['evt'] = Evento.objects.get(pk = pk)
@@ -43,7 +43,7 @@ def edit(request, pk):
     return render(request,'event_form.html', data)
 
 @require_http_methods(["POST"])
-@login_required(login_url='account_login')
+@login_required(login_url='logar_user')
 def update(request, pk):
     data = {}
     data['evt'] = Evento.objects.get(pk = pk)
@@ -53,7 +53,7 @@ def update(request, pk):
         return redirect(redirLink)
 
 @require_http_methods(["POST"])
-@login_required(login_url='account_login')
+@login_required(login_url='logar_user')
 def delete(request, pk):
     db = Evento.objects.get(pk = pk)
     db.delete()
