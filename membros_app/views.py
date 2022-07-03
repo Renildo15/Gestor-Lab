@@ -3,13 +3,16 @@ from django.contrib.auth.decorators import login_required
 from .models import Membro
 from .forms import MembroForm
 from django.views.decorators.http import require_safe, require_http_methods
+from django.core.paginator import Paginator
 
 # Create your views here.
 @require_safe
 def listar_membros(request):
     membros = Membro.objects.all()
-    
-    return render(request, 'membro_list.html', {'membros': membros})
+    usuario_paginator = Paginator(membros, 3)
+    page_num = request.GET.get('page')
+    page = usuario_paginator.get_page(page_num)
+    return render(request, 'membro_list.html', {'page': page})
 
 
 @require_http_methods(["GET", "POST"])

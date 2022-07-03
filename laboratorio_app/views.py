@@ -1,4 +1,5 @@
 from django.shortcuts import redirect, render
+from django.core.paginator import Paginator
 from .forms import LabForm
 from .models import Lab
 from django.contrib.auth.decorators import login_required
@@ -10,9 +11,11 @@ formHtml = 'form.html'
 
 @require_safe
 def home(request):
-    data = {}
-    data['db'] = Lab.objects.all()
-    return render(request,'index.html',data)
+    laboratorios = Lab.objects.all()
+    usuario_paginator = Paginator(laboratorios, 3)
+    page_num = request.GET.get('page')
+    page = usuario_paginator.get_page(page_num)
+    return render(request,'index.html',{'page': page})
 
 @require_safe
 @login_required(login_url='logar_user')

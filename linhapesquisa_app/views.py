@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import redirect, render
 from linhapesquisa_app.forms import LinhaForm
+from django.core.paginator import Paginator
 from linhapesquisa_app.models import LinhaPesquisa
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_safe, require_http_methods
@@ -9,9 +10,11 @@ redirLink = '/linhapesquisa/'
 
 @require_safe
 def home(request):
-    data = {}
-    data['db'] = LinhaPesquisa.objects.all()
-    return render(request,'linha_index.html',data)
+    linha = LinhaPesquisa.objects.all()
+    usuario_paginator = Paginator(linha, 3)
+    page_num = request.GET.get('page')
+    page = usuario_paginator.get_page(page_num)
+    return render(request,'linha_index.html',{'page': page})
 
 @require_safe
 @login_required(login_url='logar_user')
