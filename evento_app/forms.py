@@ -11,7 +11,7 @@ class EventForm(ModelForm):
                 'descricao': 'E-Mail',
                 'area': 'Telefone',
                 'laboratorio': 'Laboratório',
-                'site': 'Perfil'
+                'site': 'Site'
         }
 
     def __init__(self, *args, **kwargs):
