@@ -1,5 +1,6 @@
 from django.test import TestCase
 from membros_app.models import Membro, Perfil
+from membros_app.forms import MembroForm
 
 class MembroTest(TestCase): 
     
@@ -62,3 +63,22 @@ class PerfilTest(TestCase):
         perfil = Perfil.objects.get(id=1)
         max_length = perfil._meta.get_field('titulo').max_length
         self.assertEquals(max_length, 50)
+
+
+class MembroFormTestCase(TestCase):
+
+    def test_membro_form_valid_data(self):
+        form = MembroForm(data={
+            'nome':'Breno',
+            'email': 'teste@gmail.com',
+            'telefone': '(84) 9 9999-9999',
+            'laboratorio': 1,
+            'membro_perfil': 1
+            
+        })
+
+        self.assertTrue(form.errors)
+
+    def test_membro_form_no_data(self):
+        form = MembroForm(data={})
+        self.assertFalse(form.is_valid())
