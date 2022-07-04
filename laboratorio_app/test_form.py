@@ -13,6 +13,6 @@ class LabFormTestCase(TestCase):
 
         self.assertTrue(form.errors)
 
-    def test_pessoa_form_invalido(self):
+    def test_lab_form_invalido(self):
         form = LabForm(data={})
         self.assertFalse(form.is_valid())

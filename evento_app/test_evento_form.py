@@ -3,7 +3,7 @@ from evento_app.forms import EventForm
 
 class EventoFormTestCase(TestCase):
 
-    def test_apresentar_form_valido(self):
+    def test_evento_form_valido(self):
         form = EventForm(data={
             'Nome':'Evento 01',
             'E-Mail': 'teste@gmail.com',
@@ -15,6 +15,6 @@ class EventoFormTestCase(TestCase):
 
         self.assertTrue(form.errors)
 
-    def test_pessoa_form_invalido(self):
+    def test_evento_form_invalido(self):
         form = EventForm(data={})
         self.assertFalse(form.is_valid())
