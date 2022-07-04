@@ -6,7 +6,7 @@ from evento_app.models import Evento
 
     
 
-class LabTest(TestCase):
+class EventoTest(TestCase):
     
     @classmethod
     def setUpTestData(cls):
