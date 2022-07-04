@@ -7,7 +7,7 @@
     <h1 class="titulo">Gestor Lab - Sistema de Gerenciamento de Laboratórios</h1>
     <h2 class="subtitulo">CERES - Campus Caicó</h2>
     {% if user.is_authenticated %}
-      <h3>Seja bem vindo ao <span class="gl">Gestor Lab</span>, <strong>{{user.username}}</strong>!</h3>
+      <h3>Seja bem vindo ao <span class="gl">Gestor Lab</span>, <strong>{{user.first_name}}</strong>!</h3>
     {% endif %}
     <hr>
   </div>
