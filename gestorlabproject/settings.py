@@ -53,10 +53,6 @@ INSTALLED_APPS = [
     'horario_app',
     'apresentacao_app',
 
-    "allauth",
-    "allauth.account",
-    "allauth.socialaccount",
-    "phonenumber_field",
 ]
 
 MIDDLEWARE = [
@@ -94,9 +90,13 @@ WSGI_APPLICATION = 'gestorlabproject.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "postgres",
+        "USER": "postgres_user",
+        "PASSWORD": "password",
+        "HOST": "postgres",
+        "PORT": 5432,
     }
 }
 
@@ -136,6 +136,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
@@ -146,12 +147,9 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # django-allauth
 
-AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
-]
 
 SITE_ID = 1
 LOGIN_REDIRECT_URL = "PaginaInicial"
 ACCOUNT_SESSION_REMEMBER = True
+
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

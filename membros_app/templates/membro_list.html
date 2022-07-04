@@ -10,10 +10,12 @@
     </div>
 
     <div class='col-8 m-auto pt-3 pb-2 text-center'>
+        {% if user.is_authenticated %}
         <a href="{% url 'cadastrar_membro' %}" class="btn btn-add">Adicionar Membros</a>
+        {% endif %}
     </div>
 
-    {% if membros %}
+    {% if page %}
 
     <div class='col-8 m-auto pt-4 pb-2 text-center'>
         <table class="table">
@@ -28,13 +30,14 @@
               </tr>
             </thead>
             <tbody>
-                {% for membro in membros %}
+                {% for membro in page %}
                     <tr>
                         <td>{{membro.nome}}</td>
                         <td>{{membro.email}}</td>
                         <td>{{membro.telefone}}</td>
                         <td>{{membro.laboratorio}}</td>
                         <td>{{membro.membro_perfil}}</td>
+                        {% if user.is_authenticated %}
                         <td>
                             <a href="{% url 'visualizar_membro' membro.id %}" class="btn btn-view">Visualizar</a>
                             <a href="{% url 'editar_membro' membro.id %}" class="btn btn-edit">Editar</a>
@@ -45,14 +48,27 @@
                                 </button>
                             </form>
                         </td>
+                        {% else %}
+                        <td></td>
+                        {% endif %}
                     </tr>
                 {% endfor %}
             </tbody>
         </table>
+        <div class="page-links">
+            {% if page.has_previous %}
+              <a href="{% url 'listar_membros' %}?page={{page.previous_page_number}}">Anterior</a>
+            {% endif %}
+            {% if page.has_next %}
+              <a href="{% url 'listar_membros' %}?page={{page.next_page_number}}">Próximo</a>
+            {% endif %}
+          </div>
     </div>
     {% else %}
     <h1 class ='text-center mt-5'>
         Não há membros cadastrados
+        <div class='col-8 m-auto pt-4 pb-2 text-center'>
+        </div>
     </h1>
     {% endif %}
 

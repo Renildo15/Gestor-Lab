@@ -27,6 +27,6 @@ urlpatterns = [
     path('tcc/', include('tcc_app.urls')),
     path('horario/', include('horario_app.urls')),
     path('apresentacao/', include('apresentacao_app.urls')),
-    path("accounts/", include('allauth.urls')),
+    path('auth/', include('usuarios_app.urls')),
     path('', include('gestorlabapp.urls')),
 ]

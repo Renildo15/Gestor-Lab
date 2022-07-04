@@ -14,7 +14,7 @@
         <a href="/membros" class="btn btn-info">Voltar</a>
     </div>
 
-    <div class='col-8 m-auto pt-4 pb-2 text-center'>
+    <div class='d-flex justify-content-center col-8 m-auto pt-4 pb-2'>
         <form name="form" id="form" action="" method="post" autocomplete="off">
             {% csrf_token %}
             <div class='form-group mt-4'>Nome: {{form.nome}}</div>
@@ -23,7 +23,9 @@
             <div class='form-group mt-4'>Laboratório: {{form.laboratorio}}</div>
             <div class='form-group mt-4'>Perfil: {{form.membro_perfil}}</div>
             <div class='form-group mt-4'></div>
-            <input type="submit" class="btn btn-success" value="Salvar">
+            <div class="d-flex justify-content-center">
+                <input type="submit" class="btn btn-success" value="Salvar">
+            </div>
         </form>
     </div>
 {% endblock content %}

@@ -2,19 +2,17 @@ version: '3.8'
 
 services:
   postgres:
-    container_name: postgres-server-II
+    container_name: postgres-server-gestor-lab
     image: postgres:latest
     volumes:
-      - $HOME_DB/Postgres/postgresql:/var/lib/postgresql
-      - $HOME_DB/Postgres/postgresql_data:/var/lib/postgresql/data
+      - $HOME_DB/postgres/postgresql:/var/lib/postgresql
+      - $HOME_DB/postgres/postgresql_data:/var/lib/postgresql/data
     environment:
-      - POSTGRES_DB=postgres_db
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres_user
+      - POSTGRES_PASSWORD=password
     restart: always
     ports:
       - 5432:5432
-
 
   web:
     container_name: app-web
@@ -24,8 +22,10 @@ services:
       dockerfile: ./Dockerfile
 
     command: >
-      sh -c  "python manage.py makemigrations
-              python manage.py migrate
+      sh -c  "python manage.py collectstatic --noinput
+              python manage.py makemigrations --noinput
+              python manage.py test
+              python manage.py migrate --noinput
               python manage.py runserver 0.0.0.0:8001"
     volumes:
       - .:/code

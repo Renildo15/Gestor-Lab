@@ -4,8 +4,8 @@ from membros_app.models import Membro
 
 # Create your models here.
 class Horario(models.Model):
-    horario_entrada = models.TimeField(null=True, blank=True)
-    horario_saida = models.TimeField(null=True, blank=True)
+    horario_entrada = models.TimeField()
+    horario_saida = models.TimeField()
     os_choices = (
         ('Matutino', 'Matutino'),
         ('Vespertino', 'Vespertino'),
@@ -20,9 +20,9 @@ class Horario(models.Model):
         ('Sabádo','Sabádo'),
         ('Domingo','Domingo'),
     )
-    turno = models.CharField(max_length=50, choices=os_choices,null=True, blank=True)
-    dia_semana = models.CharField(max_length=50,choices=dias_choices,null=False, blank=True)
-    membro = models.ForeignKey(Membro, on_delete=models.SET_NULL, related_name='membrohorario', null=True, blank=True)
+    turno = models.CharField(max_length=50, choices=os_choices)
+    dia_semana = models.CharField(max_length=50,choices=dias_choices)
+    membro = models.ForeignKey(Membro, on_delete=models.CASCADE, related_name='membrohorario')
 
     def __str__(self):
         return self.titulo
