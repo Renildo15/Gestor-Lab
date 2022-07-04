@@ -9,7 +9,7 @@ class Evento(models.Model):
     laboratorio = models.ForeignKey(Lab, on_delete=models.CASCADE, null=True, blank=True)
     site = models.URLField(max_length=200)
     data_sbm = models.DateField(auto_now_add=True)
-    descricao = models.TextField()
+    descricao = models.TextField(max_length=200)
  
     def __str__(self):
         return self.titulo
