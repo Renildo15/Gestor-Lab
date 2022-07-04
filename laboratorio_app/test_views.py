@@ -13,3 +13,6 @@ class LabViewTesCase(TestCase):
     def test_template_usado(self):
         response = self.client.get(reverse('laboratorio:home'))
         self.assertTemplateUsed(response, 'index.html')
+
+    #view_view
+
