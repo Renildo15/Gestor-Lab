@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class='col-8 m-auto pt-2 pb-2 text-center'>
+
+  {% block titulo %}
+  <h1>Cadastrar Estagio</h1>
+  {% endblock  %}
+  
+</div>
+
+<div class='col-8 m-auto pt-3 pb-2 text-center'>
+  {% block botao %}
+  <a href="/estagio/" class="btn btn-info">voltar</a>
+  {% endblock  %}
+</div>
+<div class='col-8 m-auto pt-4 pb-2 text-center'>
+  <form name="form" id="form" action="{%if est %}{% url 'estagio:estUpdate' est.id %}{%else%}{% url 'estagio:estCreate' %}{%endif%}" method="post">
+      {% block form %}
+      {% csrf_token %}
+      <div class='form-group mt-4'>Estagiario: {{form.estagiario}}</div>
+      <div class='form-group mt-4'>Orientador: {{form.orientafor}}</div>
+      <div class='form-group mt-4'>Supervisor: {{form.supervisor}}</div>
+      <div class='form-group mt-4'>Atividade: {{form.atividade}}</div>
+      <div class='form-group mt-4'></div>
+      <input type="submit" class="btn btn-success" value="Salvar">
+      {% endblock form %}
+  </form>
+</div>
+{% endblock content %}
