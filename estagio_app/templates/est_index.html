@@ -19,6 +19,7 @@
           <th scope="col">Orientador</th>
           <th scope="col">Supervisor</th>
           <th scope="col">Atividade</th>
+          <th scope="col">Laboratório</th>
           <th scope="col"></th>
           
         </tr>
@@ -30,8 +31,8 @@
                   <td>{{ests.estagiario}}</td>
                   <td>{{ests.orientador}}</td>
                   <td>{{ests.supervisor}}</td>
-                  <td>{{evts.data_sbm}}</td>
-                  <td>{{evts.descricao}}</td>
+                  <td>{{ests.atividade}}</td>
+                  <td>{{ests.laboratorio}}</td>
 
                   {% if user.is_authenticated %}
                   <td>

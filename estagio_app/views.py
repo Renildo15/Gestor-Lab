@@ -49,7 +49,7 @@ def edit(request, pk):
 @login_required(login_url='logar_user')
 def update(request, pk):
     data = {}
-    data['evt'] = Estagio.objects.get(pk = pk)
+    data['est'] = Estagio.objects.get(pk = pk)
     form = estForm(request.POST or None, instance=data['est'])
     if form.is_valid():
         form.save()
