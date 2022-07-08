@@ -17,3 +17,6 @@ class estForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super(estForm, self).__init__(*args, **kwargs)
         self.fields['laboratorio'].empty_label = "Selecione"
+        self.fields['estagiario'].empty_label = "Selecione"
+        self.fields['supervisor'].empty_label = "Selecione"
+        self.fields['orientador'].empty_label = "Selecione"
