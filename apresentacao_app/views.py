@@ -9,10 +9,18 @@ redirLink = '/apresentacao/'
 
 @require_safe
 def home(request):
-    apresentacoes = Apresentacao.objects.all()
-    usuario_paginator = Paginator(apresentacoes, 3)
-    page_num = request.GET.get('page')
-    page = usuario_paginator.get_page(page_num)
+    search = request.GET.get('search')
+
+    if search:
+        apresentacoes = Apresentacao.objects.filter(titulo__icontains= search)
+        usuario_paginator = Paginator(apresentacoes, 3)
+        page_num = request.GET.get('page')
+        page = usuario_paginator.get_page(page_num)
+    else:
+        apresentacoes = Apresentacao.objects.all()
+        usuario_paginator = Paginator(apresentacoes, 3)
+        page_num = request.GET.get('page')
+        page = usuario_paginator.get_page(page_num)
     return render(request,'apresentacao_index.html',{'page': page})
 
 @require_safe

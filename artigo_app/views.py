@@ -11,10 +11,18 @@ redirLink = '/artigo/'
 
 @require_safe
 def home(request):
-    artigo = Artigo.objects.all()
-    usuario_paginator = Paginator(artigo, 3)
-    page_num = request.GET.get('page')
-    page = usuario_paginator.get_page(page_num)
+    search = request.GET.get('search')
+    if search:
+        artigo = Artigo.objects.filter(titulo__icontains= search)
+        usuario_paginator = Paginator(artigo, 3)
+        page_num = request.GET.get('page')
+        page = usuario_paginator.get_page(page_num)
+    else:
+
+        artigo = Artigo.objects.all()
+        usuario_paginator = Paginator(artigo, 3)
+        page_num = request.GET.get('page')
+        page = usuario_paginator.get_page(page_num)
     return render(request,'art_index.html',{'page': page})
 
 
