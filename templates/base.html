@@ -10,9 +10,7 @@
     </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="icon" href="{% static 'img/icon-gl.ico' %}" type="image/gif" sizes="16x16">
-    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
-    <link rel="stylesheet" href="{% static 'css/search-css.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style02.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -20,10 +18,10 @@
         <div class="navbar-css">
           <ul>
             {% block logo %}
-            <li class='li-pr'><a class="logo" href="/"><img src="/static/img/logo.png" width="50"></a></li>
+            <li><img src="/static/img/logo.png" width="50"></li>
             <li class='li-pr'>
             {% endblock logo %}
-              <a href="/">
+              <a class='link-nav' href="/">
                 <i class="fa fa-home" aria-hidden="true"></i>
                 Inicio
               </a>
@@ -31,12 +29,11 @@
             <li class='li-pr'>{% if user.is_authenticated %}
               <div class="dropdown-css">
                 <button class="dropbtn-css">
-                  <i class="fa fa-plus-square" aria-hidden="true"></i>
-                  Cadastros 
+                  Menu 
                   <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-content-css">
-                  <a class="link a-link" href="/laboratorio/">Laborátorios</a>
+                  <a class="link"href="/laboratorio/">Laborátorios</a>
                   <a class="link" href="/membros/">Membros</a>
                   <a class="link" href="/evento/">Eventos</a>
                   <a class="link" href="/projeto/">Projetos</a>
@@ -50,12 +47,13 @@
               </div> 
             {% else %}
             {% endif %}</li>
-            <li  class='li-pr'><a href="/sobre/">
+            <li ><a class='link-nav' href="/sobre/">
               <i class="fa fa-info-circle" aria-hidden="true"></i>
               Sobre
-            </a></li>
-            <li  class='li-pr' style="float:right;" class = "login">
-              <div class="dropdown-css">
+            </a>
+          </li>
+           <li class = "login li-pr">
+            <div class="dropdown-css">
               <button class="dropbtn-css">
                 <i class="fa fa-user-circle-o" aria-hidden="true"></i>
                 {% if user.is_authenticated%}
@@ -64,30 +62,30 @@
                 Login
                 {% endif %}
                 <i class="fa fa-caret-down"></i>
-      
               </button>
-              <div class="dropdown-content-css">
-                  {% if user.is_authenticated %}
-                  <a href="{% url 'mudar_senha' %}">
-                    <i class="fa fa-lock"></i>
-                    Mudar senha
-                  </a>
-                  <a href="{% url 'deslogar_usuario' %}">
-                    <i class="fa fa-sign-out" aria-hidden="true"></i>
-                    Sair
-                  </a>
-                  {% else %}
-                  <a href="{% url 'logar_user' %}">
-                    <i class="fa fa-sign-in" aria-hidden="true"></i>
-                    Entrar
-                  </a>
-                  <a href="{% url 'cadastrar_user' %}">
-                    <i class="fa fa-user"></i>
-                    Cadastro
-                  </a>
-                  {% endif %}
+              <div class="dropdown-content-css-login">
+                {% if user.is_authenticated %}
+                <a class="link" href="{% url 'mudar_senha' %}">
+                  <i class="fa fa-lock"></i>
+                  Mudar senha
+                </a>
+                <a class="link" href="{% url 'deslogar_usuario' %}">
+                  <i class="fa fa-sign-out" aria-hidden="true"></i>
+                  Sair
+                </a>
+                {% else %}
+                <a class="link" href="{% url 'logar_user' %}">
+                  <i class="fa fa-sign-in" aria-hidden="true"></i>
+                  Entrar
+                </a>
+                <a class="link" href="{% url 'cadastrar_user' %}">
+                  <i class="fa fa-user"></i>
+                  Cadastro
+                </a>
+                {% endif %}
               </div>
-            </li>
+            </div>
+           </li>
           </ul>
         </div>
     </header>

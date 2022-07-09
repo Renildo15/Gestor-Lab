@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    outline: none;
+    box-sizing: border-box;
+    transition: all .2s linear;
+    text-transform: capitalize;
+    font-family: 'Exo 2',sans-serif;
+}
+
+html{
+    font-size: 80.5%;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    box-shadow: 0 .2rem .5rem rgba(0, 0, 0, .3);
+    background-color: #70C4CA;
+    height: 58px;
+}
+
+.navbar-css ul{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-css ul li{
+    margin: 0 1.5rem;
+}
+.navbar-css ul li a.link-nav{
+    position: relative;
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px; 
+    letter-spacing: 0.5px; 
+}
+
+.navbar-css ul li a.link-nav::after{
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+
+.navbar-css ul li a.link-nav:hover:after{
+    width: 100%;
+}
+
+
+.dropdown-css {
+    float: left;
+    overflow: hidden;
+  }
+    
+.dropdown-css .dropbtn-css {
+    font-size: 20px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.dropdown-css:hover {
+    background-color: #58969b;
+    color: #fff;
+}
+
+.dropdown-content-css {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 162px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content-css-login {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 184px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content-css a.link {
+    float: none;
+    color: black;
+    padding: 8px 12px;
+    font-size: 20px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content-css-login a.link {
+    float: none;
+    color: black;
+    padding: 8px 12px;
+    font-size: 20px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content-css a.link:hover {
+    background-color:#58969b ;
+    color: #fff;
+}
+
+.dropdown-content-css-login a.link:hover {
+    background-color: #58969b;
+    color: #fff;
+}
+
+.dropdown-css:hover .dropdown-content-css {
+    display: block;
+}
+
+.dropdown-css:hover .dropdown-content-css-login {
+    display: block;
+}
+
+.login{
+    position: relative;
+    left: 580px;
+}
