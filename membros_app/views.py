@@ -8,10 +8,19 @@ from django.core.paginator import Paginator
 # Create your views here.
 @require_safe
 def listar_membros(request):
-    membros = Membro.objects.all()
-    usuario_paginator = Paginator(membros, 3)
-    page_num = request.GET.get('page')
-    page = usuario_paginator.get_page(page_num)
+
+    search = request.GET.get('search')
+
+    if search:
+        membros = Membro.objects.filter(nome__icontains = search)
+        usuario_paginator = Paginator(membros, 3)
+        page_num = request.GET.get('page')
+        page = usuario_paginator.get_page(page_num)
+    else:
+        membros = Membro.objects.all()
+        usuario_paginator = Paginator(membros, 3)
+        page_num = request.GET.get('page')
+        page = usuario_paginator.get_page(page_num)
     return render(request, 'membro_list.html', {'page': page})
 
 

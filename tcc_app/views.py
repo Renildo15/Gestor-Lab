@@ -9,10 +9,19 @@ redirLink = '/tcc/'
 
 @require_safe
 def home(request):
-    tcc = Tcc.objects.all()
-    usuario_paginator = Paginator(tcc, 3)
-    page_num = request.GET.get('page')
-    page = usuario_paginator.get_page(page_num)
+
+    search = request.GET.get('search')
+
+    if search:
+        tcc = Tcc.objects.filter(titulo__icontains = search)
+        usuario_paginator = Paginator(tcc, 3)
+        page_num = request.GET.get('page')
+        page = usuario_paginator.get_page(page_num)
+    else:
+        tcc = Tcc.objects.all()
+        usuario_paginator = Paginator(tcc, 3)
+        page_num = request.GET.get('page')
+        page = usuario_paginator.get_page(page_num)
     return render(request,'tcc_index.html',{'page':page})
 
 @require_safe

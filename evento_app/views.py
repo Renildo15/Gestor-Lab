@@ -9,10 +9,19 @@ redirLink = '/evento/'
 
 @require_safe
 def home(request):
-    evento = Evento.objects.all()
-    usuario_paginator = Paginator(evento, 3)
-    page_num = request.GET.get('page')
-    page = usuario_paginator.get_page(page_num)
+
+    search = request.GET.get('search')
+
+    if search:
+        evento = Evento.objects.filter(titulo__icontains=search)
+        usuario_paginator = Paginator(evento, 3)
+        page_num = request.GET.get('page')
+        page = usuario_paginator.get_page(page_num)
+    else:
+        evento = Evento.objects.all()
+        usuario_paginator = Paginator(evento, 3)
+        page_num = request.GET.get('page')
+        page = usuario_paginator.get_page(page_num)
     return render(request,'event_index.html',{'page' : page})
 
 @require_safe
