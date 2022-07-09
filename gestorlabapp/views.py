@@ -10,6 +10,7 @@ from bo.pesquisa import get_pesquisa
 from bo.projeto import get_projeto
 from bo.tcc import get_tcc
 from bo.horario import get_horario
+from bo.estagio import get_estagio
 from django.views.decorators.http import require_safe
 
 
@@ -24,6 +25,7 @@ def pagina_inicial(request):
     projeto = get_projeto()
     tcc = get_tcc()
     horario = get_horario()
+    estagio = get_estagio()
 
     context = {
         'laboratorio': laboratorio,
@@ -34,7 +36,8 @@ def pagina_inicial(request):
         'pesquisa': pesquisa,
         'projeto': projeto,
         'tcc': tcc,
-        'horario': horario
+        'horario': horario,
+        'estagio': estagio
     }
     return render(request,'PageInicial.html', context)
 

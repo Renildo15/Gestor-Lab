@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'usuarios_app',
     'horario_app',
     'apresentacao_app',
+    'estagio_app'
 
 ]
 
