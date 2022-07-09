@@ -52,8 +52,7 @@ INSTALLED_APPS = [
     'usuarios_app',
     'horario_app',
     'apresentacao_app',
-    'estagio_app'
-
+    'estagio_app',
 ]
 
 MIDDLEWARE = [
@@ -154,3 +153,5 @@ LOGIN_REDIRECT_URL = "PaginaInicial"
 ACCOUNT_SESSION_REMEMBER = True
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

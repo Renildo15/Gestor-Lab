@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from projetos_app.forms import ProjectForm
 from django.core.paginator import Paginator
@@ -9,10 +10,22 @@ redirLink = '/projeto/'
 
 @require_safe
 def home(request):
-    projeto = Projeto.objects.all()
-    usuario_paginator = Paginator(projeto, 3)
-    page_num = request.GET.get('page')
-    page = usuario_paginator.get_page(page_num)
+
+    search = request.GET.get('search')
+    if search:
+        projeto = Projeto.objects.filter(nome__icontains=search)
+        usuario_paginator = Paginator(projeto, 3)
+        page_num = request.GET.get('page')
+        page = usuario_paginator.get_page(page_num)
+
+        if projeto is None:
+            return HttpResponse('Vazio')
+    else:
+
+        projeto = Projeto.objects.all()
+        usuario_paginator = Paginator(projeto, 3)
+        page_num = request.GET.get('page')
+        page = usuario_paginator.get_page(page_num)
     return render(request,'project_index.html',{'page': page})
 
 @require_safe

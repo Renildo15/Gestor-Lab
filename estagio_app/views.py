@@ -9,10 +9,19 @@ redirLink = '/estagio/'
 
 @require_safe
 def home(request):
-    estagio = Estagio.objects.all()
-    usuario_paginator = Paginator(estagio, 3)
-    page_num = request.GET.get('page')
-    page = usuario_paginator.get_page(page_num)
+
+    search = request.GET.get('search')
+    if search:
+        estagio = Estagio.objects.filter(atividade__icontains = search)
+        usuario_paginator = Paginator(estagio, 3)
+        page_num = request.GET.get('page')
+        page = usuario_paginator.get_page(page_num)
+    else:
+
+        estagio = Estagio.objects.all()
+        usuario_paginator = Paginator(estagio, 3)
+        page_num = request.GET.get('page')
+        page = usuario_paginator.get_page(page_num)
     return render(request,'est_index.html',{'page' : page})
 
 @require_safe
