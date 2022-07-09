@@ -26,7 +26,7 @@
                 Inicio
               </a>
           </li>
-            <li class='li-pr'>{% if user.is_authenticated %}
+            <li class='li-pr'>
               <div class="dropdown-css">
                 <button class="dropbtn-css">
                   Menu 
@@ -45,8 +45,6 @@
                   <a class="link" href="/estagio/">Estágios</a>
                 </div>
               </div> 
-            {% else %}
-            {% endif %}</li>
             <li ><a class='link-nav' href="/sobre/">
               <i class="fa fa-info-circle" aria-hidden="true"></i>
               Sobre
@@ -94,13 +92,15 @@
     {% endblock content %}
     <br>
     {% block footer %}
-    <div class="py-5 bg-dark">
-      <div class="container text-center">
-        <span class="m-0 text-center text-white">
-          Copyright © Gestor Lab 2022
-        </span>
+    <footer>
+      <div class="footer-content">
+        <h3>Gestor Lab</h3>
+        <p>O Gestor Lab é um rojeto de Gestão de Laboratórios para gerenciar a equipe, as tarefas, os projetos, os artigos e as apresentações em no laboratório no LabCoffee MeetUp.</p>
       </div>
-    </div>
+      <div class="footer-bottom">
+        <p>Copyright © Gestor Lab 2022. designed by <span>Habby Valle</span></p>
+      </div>
+    </footer>
     {% endblock footer %}
     
 
