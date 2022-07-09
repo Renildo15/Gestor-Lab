@@ -7,7 +7,7 @@ class estForm(ModelForm):
         model = Estagio
         fields = '__all__'
         labels = {
-                'estagiario': 'Nome',
+                'esta': 'Nome',
                 'orientador': 'Nome',
                 'supervisor': 'Nome',
                 'atividade': 'Atividade',
