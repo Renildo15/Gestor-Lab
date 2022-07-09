@@ -20,8 +20,6 @@ def home(request):
         page_num = request.GET.get('page')
         page = usuario_paginator.get_page(page_num)
 
-        if page is None:
-            return HttpResponse('Vazio')
     else:
         laboratorios = Lab.objects.all()
         usuario_paginator = Paginator(laboratorios, 3)

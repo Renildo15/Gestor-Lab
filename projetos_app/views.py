@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from projetos_app.forms import ProjectForm
 from django.core.paginator import Paginator
@@ -16,6 +17,9 @@ def home(request):
         usuario_paginator = Paginator(projeto, 3)
         page_num = request.GET.get('page')
         page = usuario_paginator.get_page(page_num)
+
+        if projeto is None:
+            return HttpResponse('Vazio')
     else:
 
         projeto = Projeto.objects.all()

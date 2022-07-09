@@ -64,10 +64,16 @@
   </div>
 </div>
 {% else %}
-<h1 class ='text-center mt-5'>
-  Não há linhas de pesquisa cadastradas
-  <div class='col-8 m-auto pt-4 pb-2 text-center'>
+<div class='col-8 m-auto pt-4 pb-2 text-center'>
+  <div class="col-9 search-div">
+    <form method="GET" id="search-form">
+        <input class="form-control" type="text" id="search" name="search" placeholder="Digite o título da linha de pesquisa para buscar..." value="{{ request.GET.search }}">
+        <i class="fa fa-search" id="search-btn"></i>
+    </form>
   </div>
-</h1>
+  <h1 class ='text-center mt-5'>
+    Não há linhas de pesquisa cadastradas
+  </h1>
+</div>
 {% endif %}
 {% endblock content %}
