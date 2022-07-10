@@ -291,3 +291,141 @@ a.a-dev:hover{
 address{
     font-size: 1.2rem;
 }
+
+/* lab */
+
+h1.lab{
+    text-align: center;
+}
+
+.lab-form{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.input-lab{
+    font-size: 1.2rem;
+}
+
+.lab-titulo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 0;
+}
+
+.btn-add {
+    color: #fff;
+    background-color: #70CA7E;
+    border-color: #70CA7E;
+}
+
+.btn-search{
+    color: #fff;
+    background-color: #58969b;
+    border: none;
+    width: 100px;
+}
+
+.btn-search:hover{
+    color: #fff;
+    background-color: #335658;
+}
+.btn-add:hover {
+    color: #fff;
+    background-color: #559c60;
+    border-color: #559c60;
+}.btn-view {
+    color: #fff;
+    background-color: #70C4CA;
+    border-color: #70C4CA;
+}
+
+.btn-view:hover{
+    color: #fff;
+    background-color: #58969b;
+    border-color: #58969b;
+}
+
+.btn-edit {
+    color: #fff;
+    background-color: #CAC170;
+    border-color: #CAC170;
+}
+
+.btn-edit:hover {
+    color: #fff;
+    background-color: #999254;
+    border-color: #999254;
+}
+
+
+.btn-delete {
+    color: #fff;
+    background-color: #CA7070;
+    border-color: #CA7070;
+}
+
+.btn-delete:hover {
+    color: #fff;
+    background-color: #754343;
+    border-color: #754343;
+}
+
+
+
+.fa-plus-square{
+    margin-right: 5px;
+}
+
+.table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+
+.table tr:nth-child(even){background-color: #B4DBDD;}
+  
+  
+.table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #70C4CA;
+    color: #fff;
+}
+  
+td a{
+    margin-left: 20px;
+}
+  
+  
+.table td, .table th {
+    padding: 8px;
+    line-height: 3;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.table-lab{
+    margin-bottom: 100px;
+}
+
+.page-links{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.page-links a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #70C4CA;
+}
+
+.page-links a:hover{
+    color: #58969b;
+    font-weight: 400;
+}
