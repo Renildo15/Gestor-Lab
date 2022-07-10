@@ -3,7 +3,7 @@
 {% block content %}
 <div class="container">
   <div>
-    <div class="lab-titulo ">
+    <div class="lab-titulo">
       <h1 class="lab">Laboratórios</h1>
       {% if user.is_authenticated %}
         <a href="{% url 'laboratorio:form'%}" class="btn btn-add">

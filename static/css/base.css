@@ -321,6 +321,19 @@ h1.lab{
     border-color: #70CA7E;
 }
 
+.btn-cadastrar{
+    color: #fff;
+    background-color: #70CA7E;
+    border-color: #70CA7E;
+    font-size: 1.5rem;
+}
+
+.btn-cadastrar:hover {
+    color: #fff;
+    background-color: #559c60;
+    border-color: #559c60;
+}
+
 .btn-search{
     color: #fff;
     background-color: #58969b;
@@ -428,4 +441,50 @@ td a{
 .page-links a:hover{
     color: #58969b;
     font-weight: 400;
+}
+
+/* form */
+
+.lab-forms .form-control {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.col-8 {
+    flex: 0 0 auto;
+    width: 50%;
+    padding: 50px;
+    border-radius: 5px;
+}
+
+div.nome, div.sigla, div.coordenador,div.vice-coordenador,div.descricao{
+    font-size: 1.5rem;
+}
+
+.btn-voltar{
+    color: #fff;
+    background-color: #58969b;
+    font-size: 1.5rem;
+}
+
+.btn-voltar:hover{
+    color: #fff;
+    background-color: #335658;
+}
+
+.lab-cadastro{
+    padding: 30px 0;
 }
