@@ -1,86 +1,90 @@
 {% extends 'base.html' %}
-
+{% block title %}
+  Gestor Lab - Eventos
+{% endblock title %}
 {% block content %}
-<div class='col-8 m-auto pt-2 pb-2 text-center'>
-  <h1>Eventos</h1>
-</div>
-
-<div class='col-8 m-auto pt-3 pb-2 text-center'>
-  {% if user.is_authenticated %}
-  <a href="{% url 'evento:eventForm' %}" class="btn btn-add">Adicionar Eventos</a>
+<div class="container">
+  <div>
+    <div class="lab-titulo">
+      <h1 class="lab">Eventos</h1>
+      {% if user.is_authenticated %}
+        <a href="{% url 'evento:eventForm' %}" class="btn btn-add">
+          <i class="fa fa-plus-square" aria-hidden="true"></i>
+          Adicionar Eventos
+        </a>
+      {% endif %}
+    </div>
+    <div>
+      <div class="lab-form row">
+        <form method="GET" id="search-form">
+          <div class="input-group mb-3">
+            <input class="form-control" type="text" id="search" name="search" placeholder="Digite o nome do evento para buscar..." value="{{ request.GET.search }}">
+            <button class="btn btn-search" type="submit" id="button-addon1">Buscar</button>
+          </div>
+      </form>
+      </div>
+      <hr>
+    </div>
+  </div>
+  
+  {% if page %}
+  <div class="table-lab">
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Título</th>
+            <th scope="col">Área</th>
+            <th scope="col">Laboratório</th>
+            <th scope="col">Site</th>
+            <th scope="col">Data</th>
+            <th scope="col"></th>       
+          </tr>
+        </thead>
+        <tbody>
+            {% for evts in page %}
+                <tr>
+                    
+                    <td>{{evts.titulo}}</td>
+                    <td>{{evts.area}}</td>
+                    <td>{{evts.laboratorio}}</td>
+                    <td><a href ={{evts.site}}>{{evts.site}}<a></td>
+                    <td>{{evts.data_sbm}}</td>
+  
+                    {% if user.is_authenticated %}
+                    <td>
+                      <a href="{% url 'evento:eventView' evts.id %}" class="btn btn-view">Visualizar</a>
+                      <a href="{% url 'evento:eventEdit' evts.id %}" class="btn btn-edit">Editar</a></th>
+                      <form method="post" action="{% url 'evento:eventDelete' evts.id %}" class="btn">
+                          {% csrf_token %}
+                          <button type="submit" class="btn btn-delete">
+                              Deletar
+                          </button>
+                      </form>
+                    </td>
+                    {% else %}
+                    <td></td>
+                    {% endif %}
+                    
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="page-links">
+      {% if page.has_previous %}
+        <a href="{% url 'evento:home' %}?page={{page.previous_page_number}}">Anterior</a>
+      {% endif %}
+      {% if page.has_next %}
+        <a href="{% url 'evento:home' %}?page={{page.next_page_number}}">Próximo</a>
+      {% endif %}
+    </div>
+  </div>
+  {% else %}
+  <div class="lab-vazio">
+    <h1>
+      Não há eventos cadastrados
+    </h1>
+  </div>
   {% endif %}
 </div>
-{% if page %}
-<div class='col-8 m-auto pt-4 pb-2 text-center'>
-  <div class="col-9 search-div">
-    <form method="GET" id="search-form">
-        <input class="form-control" type="text" id="search" name="search" placeholder="Digite o nome do evento para buscar..." value="{{ request.GET.search }}">
-        <i class="fa fa-search" id="search-btn"></i>
-    </form>
-  </div>
-  <table class="table">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">Título</th>
-          <th scope="col">Área</th>
-          <th scope="col">Laboratório</th>
-          <th scope="col">Site</th>
-          <th scope="col">Data de submissão</th>
-          <th scope="col">Descrição</th>
-          <th scope="col"></th>
-          
-        </tr>
-      </thead>
-      <tbody>
-          {% for evts in page %}
-              <tr>
-                  
-                  <td>{{evts.titulo}}</td>
-                  <td>{{evts.area}}</td>
-                  <td>{{evts.laboratorio}}</td>
-                  <td><a href ={{evts.site}}>{{evts.site}}<a></td>
-                  <td>{{evts.data_sbm}}</td>
-                  <td>{{evts.descricao}}</td>
 
-                  {% if user.is_authenticated %}
-                  <td>
-                    <a href="{% url 'evento:eventView' evts.id %}" class="btn btn-view">Visualizar</a>
-                    <a href="{% url 'evento:eventEdit' evts.id %}" class="btn btn-edit">Editar</a></th>
-                    <form method="post" action="{% url 'evento:eventDelete' evts.id %}" class="btn">
-                        {% csrf_token %}
-                        <button type="submit" class="btn btn-delete">
-                            Deletar
-                        </button>
-                    </form>
-                  </td>
-                  {% else %}
-                  <td></td>
-                  {% endif %}
-                  
-              </tr>
-          {% endfor %}
-      </tbody>
-  </table>
-  <div class="page-links">
-    {% if page.has_previous %}
-      <a href="{% url 'evento:home' %}?page={{page.previous_page_number}}">Anterior</a>
-    {% endif %}
-    {% if page.has_next %}
-      <a href="{% url 'evento:home' %}?page={{page.next_page_number}}">Próximo</a>
-    {% endif %}
-  </div>
-</div>
-{% else %}
-<div class='col-8 m-auto pt-4 pb-2 text-center'>
-  <div class="col-9 search-div">
-    <form method="GET" id="search-form">
-        <input class="form-control" type="text" id="search" name="search" placeholder="Digite o nome do evento para buscar..." value="{{ request.GET.search }}">
-        <i class="fa fa-search" id="search-btn"></i>
-    </form>
-  </div>
-  <h1 class ='text-center mt-5'>
-    Não há eventos cadastrados
-  </h1>
-</div>
-{% endif %}
 {% endblock content %}

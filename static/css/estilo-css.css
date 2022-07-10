@@ -520,3 +520,8 @@ div.nome, div.sigla, div.coordenador,div.vice-coordenador,div.descricao{
 div.Nome-membro, div.Email-membro, div.Telefone-membro,div.lab-membro,div.perfil-membro{
     font-size: 1.5rem;
 }
+
+/** evento **/
+div.titulo, div.area, div.lab,div.site,div.desc{
+    font-size: 1.5rem;
+}

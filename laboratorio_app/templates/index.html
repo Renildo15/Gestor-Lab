@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
-
+{% block title %}
+  Gestor Lab - Laboratórios
+{% endblock title %}
 {% block content %}
 <div class="container">
   <div>
@@ -10,10 +12,8 @@
           <i class="fa fa-plus-square" aria-hidden="true"></i>
           Adicionar Laborátorio
         </a>
-      {% endif %}
-     
-    </div>
-    
+      {% endif %} 
+    </div>   
     <div>
       <div class="lab-form row">
        <form method="GET" id="search-form">

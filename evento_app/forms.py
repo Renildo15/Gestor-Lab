@@ -1,4 +1,5 @@
 from django.forms import ModelForm
+from django import forms
 from .models import Evento
 
 class EventForm(ModelForm):
@@ -6,12 +7,12 @@ class EventForm(ModelForm):
 
         model = Evento
         fields = '__all__'
-        labels = {
-                'titulo': 'Nome',
-                'descricao': 'E-Mail',
-                'area': 'Telefone',
-                'laboratorio': 'Laboratório',
-                'site': 'Site'
+        widgets = {
+                'titulo': forms.TextInput(attrs={'class': 'form-control'}),
+                'descricao': forms.Textarea(attrs={'class': 'form-control'}),
+                'area': forms.TextInput(attrs={'class': 'form-control'}),
+                'laboratorio': forms.Select(attrs={'class': 'form-control'}),
+                'site': forms.EmailInput(attrs={'class': 'form-control'})
         }
 
     def __init__(self, *args, **kwargs):
