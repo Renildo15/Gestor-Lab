@@ -492,3 +492,17 @@ div.nome, div.sigla, div.coordenador,div.vice-coordenador,div.descricao{
 .lab-vazio{
     padding: 50px;
 }
+
+.lab-vazio h1{
+    text-align: center;
+}
+
+.list-view-lab{
+    margin-bottom: 10px;
+}
+
+.list-view-lab ul li{
+    font-size: 1.4rem;
+    word-spacing: 2px;
+    text-align: justify;
+}
