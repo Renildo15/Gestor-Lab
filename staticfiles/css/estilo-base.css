@@ -445,7 +445,7 @@ td a{
 
 /* form */
 
-.lab-forms .form-control{
+.lab-forms .form-control {
     display: block;
     width: 100%;
     padding: 0.375rem 0.75rem;
@@ -515,8 +515,4 @@ div.nome, div.sigla, div.coordenador,div.vice-coordenador,div.descricao{
     align-items: center;
     justify-content: space-between;
     padding: 30px 0;
-}
-
-div.Nome-membro, div.Email-membro, div.Telefone-membro,div.lab-membro,div.perfil-membro{
-    font-size: 1.5rem;
 }

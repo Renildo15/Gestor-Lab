@@ -7,12 +7,13 @@ class MembroForm(forms.ModelForm):
     class Meta:
         model = Membro
         fields = '__all__'
-        labels = {
-            'nome': 'Nome',
-            'email': 'E-Mail',
-            'telefone': 'Telefone',
-            'laboratorio': 'Laboratório',
-            'membro_perfil': 'Perfil'
+        
+        widgets = {
+            'nome': forms.TextInput(attrs={'class': 'form-control'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control'}),
+            'telefone': forms.TextInput(attrs={'class': 'form-control'}),
+            'laboratorio': forms.Select(attrs={'class': 'form-control'}),
+            'membro_perfil': forms.Select(attrs={'class': 'form-control'}),
         }
         
     def __init__(self, *args, **kwargs):
