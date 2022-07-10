@@ -1,31 +1,26 @@
 {% extends 'base.html' %}
-
+{% block title %}
+    Gestor Lab - Cadastrar Projetos
+{% endblock title %}
 {% block content %}
-<div class='col-8 m-auto pt-2 pb-2 text-center'>
-
-  {% block titulo %}
-  <h1>Cadastrar Projeto</h1>
-  {% endblock  %}
-  
-</div>
-
-<div class='col-8 m-auto pt-3 pb-2 text-center'>
-  {% block botao %}
-  <a href="/projeto/" class="btn btn-info">voltar</a>
-  {% endblock  %}
-</div>
-<div class='col-8 m-auto pt-4 pb-2 text-center'>
-  <form name="form" id="form" action="{%if pjt %}{% url 'projeto:projectUpdate' pjt.id %}{%else%}{% url 'projeto:projectCreate' %}{%endif%}" method="post">
-      {% block form %}
+<div>
+  <div class='col-8 m-auto pt-4 lab-forms shadow'>
+    {% block titulo %}
+    <div class="lab-cadastro text-center">
+      <h1>Cadastrar projeto</h1>
+    </div>
+    {% endblock  %}
+    <form name="form" id="form" action="{%if pjt %}{% url 'projeto:projectUpdate' pjt.id %}{%else%}{% url 'projeto:projectCreate' %}{%endif%}" method="post">
       {% csrf_token %}
-      <div class='form-group mt-4'>Nome: {{form.nome}}</div>
-      <div class='form-group mt-4'>Coordenador: {{form.coordenador_projeto}}</div>
-      <div class='form-group mt-4'>Participantes: {{form.participantes}}</div>
-      <div class='form-group mt-4'>Laboratório: {{form.laboratorio_projeto}}</div>
-      <div class='form-group mt-4'>Descrição: {{form.descricao}}</div>
+      <div class='form-group mt-4 nome'>Nome: {{form.nome}}</div>
+      <div class='form-group mt-4 coordenador'>Coordenador: {{form.coordenador_projeto}}</div>
+      <div class='form-group mt-4 participante'>Participantes: {{form.participantes}}</div>
+      <div class='form-group mt-4 lab'>Laboratório: {{form.laboratorio_projeto}}</div>
+      <div class='form-group mt-4 desc'>Descrição: {{form.descricao}}</div>
       <div class='form-group mt-4'></div>
-      <input type="submit" class="btn btn-success" value="Salvar">
-      {% endblock form %}
+      <input type="submit" class="btn btn-cadastrar" value="Cadastrar">
+      <a href="/projeto/" class="btn btn-voltar">voltar</a>
   </form>
+  </div>
 </div>
 {% endblock content %}

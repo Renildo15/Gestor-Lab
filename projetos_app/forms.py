@@ -1,16 +1,17 @@
 from django.forms import ModelForm
 from projetos_app.models import Projeto
+from django import forms
 
 class ProjectForm(ModelForm):
     class Meta:
         model=Projeto
         fields = '__all__'
-        labels = {
-            'nome': 'Nome',
-            'descricao': 'Descrição',
-            'coordenador_projeto ': 'Coordenador',
-            'participantes': 'Participantes',
-            'laboratorio_projeto': 'Laboratório'
+        widgets = {
+            'nome': forms.TextInput(attrs={'class': 'form-control'}),
+            'coordenador_projeto': forms.Select(attrs={'class': 'form-control'}),
+            'participantes': forms.Select(attrs={'class': 'form-control'}),
+            'laboratorio_projeto': forms.Select(attrs={'class': 'form-control'}),
+            'descricao': forms.Textarea(attrs={'class': 'form-control'}),
         }
 
     def __init__(self, *args, **kwargs):

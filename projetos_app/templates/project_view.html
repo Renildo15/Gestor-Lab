@@ -1,19 +1,23 @@
 {% extends 'base.html' %}
+{% block title %}
+    Visualização {{pjt.nome}}
+{% endblock title %}
 
 {% block content %}
-<div class='col-8 m-auto pt-2 pb-2 text-center'>
-  <h1>Visualização do projeto</h1>
+<div class='col-8 m-auto pt-2 pb-2 text-center mt-4'>
+  <h1>Visualização {{pjt.nome}}</h1>
 </div>
-
-<div class='col-8 m-auto pt-3 pb-2 text-center'>
-  <a href="/projeto/" class="btn btn-info">voltar</a>
-</div>
-<div class='col-8 m-auto pt-4 pb-2 text-center'>
+<div class='col-8 m-auto pt-4 pb-4'>
   {% block dados %}
-  <strong>Nome: </strong>{{pjt.nome}}<br>
-  <strong>Coordenador: </strong>{{pjt.coordenador}}<br>
-  <strong>Participantes: </strong>{{pjt.participantes}}<br>
-  <strong>Descrição: </strong>{{pjt.descricao}}<br>
+  <div class="list-view-lab">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><strong>Nome: </strong>{{pjt.nome}}<br></li>
+      <li class="list-group-item"><strong>Coordenador: </strong>{{pjt.coordenador_projeto}}<br></li>
+      <li class="list-group-item"><strong>Participantes: </strong>{{pjt.participantes}}<br></li>
+      <li class="list-group-item"><strong>Descrição: </strong>{{pjt.descricao}}<br></li>
+    </ul>
+  </div>
+  <a href="/projeto/" class="btn btn-voltar">voltar</a>
   {% endblock dados %}
 </div>
 {% endblock content %}
