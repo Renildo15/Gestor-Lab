@@ -531,3 +531,9 @@ div.nome, div.coordenador, div.participante,div.lab,div.desc{
     font-size: 1.5rem;
 }
 
+
+/** artigo **/
+div.titulo, div.autor, div.local,div.lab,div.desc{
+    font-size: 1.5rem;
+}
+
