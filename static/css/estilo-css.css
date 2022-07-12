@@ -537,3 +537,8 @@ div.titulo, div.autor, div.local,div.lab,div.desc{
     font-size: 1.5rem;
 }
 
+div.nome, div.area, div.lab, div.desc{
+    font-size: 1.5rem;
+}
+
+

@@ -14,18 +14,16 @@
         </a>
       {% endif %} 
     </div>   
-    <div>
-      <div class="lab-form row">
-       <form method="GET" id="search-form">
+  </div>
+    <div class="lab-form row">
+      <form method="GET" id="search-form">
         <div class="input-group mb-3">
            <input class="form-control input-lab" type="text" id="search" name="search" placeholder="Digite o nome do laboratório para buscar..." value="{{ request.GET.search }}">
            <button class="btn btn-search" type="submit" id="button-addon1">Buscar</button>
         </div>
-       </form>
-     </div>
-     <hr>
-  </div>
-  </div>
+      </form>
+    </div>
+    <hr>
   {% if page %}
   <div class="table-lab">
     <table class="table">
