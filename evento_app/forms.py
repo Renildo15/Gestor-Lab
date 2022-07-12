@@ -2,6 +2,9 @@ from django.forms import ModelForm
 from django import forms
 from .models import Evento
 
+class DateInput(forms.DateInput):
+     input_type = 'date'
+
 class EventForm(ModelForm):
     class Meta:
 
@@ -12,7 +15,8 @@ class EventForm(ModelForm):
                 'descricao': forms.Textarea(attrs={'class': 'form-control'}),
                 'area': forms.TextInput(attrs={'class': 'form-control'}),
                 'laboratorio': forms.Select(attrs={'class': 'form-control'}),
-                'site': forms.EmailInput(attrs={'class': 'form-control'})
+                'site': forms.URLInput(attrs={'class': 'form-control'}),
+                'data_sbm': DateInput(attrs={'class': 'form-control'}),
         }
 
     def __init__(self, *args, **kwargs):

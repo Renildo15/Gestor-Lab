@@ -13,7 +13,7 @@ class TccForm(forms.ModelForm):
             'autores': forms.Select(attrs={'class': 'form-control'}),
             'orientadores': forms.Select(attrs={'class': 'form-control'}),
             'instituicao': forms.TextInput(attrs={'class': 'form-control'}),
-            "dtpublicacao": forms.DateInput(attrs={'class': 'form-control'}),
+            "dtpublicacao": DateInput(attrs={'class': 'form-control'}),
             'pesquisa': forms.Select(attrs={'class': 'form-control'}),
             'descricao': forms.Textarea(attrs={'class': 'form-control'})
         }

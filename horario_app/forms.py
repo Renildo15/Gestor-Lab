@@ -11,22 +11,18 @@ class HorarioForm(forms.ModelForm):
     class Meta:
         model = Horario
         fields = '__all__'
-        labels = {
-            'horario_entrada': 'Hora Entrada',
-            'horario_saida': 'Hora Saída',
-            'turno': 'Turno',
-            'dia_semana': 'Dia',
-            'membro': 'Membro',
-        }
-
         widgets = {
 
-            "horario_entrada": TimeInput(),
-            "horario_saida": TimeInput(),
+            "horario_entrada": TimeInput(attrs={'class': 'form-control'}),
+            "horario_saida": TimeInput(attrs={'class': 'form-control'}),
+            'turno': forms.Select(attrs={'class': 'form-control'}),
+            'dia_semana': forms.Select(attrs={'class': 'form-control'}),
+            'membro': forms.Select(attrs={'class': 'form-control'}),
         }
 
         
     def __init__(self, *args, **kwargs):
             super(HorarioForm, self).__init__(*args, **kwargs)
             self.fields['membro'].empty_label = "Selecione"
+            self.fields['turno'].empty_label = "Selecione"
             

@@ -1,31 +1,26 @@
 {% extends 'base.html' %}
-
+{% block title %}
+    Gestor Lab - Cadastrar Horários
+{% endblock title %}
 {% block content %}
-<div class='col-8 m-auto pt-2 pb-2 text-center'>
-
-  {% block titulo %}
-  <h1>Cadastrar Horário</h1>
-  {% endblock  %}
-  
-</div>
-
-<div class='col-8 m-auto pt-3 pb-2 text-center'>
-  {% block botao %}
-  <a href="/horario/" class="btn btn-info">voltar</a>
-  {% endblock  %}
-</div>
-<div class='col-8 m-auto pt-4 pb-2 text-center'>
-  <form name="form" id="form" action="{%if db %}{% url 'horario:update' db.id %}{%else%}{% url 'horario:create' %}{%endif%}" method="post">
-      {% block form %}
-      {% csrf_token %}
-      <div class='form-group mt-4'>Hora Entrada: {{form.horario_entrada}}</div>
-      <div class='form-group mt-4'>Hora Saída: {{form.horario_saida}}</div>
-      <div class='form-group mt-4'>Turno: {{form.turno}}</div>
-      <div class='form-group mt-4'>Dia: {{form.dia_semana}}</div>
-      <div class='form-group mt-4'>Membro: {{form.membro}}</div>
-      <div class='form-group mt-4'></div>
-      <input type="submit" class="btn btn-success" value="Salvar">
-      {% endblock form %}
+<div>
+  <div class='col-8 m-auto pt-4 lab-forms shadow mt-4'>
+    <div class="lab-cadastro text-center">
+      <h1>Cadastrar Horário</h1>
+    </div>
+    <form name="form" id="form" action="{%if db %}{% url 'horario:update' db.id %}{%else%}{% url 'horario:create' %}{%endif%}" method="post">
+      <div class="mb-3">
+        {% csrf_token %}
+        <div class='form-group mt-4 desc'>Hora Entrada: {{form.horario_entrada}}</div>
+        <div class='form-group mt-4 desc '>Hora Saída: {{form.horario_saida}}</div>
+        <div class='form-group mt-4 desc'>Turno: {{form.turno}}</div>
+        <div class='form-group mt-4 desc'>Dia: {{form.dia_semana}}</div>
+        <div class='form-group mt-4 desc '>Membro: {{form.membro}}</div>
+        <div class='form-group mt-4 desc'></div>
+        <input type="submit" class="btn btn-cadastrar" value="Cadastrar">
+        <a href="/horario/" class="btn btn-voltar">voltar</a>
+      </div>
   </form>
+  </div>
 </div>
 {% endblock content %}
