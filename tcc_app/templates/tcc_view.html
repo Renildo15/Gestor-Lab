@@ -1,25 +1,24 @@
 {% extends 'base.html' %}
-
+{% block title %}
+    Visualização {{db.titulo}}
+{% endblock title %}
 {% block content %}
-<div class='col-8 m-auto pt-2 pb-2 text-center'>
-  {% block view %}
-  <h1>Visualização do TCC</h1>
-  {% endblock view %}
-</div>
 
-<div class='col-8 m-auto pt-3 pb-2 text-center'>
-  <a href="/tcc/" class="btn btn-info">voltar</a>
+<div class='col-8 m-auto pt-2 pb-2 text-center mt-4'>
+  <h1>Visualização do {{db.titulo}}</h1>
 </div>
-<div class='col-8 m-auto pt-4 pb-2 text-center'>
-  {% block dados %}
-  <strong>Título: </strong>{{db.titulo}}<br>
-  <strong>Autores: </strong>{{db.autores}}<br>
-  <strong>Orientadores: </strong>{{db.orientadores}}<br>
-  <strong>Instituição: </strong>{{db.instituicao}}<br>
-  <strong>Data de publicação: </strong>{{db.dtpublicacao}}<br>
-  <strong>Pesquisa: </strong>{{db.pesquisa}}<br>
-  <strong>Descrição: </strong>{{db.descricao}}<br>
-
-  {% endblock dados %}
+<div class='col-8 m-auto pt-4 pb-4'>
+  <div class="list-view-lab">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><strong>Título: </strong>{{db.titulo}}<br>
+      <li class="list-group-item"><strong>Autores: </strong>{{db.autores}}<br>
+      <li class="list-group-item"><strong>Orientadores: </strong>{{db.orientadores}}<br>
+      <li class="list-group-item"><strong>Instituição: </strong>{{db.instituicao}}<br>
+      <li class="list-group-item"><strong>Data de publicação: </strong>{{db.dtpublicacao}}<br>
+      <li class="list-group-item"><strong>Pesquisa: </strong>{{db.pesquisa}}<br>
+      <li class="list-group-item"><strong>Descrição: </strong>{{db.descricao}}<br>
+    </ul>
+  </div>
+  <a href="/tcc/" class="btn btn-voltar">voltar</a>
 </div>
 {% endblock content %}

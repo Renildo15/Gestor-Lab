@@ -5,11 +5,9 @@
 {% block content %}
 <div>
   <div class='col-8 m-auto pt-4 lab-forms shadow mt-4'>
-    {% block titulo %}
     <div class="lab-cadastro text-center">
       <h1>Cadastrar laboratório</h1>
     </div>
-    {% endblock  %}
     <form name="form" id="form" action="{%if db %}{% url 'laboratorio:update' db.id %}{%else%}{% url 'laboratorio:create' %}{%endif%}" method="post">
         <div class="mb-3">
           {% csrf_token %}

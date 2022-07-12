@@ -1,33 +1,28 @@
 {% extends 'base.html' %}
-
+{% block title %}
+    Gestor Lab - Cadastrar TCC
+{% endblock title %}
 {% block content %}
-<div class='col-8 m-auto pt-2 pb-2 text-center'>
-
-  {% block titulo %}
-  <h1>Cadastrar TCC</h1>
-  {% endblock  %}
-  
-</div>
-
-<div class='col-8 m-auto pt-3 pb-2 text-center'>
-  {% block botao %}
-  <a href="/tcc/" class="btn btn-info">voltar</a>
-  {% endblock  %}
-</div>
-<div class='col-8 m-auto pt-4 pb-2 text-center'>
-  <form name="form" id="form" action="{%if db %}{% url 'tcc:update' db.id %}{%else%}{% url 'tcc:create' %}{%endif%}" method="post">
-      {% block form %}
-      {% csrf_token %}
-      <div class='form-group mt-4'>Título: {{form.titulo}}</div>
-      <div class='form-group mt-4'>Autores: {{form.autores}}</div>
-      <div class='form-group mt-4'>Orientadores: {{form.orientadores}}</div>
-      <div class='form-group mt-4'>Instituição: {{form.instituicao}}</div>
-      <div class='form-group mt-4'>Data de publicação: {{form.dtpublicacao}}</div>
-      <div class='form-group mt-4'>Pesquisa: {{form.pesquisa}}</div>
-      <div class='form-group mt-4'>Descrição: {{form.descricao}}</div>
-      <div class='form-group mt-4'></div>
-      <input type="submit" class="btn btn-success" value="Salvar">
-      {% endblock form %}
-  </form>
+<div>
+  <div class='col-8 m-auto pt-4 lab-forms shadow mt-4'>
+    <div class="lab-cadastro text-center">
+      <h1>Cadastrar Tcc</h1>
+    </div>
+    <form name="form" id="form" action="{%if db %}{% url 'tcc:update' db.id %}{%else%}{% url 'tcc:create' %}{%endif%}" method="post">
+      <div class="mb-3">
+        {% csrf_token %}
+        <div class='form-group mt-4 desc'>Título: {{form.titulo}}</div>
+        <div class='form-group mt-4 desc'>Autores: {{form.autores}}</div>
+        <div class='form-group mt-4 desc'>Orientadores: {{form.orientadores}}</div>
+        <div class='form-group mt-4 desc'>Instituição: {{form.instituicao}}</div>
+        <div class='form-group mt-4 desc'>Data de publicação: {{form.dtpublicacao}}</div>
+        <div class='form-group mt-4 desc'>Pesquisa: {{form.pesquisa}}</div>
+        <div class='form-group mt-4 desc'>Descrição: {{form.descricao}}</div>
+        <div class='form-group mt-4'></div>
+        <input type="submit" class="btn btn-cadastrar" value="Cadastrar">
+        <a href="/tcc/" class="btn btn-voltar">voltar</a>
+      </div>
+    </form>
+  </div>
 </div>
 {% endblock content %}
