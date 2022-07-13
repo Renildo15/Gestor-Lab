@@ -1,23 +1,22 @@
 {% extends 'base.html' %}
-
+{% block title %}
+    Visualização {{db.titulo}}
+{% endblock title %}
 {% block content %}
-<div class='col-8 m-auto pt-2 pb-2 text-center'>
-  {% block view %}
-  <h1>Visualização da Apresentação</h1>
-  {% endblock view %}
-</div>
 
-<div class='col-8 m-auto pt-3 pb-2 text-center'>
-  <a href="/apresentacao/" class="btn btn-info">voltar</a>
+<div class='col-8 m-auto pt-2 pb-2 text-center mt-4'>
+  <h1>Visualização {{db.titulo}}</h1>
 </div>
-<div class='col-8 m-auto pt-4 pb-2 text-center'>
-  {% block dados %}
-  <strong>Título: </strong>{{db.titulo}}<br>
-  <strong>Autores: </strong>{{db.autores}}<br>
-  <strong>Data da apresesentação: </strong>{{db.dataApresentacao}}<br>
-  <strong>Projeto: </strong>{{db.projeto}}<br>
-  <strong>Descrição: </strong>{{db.descricao}}<br>
-
-  {% endblock dados %}
+<div class='col-8 m-auto pt-4 pb-4'>
+  <div class="list-view-lab">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><strong>Título: </strong>{{db.titulo}}<br>
+      <li class="list-group-item"><strong>Autores: </strong>{{db.autores}}<br>
+      <li class="list-group-item"><strong>Data da apresesentação: </strong>{{db.dataApresentacao}}<br>
+      <li class="list-group-item"><strong>Projeto: </strong>{{db.projeto}}<br>
+      <li class="list-group-item"><strong>Descrição: </strong>{{db.descricao}}<br>
+    </ul>
+  </div>
+  <a href="/apresentacao/" class="btn btn-voltar">voltar</a>
 </div>
 {% endblock content %}

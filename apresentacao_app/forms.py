@@ -9,16 +9,12 @@ class ApresentacaoForm(forms.ModelForm):
     class Meta:
         model = Apresentacao
         fields = '__all__'
-        labels = {
-            'titulo': 'Titulo',
-            'autores': 'Autores',
-            'descricao': 'Descricao',
-            'projeto': 'Projeto',
-
-        }
         widgets = {
-
-            "dataApresentacao":   DateInput(),
+            'titulo': forms.TextInput(attrs={'class': 'form-control'}),
+            "dataApresentacao": DateInput(attrs={'class': 'form-control'}),
+            'autores': forms.Select(attrs={'class': 'form-control'}),
+            'projeto': forms.Select(attrs={'class': 'form-control'}),
+            'descricao': forms.Textarea(attrs={'class': 'form-control'})
         }
 
 
