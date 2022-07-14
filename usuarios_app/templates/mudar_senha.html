@@ -15,16 +15,16 @@
                 
         </div>
 
-        <div class=" shadow p-4 bg-body rounded mb-5 col-md">
+        <div class=" shadow p-4 bg-body rounded mb-5 col-md mt-5">
             <h1>Alterar Senha</h1>
             <hr>
 
-            <form method="POST" action="{% url 'mudar_senha' %}">
+            <form method="POST" action="{% url 'mudar_senha' %}" class='teste'>
                 {% csrf_token %}
                 {{form_senha.as_p}}
             
-                <input class="btn btn-info btn-lg" type="submit" value="Enviar">
-                <a href="{% url 'logar_user' %}" class="btn btn-warning btn-lg">Login</a>
+                <input class="btn btn-register btn-lg" type="submit" value="Cadastrar-se">
+                <a href="{% url 'logar_user' %}" class="btn btn-login-register btn-lg">Login</a>
             </form>
         </div>
 

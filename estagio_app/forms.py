@@ -1,17 +1,18 @@
 from django.forms import ModelForm
 from .models import Estagio
+from django import forms
 
 class estForm(ModelForm):
     class Meta:
 
         model = Estagio
         fields = '__all__'
-        labels = {
-                'esta': 'Nome',
-                'orientador': 'Nome',
-                'supervisor': 'Nome',
-                'atividade': 'Atividade',
-                'laboratorio': 'Laboratorio',
+        widgets = {
+                'estagiario': forms.Select(attrs={'class': 'form-control'}),
+                'orientador': forms.Select(attrs={'class': 'form-control'}),
+                'supervisor': forms.Select(attrs={'class': 'form-control'}),
+                'atividade': forms.TextInput(attrs={'class': 'form-control'}),
+                'laboratorio': forms.Select(attrs={'class': 'form-control'}),
         }
 
     def __init__(self, *args, **kwargs):

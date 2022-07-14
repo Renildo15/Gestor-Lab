@@ -1,19 +1,22 @@
 {% extends 'base.html' %}
+{% block title %}
+    Visualização {{est.estagiario}}
+{% endblock title %}
 {% block content %}
-<div class='col-8 m-auto pt-2 pb-2 text-center'>
-  <h1>Visualização do estagio</h1>
-</div>
 
-<div class='col-8 m-auto pt-3 pb-2 text-center'>
-  <a href="/estagio/" class="btn btn-info">voltar</a>
+<div class='col-8 m-auto pt-2 pb-2 text-center mt-4'>
+  <h1>Visualização {{est.atividade}}</h1>
 </div>
-<div class='col-8 m-auto pt-4 pb-2 text-center'>
-  {% block dados %}
-  <strong>Estagiario: </strong>{{est.estagiario}}<br>
-  <strong>Orientador: </strong>{{est.orientador}}<br>
-  <strong>Supervisor: </strong>{{est.supervisor}}<br>
-  <strong>Atividade: </strong>{{est.atividade}}<br>
-  <strong>Laborátorio: </strong>{{est.laboratorio}}<br>
-  {% endblock dados %}
+<div class='col-8 m-auto pt-4 pb-4'>
+  <div class="list-view-lab">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><strong>Estagiario: </strong>{{est.estagiario}}<br></li>
+      <li class="list-group-item"><strong>Orientador: </strong>{{est.orientador}}<br></li>
+      <li class="list-group-item"><strong>Supervisor: </strong>{{est.supervisor}}<br></li>
+      <li class="list-group-item"><strong>Atividade: </strong>{{est.atividade}}<br></li>
+      <li class="list-group-item"><strong>Laborátorio: </strong>{{est.laboratorio}}<br></li>
+    </ul>
+  </div>
+  <a href="/estagio/" class="btn btn-voltar">voltar</a>
 </div>
 {% endblock content %}

@@ -1,31 +1,28 @@
 {% extends 'base.html' %}
-
+{% block title %}
+    Gestor Lab - Cadastrar Artigo
+{% endblock title %}
 {% block content %}
-<div class='col-8 m-auto pt-2 pb-2 text-center'>
-
-  {% block titulo %}
-  <h1>Cadastrar Artigo</h1>
-  {% endblock  %}
-  
-</div>
-
-<div class='col-8 m-auto pt-3 pb-2 text-center'>
-  {% block botao %}
-  <a href="/artigo/" class="btn btn-info">voltar</a>
-  {% endblock  %}
-</div>
-<div class='col-8 m-auto pt-4 pb-2 text-center'>
-  <form name="form" id="form" action="{%if art %}{% url 'artigo:artUpdate' art.id %}{%else%}{% url 'artigo:artCreate' %}{%endif%}" method="post">
-      {% block form %}
+<div>
+  <div class='col-8 m-auto pt-4 lab-forms shadow mt-4'>
+    {% block titulo %}
+    <div class="lab-cadastro text-center">
+      <h1>Cadastrar artigo</h1>
+    </div>
+    {% endblock  %}
+    <form name="form" id="form" action="{%if art %}{% url 'artigo:artUpdate' art.id %}{%else%}{% url 'artigo:artCreate' %}{%endif%}" method="post">
       {% csrf_token %}
-      <div class='form-group mt-4'>Título: {{form.titulo}}</div>
-      <div class='form-group mt-4'>Autores: {{form.autores}}</div>
-      <div class='form-group mt-4'>Local de Pubicação: {{form.local_Publi}}</div>
-      <div class='form-group mt-4'>Laboratório {{form.laboratorio_art}}</div>
-      <div class='form-group mt-4'>Descrição: {{form.descricao}}</div>
-      <div class='form-group mt-4'></div>
-      <input type="submit" class="btn btn-success" value="Salvar">
-      {% endblock form %}
+      <div class="mb-3">
+        <div class='form-group mt-4 titulo'>Título: {{form.titulo}}</div>
+        <div class='form-group mt-4 autor'>Autores: {{form.autores}}</div>
+        <div class='form-group mt-4 local'>Local de Pubicação: {{form.local_Publi}}</div>
+        <div class='form-group mt-4 lab'>Laboratório {{form.laboratorio_art}}</div>
+        <div class='form-group mt-4 desc'>Descrição: {{form.descricao}}</div>
+        <div class='form-group mt-4'></div>
+        <input type="submit" class="btn btn-cadastrar" value="Cadastrar">
+        <a href="/artigo/" class="btn btn-voltar">Voltar</a>  
+      </div>
   </form>
+  </div>
 </div>
 {% endblock content %}

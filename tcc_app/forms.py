@@ -7,17 +7,15 @@ class TccForm(forms.ModelForm):
     class Meta:
         model = Tcc
         fields = '__all__'
-        labels = {
-            'titulo': 'Titulo',
-            'autores': 'Autores',
-            'orientadores': 'Orientadores',
-            'instituicao': 'Instituicao',
-            'descricao': 'Descricao',
-            'pesquisa': 'Pesquisa',
-        }
         widgets = {
 
-            "dtpublicacao":   DateInput(),
+            'titulo': forms.TextInput(attrs={'class': 'form-control'}),
+            'autores': forms.Select(attrs={'class': 'form-control'}),
+            'orientadores': forms.Select(attrs={'class': 'form-control'}),
+            'instituicao': forms.TextInput(attrs={'class': 'form-control'}),
+            "dtpublicacao": DateInput(attrs={'class': 'form-control'}),
+            'pesquisa': forms.Select(attrs={'class': 'form-control'}),
+            'descricao': forms.Textarea(attrs={'class': 'form-control'})
         }
         
     def __init__(self, *args, **kwargs):

@@ -1,22 +1,24 @@
 {% extends 'base.html' %}
-
+{% block title %}
+    Visualização {{db.nome}}
+{% endblock title %}
 {% block content %}
-<div class='col-8 m-auto pt-2 pb-2 text-center'>
-  {% block view %}
-  <h1>Visualização do laboratório</h1>
-  {% endblock view %}
-</div>
 
-<div class='col-8 m-auto pt-3 pb-2 text-center'>
-  <a href="/laboratorio/" class="btn btn-info">voltar</a>
+<div class='col-8 m-auto pt-2 pb-2 text-center mt-4'>
+  <h1>Visualização {{db.nome}}</h1>
 </div>
-<div class='col-8 m-auto pt-4 pb-2 text-center'>
+<div class='col-8 m-auto pt-4 pb-4'>
   {% block dados %}
-  <strong>Nome: </strong>{{db.nome}}<br>
-  <strong>Sigla: </strong>{{db.sigla}}<br>
-  <strong>Coordenador: </strong>{{db.coordenador}}<br>
-  <strong>Vice-coordenador: </strong>{{db.vice_coordenador}}<br>
-  <strong>Descrição: </strong>{{db.descricao}}<br>
+  <div class="list-view-lab">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><strong>Nome: </strong>{{db.nome}}<br></li>
+      <li class="list-group-item"><strong>Sigla: </strong>{{db.sigla}}<br></li>
+      <li class="list-group-item"><strong>Coordenador: </strong>{{db.coordenador}}<br></li>
+      <li class="list-group-item"><strong>Vice-coordenador: </strong>{{db.vice_coordenador}}<br></li>
+      <li class="list-group-item"><strong>Descrição: </strong>{{db.descricao}}<br></li>
+    </ul>
+  </div>
+  <a href="/laboratorio/" class="btn btn-voltar">voltar</a>
   {% endblock dados %}
 </div>
 {% endblock content %}

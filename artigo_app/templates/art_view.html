@@ -1,22 +1,25 @@
 {% extends 'base.html' %}
+{% block title %}
+    Visualização {{art.titulo}}
+{% endblock title %}
 
 {% block content %}
-<div class='col-8 m-auto pt-2 pb-2 text-center'>
-  {% block view %}
-  <h1>Visualização do artigo</h1>
-  {% endblock view %}
+<div class='col-8 m-auto pt-2 pb-2 text-center mt-4'>
+  <h1>Visualização {{art.titulo}}</h1>
 </div>
 
-<div class='col-8 m-auto pt-3 pb-2 text-center'>
-  <a href="/artigo/" class="btn btn-info">voltar</a>
-</div>
-<div class='col-8 m-auto pt-4 pb-2 text-center'>
+<div class='col-8 m-auto pt-4 pb-4'>
   {% block dados %}
-  <strong>Título: </strong>{{art.titulo}}<br>
-  <strong>Autores: </strong>{{art.autores}}<br>
-  <strong>Local de Publicação: </strong>{{art.local_Publi}}<br>
-  <strong>Descrição: </strong>{{art.descricao}}<br>
-  <strong>Laboratório: </strong>{{art.laboratorio_art}}<br>
+  <div class="list-view-lab">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><strong>Título: </strong>{{art.titulo}}<br></li>
+      <li class="list-group-item"><strong>Autores: </strong>{{art.autores}}<br></li>
+      <li class="list-group-item"><strong>Local de Publicação: </strong><a href={{arts.local_Publi}}>{{art.local_Publi}}</a><br></li>
+      <li class="list-group-item"><strong>Laboratório: </strong>{{art.laboratorio_art}}<br></li>
+      <li class="list-group-item"><strong>Descrição: </strong>{{art.descricao}}<br></li>
+    </ul>
+  </div>
+  <a href="/artigo/" class="btn btn-voltar">voltar</a>
   {% endblock dados %}
 </div>
 {% endblock content %}

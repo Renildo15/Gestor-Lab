@@ -1,84 +1,84 @@
 {% extends 'base.html' %}
-
+{% block title %}
+    Gestor Lab - Estágios
+{% endblock title %}
 {% block content %}
-<div class='col-8 m-auto pt-2 pb-2 text-center'>
-  <h1>Estagios</h1>
-</div>
-
-<div class='col-8 m-auto pt-3 pb-2 text-center'>
-  {% if user.is_authenticated %}
-  <a href="{% url 'estagio:estForm' %}" class="btn btn-add">Adicionar Estagios</a>
+<div class="container">
+  <div>
+    <div class="lab-titulo">
+      <h1 class="lab">Estagios</h1>
+      {% if user.is_authenticated %}
+        <a href="{% url 'estagio:estForm' %}" class="btn btn-add">Adicionar Estagios</a>
+      {% endif %}
+    </div>
+  </div>
+  <div class="lab-form row">
+    <form method="GET" id="search-form">
+      <div class="input-group mb-3">
+        <input class="form-control input-lab" type="text" id="search" name="search" placeholder="Digite o titulo da atividade para buscar..." value="{{ request.GET.search }}">
+        <button class="btn btn-search" type="submit" id="button-addon1">Buscar</button>
+      </div>
+    </form>
+  </div>
+  <hr>
+  {% if page %}
+  <div class="table-lab">
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Estagiario</th>
+            <th scope="col">Orientador</th>
+            <th scope="col">Supervisor</th>
+            <th scope="col">Atividade</th>
+            <th scope="col">Laboratório</th>
+            <th scope="col"></th>
+            
+          </tr>
+        </thead>
+        <tbody>
+            {% for ests in page %}
+                <tr>
+                    
+                    <td>{{ests.estagiario}}</td>
+                    <td>{{ests.orientador}}</td>
+                    <td>{{ests.supervisor}}</td>
+                    <td>{{ests.atividade}}</td>
+                    <td>{{ests.laboratorio}}</td>
+  
+                    {% if user.is_authenticated %}
+                    <td>
+                      <a href="{% url 'estagio:estView' ests.id %}" class="btn btn-view">Visualizar</a>
+                      <a href="{% url 'estagio:estEdit' ests.id %}" class="btn btn-edit">Editar</a></th>
+                      <form method="post" action="{% url 'estagio:estDelete' ests.id %}" class="btn">
+                          {% csrf_token %}
+                          <button type="submit" class="btn btn-delete">
+                              Deletar
+                          </button>
+                      </form>
+                    </td>
+                    {% else %}
+                    <td></td>
+                    {% endif %}
+                    
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="page-links">
+      {% if page.has_previous %}
+        <a href="{% url 'estagio:home' %}?page={{page.previous_page_number}}">Anterior</a>
+      {% endif %}
+      {% if page.has_next %}
+        <a href="{% url 'estagio:home' %}?page={{page.next_page_number}}">Próximo</a>
+      {% endif %}
+    </div>
+  </div>
+  {% else %}
+  <div class="lab-vazio">
+    <h1>
+      Não há estagios cadastrados
+    </h1>
+  </div>
   {% endif %}
 </div>
-{% if page %}
-<div class='col-8 m-auto pt-4 pb-2 text-center'>
-  <div class="col-9 search-div">
-    <form method="GET" id="search-form">
-        <input class="form-control" type="text" id="search" name="search" placeholder="Digite o titulo da atividade para buscar..." value="{{ request.GET.search }}">
-        <i class="fa fa-search" id="search-btn"></i>
-    </form>
-  </div>
-  <table class="table">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">Estagiario</th>
-          <th scope="col">Orientador</th>
-          <th scope="col">Supervisor</th>
-          <th scope="col">Atividade</th>
-          <th scope="col">Laboratório</th>
-          <th scope="col"></th>
-          
-        </tr>
-      </thead>
-      <tbody>
-          {% for ests in page %}
-              <tr>
-                  
-                  <td>{{ests.estagiario}}</td>
-                  <td>{{ests.orientador}}</td>
-                  <td>{{ests.supervisor}}</td>
-                  <td>{{ests.atividade}}</td>
-                  <td>{{ests.laboratorio}}</td>
-
-                  {% if user.is_authenticated %}
-                  <td>
-                    <a href="{% url 'estagio:estView' ests.id %}" class="btn btn-view">Visualizar</a>
-                    <a href="{% url 'estagio:estEdit' ests.id %}" class="btn btn-edit">Editar</a></th>
-                    <form method="post" action="{% url 'estagio:estDelete' ests.id %}" class="btn">
-                        {% csrf_token %}
-                        <button type="submit" class="btn btn-delete">
-                            Deletar
-                        </button>
-                    </form>
-                  </td>
-                  {% else %}
-                  <td></td>
-                  {% endif %}
-                  
-              </tr>
-          {% endfor %}
-      </tbody>
-  </table>
-  <div class="page-links">
-    {% if page.has_previous %}
-      <a href="{% url 'estagio:home' %}?page={{page.previous_page_number}}">Anterior</a>
-    {% endif %}
-    {% if page.has_next %}
-      <a href="{% url 'estagio:home' %}?page={{page.next_page_number}}">Próximo</a>
-    {% endif %}
-  </div>
-</div>
-{% else %}
-<div class='col-8 m-auto pt-4 pb-2 text-center'>
-  <div class="col-9 search-div">
-    <form method="GET" id="search-form">
-        <input class="form-control" type="text" id="search" name="search" placeholder="Digite o titulo da atividade para buscar..." value="{{ request.GET.search }}">
-        <i class="fa fa-search" id="search-btn"></i>
-    </form>
-  </div>
-  <h1 class ='text-center mt-5'>
-    Não há estagios cadastrados
-  </h1>
-</div>
-{% endif %}
 {% endblock content %}

@@ -5,8 +5,8 @@ services:
     container_name: postgres-server-gestor-lab
     image: postgres:latest
     volumes:
-      - $HOME_DB/postgres/postgresql:/var/lib/postgresql
-      - $HOME_DB/postgres/postgresql_data:/var/lib/postgresql/data
+      - C:\Users\Habby\Desktop\Gestor_Lab\postgres\postgresql:\var\lib\postgresql
+      - C:\Users\Habby\Desktop\Gestor_Lab\postgres\postgresql_data:\var\lib\postgresql\data
     environment:
       - POSTGRES_USER=postgres_user
       - POSTGRES_PASSWORD=password

@@ -1,20 +1,26 @@
 {% extends 'base.html' %}
+{% block title %}
+    Visualização {{evt.titulo}}
+{% endblock title %}
+
 {% block content %}
-<div class='col-8 m-auto pt-2 pb-2 text-center'>
-  <h1>Visualização do evento</h1>
+<div class='col-8 m-auto pt-2 pb-2 text-center mt-4'>
+  <h1>Visualização {{evt.titulo}}</h1>
 </div>
 
-<div class='col-8 m-auto pt-3 pb-2 text-center'>
-  <a href="/evento/" class="btn btn-info">voltar</a>
-</div>
-<div class='col-8 m-auto pt-4 pb-2 text-center'>
+<div class='col-8 m-auto pt-4 pb-4'>
   {% block dados %}
-  <strong>Título: </strong>{{evt.titulo}}<br>
-  <strong>Área: </strong>{{evt.area}}<br>
-  <strong>Laboratório: </strong>{{evt.laboratorio}}<br>
-  <strong>Site: </strong>{{evt.site}}<br>
-  <strong>Data: </strong>{{evt.data_sbm}}<br>
-  <strong>Descrição: </strong>{{evt.descricao}}<br>
+  <div class="list-view-lab">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><strong>Título: </strong>{{evt.titulo}}<br></li>
+      <li class="list-group-item"><strong>Área: </strong>{{evt.area}}<br></li>
+      <li class="list-group-item"><strong>Laboratório: </strong>{{evt.laboratorio}}<br></li>
+      <li class="list-group-item"><strong>Site: </strong><a href ={{evts.site}}>{{evt.site}}</a><br></li>
+      <li class="list-group-item"><strong>Data: </strong>{{evt.data_sbm}}<br></li>
+      <li class="list-group-item"><strong>Descrição: </strong>{{evt.descricao}}<br></li>
+    </ul>
+  </div>
+  <a href="/evento/" class="btn btn-voltar">voltar</a>
   {% endblock dados %}
 </div>
 {% endblock content %}

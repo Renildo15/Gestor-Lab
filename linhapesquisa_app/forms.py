@@ -7,12 +7,12 @@ class LinhaForm(forms.ModelForm):
     class Meta:
         model = LinhaPesquisa
         fields = '__all__'
-        labels = {
-            'nome': 'Nome',
-            'descricao': 'Descrição',
-            'area': 'Área',
-            'cnpq': 'CNPQ',
-            'laboratório': 'Laboratório'
+        widgets = {
+            'nome': forms.TextInput(attrs={'class': 'form-control'}),
+            'descricao': forms.Textarea(attrs={'class': 'form-control'}),
+            'areaCNPQ': forms.TextInput(attrs={'class': 'form-control'}),
+            'subAreaCNPQ': forms.TextInput(attrs={'class': 'form-control'}),
+            'laboratorio_pesq': forms.Select(attrs={'class': 'form-control'})
         }
 
     def __init__(self, *args, **kwargs):

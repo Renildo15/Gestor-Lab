@@ -1,79 +1,80 @@
 {% extends 'base.html' %}
-
+{% block title %}
+  Gestor Lab - Laboratórios
+{% endblock title %}
 {% block content %}
-<div class='col-8 m-auto pt-2 pb-2 text-center'>
-  <h1>Laboratório</h1>
-</div>
-
-<div class='col-8 m-auto pt-3 pb-2 text-center'>
- {% if user.is_authenticated %}
- <a href="{% url 'laboratorio:form'%}" class="btn btn-add">Adicionar Laborátorio</a>
- {% endif %}
-</div>
-{% if page %}
-<div class='col-8 m-auto pt-4 pb-2 text-center'>
-  <div class="col-9 search-div">
-    <form method="GET" id="search-form">
-        <input class="form-control" type="text" id="search" name="search" placeholder="Digite o nome do laboratório para buscar..." value="{{ request.GET.search }}">
-        <i class="fa fa-search" id="search-btn"></i>
-    </form>
+<div class="container">
+  <div>
+    <div class="lab-titulo">
+      <h1 class="lab">Laboratórios</h1>
+      {% if user.is_authenticated %}
+        <a href="{% url 'laboratorio:form'%}" class="btn btn-add">
+          <i class="fa fa-plus-square" aria-hidden="true"></i>
+          Adicionar Laborátorio
+        </a>
+      {% endif %} 
+    </div>   
   </div>
-  <table class="table">
-      <thead class="thead-dark">
-        <tr>
-          {% block th %}
-          <th scope="col">Nome</th>
-          <th scope="col">Sigla</th>
-          <th scope="col">Coordenador</th>
-          <th scope="col">Vice-coordenador</th>
-          <th scope="col">Descrição</th>
-          <th scope="col"></th>
-          {% endblock th %}
-        </tr>
-      </thead>
-      <tbody>
-          {% for dbs in page %}
-              <tr>
-                  {% block linhas %}
-                  <td>{{dbs.nome}}</td>
-                  <td>{{dbs.sigla}}</td>
-                  <td>{{dbs.coordenador}}</td>
-                  <td>{{dbs.vice_coordenador}}</td>
-                  <td>{{dbs.descricao}}</td>
-                  {% if user.is_authenticated %}
-                  <td>
-                    <a href="{% url 'laboratorio:view' dbs.id %}" class="btn btn-view">Visualizar</a>
-                    <a href="{% url 'laboratorio:edit' dbs.id %}" class="btn btn-edit">Editar</a>
-                    <a href="{% url 'laboratorio:delete' dbs.id %}" class="btn btn-delete">Deletar</a>
-                  </td>
-                  {% else%}
-                  <td></td>
-                  {% endif %}
-                  {% endblock linhas %}
-              </tr>
-          {% endfor %}
-      </tbody>
-  </table>
-  <div class="page-links">
-    {% if page.has_previous %}
-      <a href="{% url 'laboratorio:home' %}?page={{page.previous_page_number}}">Anterior</a>
-    {% endif %}
-    {% if page.has_next %}
-      <a href="{% url 'laboratorio:home' %}?page={{page.next_page_number}}">Próximo</a>
-    {% endif %}
+    <div class="lab-form row">
+      <form method="GET" id="search-form">
+        <div class="input-group mb-3">
+           <input class="form-control input-lab" type="text" id="search" name="search" placeholder="Digite o nome do laboratório para buscar..." value="{{ request.GET.search }}">
+           <button class="btn btn-search" type="submit" id="button-addon1">Buscar</button>
+        </div>
+      </form>
+    </div>
+    <hr>
+  {% if page %}
+  <div class="table-lab">
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            {% block th %}
+            <th scope="col">Nome</th>
+            <th scope="col">Sigla</th>
+            <th scope="col">Coordenador</th>
+            <th scope="col">Vice-coordenador</th>
+            <th scope="col"></th>
+            {% endblock th %}
+          </tr>
+        </thead>
+        <tbody>
+            {% for dbs in page %}
+                <tr>
+                    {% block linhas %}
+                    <td>{{dbs.nome}}</td>
+                    <td>{{dbs.sigla}}</td>
+                    <td>{{dbs.coordenador}}</td>
+                    <td>{{dbs.vice_coordenador}}</td>
+                    {% if user.is_authenticated %}
+                    <td>
+                      <a href="{% url 'laboratorio:view' dbs.id %}" class="btn btn-view">Visualizar</a>
+                      <a href="{% url 'laboratorio:edit' dbs.id %}" class="btn btn-edit">Editar</a>
+                      <a href="{% url 'laboratorio:delete' dbs.id %}" class="btn btn-delete">Deletar</a>
+                    </td>
+                    {% else%}
+                    <td></td>
+                    {% endif %}
+                    {% endblock linhas %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="page-links">
+      {% if page.has_previous %}
+        <a href="{% url 'laboratorio:home' %}?page={{page.previous_page_number}}">Anterior</a>
+      {% endif %}
+      {% if page.has_next %}
+        <a href="{% url 'laboratorio:home' %}?page={{page.next_page_number}}">Próximo</a>
+      {% endif %}
+    </div>
   </div>
-</div>
-{% else %}
-<div class='col-8 m-auto pt-4 pb-2 text-center'>
-  <div class="col-9 search-div">
-    <form method="GET" id="search-form">
-        <input class="form-control" type="text" id="search" name="search" placeholder="Digite o nome do laboratório para buscar..." value="{{ request.GET.search }}">
-        <i class="fa fa-search" id="search-btn"></i>
-    </form>
+  {% else %}
+  <div class="lab-vazio">
+    <h1>
+      Não há laboratorios cadastrados
+    </h1>
   </div>
-  <h1 class ='text-center mt-5'>
-    Não há laboratorios cadastrados
-  </h1>
+  {% endif %}
 </div>
-{% endif %}
 {% endblock content %}

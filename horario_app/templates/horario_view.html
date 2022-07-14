@@ -1,23 +1,22 @@
 {% extends 'base.html' %}
-
+{% block title %}
+    Visualização Horário
+{% endblock title %}
 {% block content %}
-<div class='col-8 m-auto pt-2 pb-2 text-center'>
-  {% block view %}
+<div class='col-8 m-auto pt-2 pb-2 text-center mt-4'>
   <h1>Visualização do Horário</h1>
-  {% endblock view %}
 </div>
 
-<div class='col-8 m-auto pt-3 pb-2 text-center'>
-  <a href="/horario/" class="btn btn-info">voltar</a>
-</div>
-<div class='col-8 m-auto pt-4 pb-2 text-center'>
-  {% block dados %}
-  <strong>Dia: </strong>{{db.dia_semana}}<br>
-  <strong>Turno: </strong>{{db.turno}}<br>
-  <strong>Horário Entrada: </strong>{{db.horario_entrada}}<br>
-  <strong>Horário Saída: </strong>{{db.horario_entrada}}<br>
-  <strong>Membro: </strong>{{db.membro}}<br>
-
-  {% endblock dados %}
+<div class='col-8 m-auto pt-4 pb-4'>
+  <div class="list-view-lab">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><strong>Membro: </strong>{{db.membro}}<br></li>
+      <li class="list-group-item"><strong>Dia: </strong>{{db.dia_semana}}<br></li>
+      <li class="list-group-item"><strong>Turno: </strong>{{db.turno}}<br></li>
+      <li class="list-group-item"><strong>Horário Entrada: </strong>{{db.horario_entrada}}<br></li>
+      <li class="list-group-item"><strong>Horário Saída: </strong>{{db.horario_entrada}}<br></li>
+    </ul>
+  </div>
+  <a href="/horario/" class="btn btn-voltar">voltar</a>
 </div>
 {% endblock content %}

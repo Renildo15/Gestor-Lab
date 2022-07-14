@@ -1,31 +1,26 @@
 {% extends 'base.html' %}
-
+{% block title %}
+    Gestor Lab - Cadastrar Estagiário
+{% endblock title %}
 {% block content %}
-<div class='col-8 m-auto pt-2 pb-2 text-center'>
-
-  {% block titulo %}
-  <h1>Cadastrar Estagio</h1>
-  {% endblock  %}
-  
-</div>
-
-<div class='col-8 m-auto pt-3 pb-2 text-center'>
-  {% block botao %}
-  <a href="/estagio/" class="btn btn-info">voltar</a>
-  {% endblock  %}
-</div>
-<div class='col-8 m-auto pt-4 pb-2 text-center'>
-  <form name="form" id="form" action="{%if est %}{% url 'estagio:estUpdate' est.id %}{%else%}{% url 'estagio:estCreate' %}{%endif%}" method="post">
-      {% block form %}
-      {% csrf_token %}
-      <div class='form-group mt-4'>Estagiario: {{form.estagiario}}</div>
-      <div class='form-group mt-4'>Orientador: {{form.orientador}}</div>
-      <div class='form-group mt-4'>Supervisor: {{form.supervisor}}</div>
-      <div class='form-group mt-4'>Atividade: {{form.atividade}}</div>
-      <div class='form-group mt-4'>Laboratório: {{form.laboratorio}}</div>
-      <div class='form-group mt-4'></div>
-      <input type="submit" class="btn btn-success" value="Salvar">
-      {% endblock form %}
+<div>
+  <div class='col-8 m-auto pt-4 lab-forms shadow mt-4'>
+    <div class="lab-cadastro text-center">
+      <h1>Cadastrar estágiario</h1>
+    </div>
+    <form name="form" id="form" action="{%if est %}{% url 'estagio:estUpdate' est.id %}{%else%}{% url 'estagio:estCreate' %}{%endif%}" method="post">
+      <div class="mb-3">
+        {% csrf_token %}
+        <div class='form-group mt-4 desc'>Estagiario: {{form.estagiario}}</div>
+        <div class='form-group mt-4 desc'>Orientador: {{form.orientador}}</div>
+        <div class='form-group mt-4 desc'>Supervisor: {{form.supervisor}}</div>
+        <div class='form-group mt-4 desc '>Atividade: {{form.atividade}}</div>
+        <div class='form-group mt-4 desc'>Laboratório: {{form.laboratorio}}</div>
+        <div class='form-group mt-4'></div>
+        <input type="submit" class="btn btn-cadastrar" value="Cadastrar">
+        <a href="/estagio/" class="btn btn-voltar">Voltar</a>
+      </div>
   </form>
+  </div>
 </div>
 {% endblock content %}

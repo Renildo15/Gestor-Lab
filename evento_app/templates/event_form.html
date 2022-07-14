@@ -1,31 +1,31 @@
 {% extends 'base.html' %}
-
+{% block title %}
+    Gestor Lab - Cadastrar Evento
+{% endblock title %}
 {% block content %}
-<div class='col-8 m-auto pt-2 pb-2 text-center'>
+<div>
+  <div class='col-8 m-auto pt-4 lab-forms shadow mt-4'>
+    {% block titulo %}
+    <div class="lab-cadastro text-center">
+      <h1>Cadastrar Evento</h1>
+    </div>
+    {% endblock  %}
+    <form name="form" id="form" action="{%if evt %}{% url 'evento:eventUpdate' evt.id %}{%else%}{% url 'evento:eventCreate' %}{%endif%}" method="post">
+      <div class="mb-3">
+        {% csrf_token %}
+        <div class='form-group mt-4 titulo'>Título: {{form.titulo}}</div>
+        <div class='form-group mt-4 desc'>Data: {{form.data_sbm}}</div>
+        <div class='form-group mt-4 area'>Área: {{form.area}}</div>
+        <div class='form-group mt-4 lab'>Laboratório: {{form.laboratorio}}</div>
+        <div class='form-group mt-4 site'>Site: {{form.site}}</div>
+        <div class='form-group mt-4 desc'>Descrição: {{form.descricao}}</div>
+        <div class='form-group mt-4'></div>
+        <input type="submit" class="btn btn-cadastrar" value="Cadastrar">
+        <a href="/evento/" class="btn btn-voltar">voltar</a>
+      </div>
 
-  {% block titulo %}
-  <h1>Cadastrar Evento</h1>
-  {% endblock  %}
-  
-</div>
-
-<div class='col-8 m-auto pt-3 pb-2 text-center'>
-  {% block botao %}
-  <a href="/evento/" class="btn btn-info">voltar</a>
-  {% endblock  %}
-</div>
-<div class='col-8 m-auto pt-4 pb-2 text-center'>
-  <form name="form" id="form" action="{%if evt %}{% url 'evento:eventUpdate' evt.id %}{%else%}{% url 'evento:eventCreate' %}{%endif%}" method="post">
-      {% block form %}
-      {% csrf_token %}
-      <div class='form-group mt-4'>Título: {{form.titulo}}</div>
-      <div class='form-group mt-4'>Área: {{form.area}}</div>
-      <div class='form-group mt-4'>Laboratório: {{form.laboratorio}}</div>
-      <div class='form-group mt-4'>Site: {{form.site}}</div>
-      <div class='form-group mt-4'>Descrição: {{form.descricao}}</div>
-      <div class='form-group mt-4'></div>
-      <input type="submit" class="btn btn-success" value="Salvar">
-      {% endblock form %}
   </form>
+  </div>
 </div>
+
 {% endblock content %}

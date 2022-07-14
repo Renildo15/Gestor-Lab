@@ -2,23 +2,24 @@
 {% load static %}
 
 {% block title %}
-    Visualização
+    Visualização {{membro.nome}}
 {% endblock title %}
 
 {% block content %}
-    <div class='col-8 m-auto pt-2 pb-2 text-center'>
-        <h1>Visualização do membro</h1>
+    <div class='col-8 m-auto pt-2 pb-2 text-center mt-4'>
+        <h1>Visualização {{membro.nome}}</h1>
     </div>
 
-    <div class='col-8 m-auto pt-3 pb-2 text-center'>
-        <a href="/membros" class="btn btn-info">Voltar</a>
-    </div>
-
-    <div class='col-8 m-auto pt-4 pb-2 text-center'>
-        <strong>Nome: </strong>{{membro.nome}}<br>
-        <strong>E-Mail: </strong>{{membro.email}}<br>
-        <strong>Telefone: </strong>{{membro.telefone}}<br>
-        <strong>Laboratório: </strong>{{membro.laboratorio}}<br>
-        <strong>Perfil: </strong>{{membro.membro_perfil}}<br>
+    <div class='col-8 m-auto pt-4 pb-4'>
+        <div class="list-view-lab">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Nome: </strong>{{membro.nome}}<br></li>
+                <li class="list-group-item"><strong>E-Mail: </strong>{{membro.email}}<br></li>
+                <li class="list-group-item"><strong>Telefone: </strong>{{membro.telefone}}<br></li>
+                <li class="list-group-item"><strong>Laboratório: </strong>{{membro.laboratorio}}<br></li>
+                <li class="list-group-item"><strong>Perfil: </strong>{{membro.membro_perfil}}<br></li>
+            </ul>
+        </div>
+        <a href="/membros" class="btn btn-voltar">Voltar</a>
     </div>
 {% endblock content %}
