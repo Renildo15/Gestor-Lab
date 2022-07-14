@@ -19,12 +19,11 @@
             <h1>Cadastre-se</h1>
             <hr>
 
-            <form method="POST" action="{% url 'cadastrar_user' %}">
+            <form method="POST" action="{% url 'cadastrar_user' %}" class='teste'>
                 {% csrf_token %}
                 {{form_usuario.as_p}}
-            
-                <input class="btn btn-info btn-lg" type="submit" value="Enviar">
-                <a href="{% url 'logar_user' %}" class="btn btn-warning btn-lg">Login</a>
+                <input class="btn btn-register btn-lg" type="submit" value="Cadastrar-se">
+                <a href="{% url 'logar_user' %}" class="btn btn-login-register btn-lg">Login</a>
             </form>
         </div>
 
