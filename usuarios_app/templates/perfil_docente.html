@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% block title %}
+  Gestor Lab - Perfil
+{% endblock title %}
+{% block content %}
+{% if user.is_authenticated %}
+<div class="container emp-profile">
+    <form method="post">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="profile-head">
+                            <h5>
+                                {{profile.nome}}
+                            </h5>
+                            <h6>
+                                Docente
+                            </h6>
+                </div>
+            </div>
+        </div>
+            <div class="col-md-8">
+                <div class="tab-content profile-tab" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Siape</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p> {{profile.siape}}</p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Nome</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{profile.nome}}</p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Email</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{user.email}}</p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Usuário</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{profile.usuario}}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Formação</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{profile.formacao}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Lotação</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{profile.lotacao}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>           
+</div>
+{% endif %}
+
+{% endblock content %}

@@ -4,6 +4,9 @@ from django.shortcuts import redirect, render
 from django.contrib import messages
 from django.http import HttpResponse
 from django.core.mail import send_mail, BadHeaderError
+from usuarios_app.models import Discente, Docente
+
+from usuarios_app.visoes.user_view import criar_usuario
 from .forms import RegisterUserForm, PasswordChangingForm
 from django.contrib.auth import authenticate,login, logout , update_session_auth_hash
 from django.contrib.auth.models import User
@@ -12,6 +15,7 @@ from django.db.models.query_utils import Q
 from django.utils.http import urlsafe_base64_encode
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.encoding import force_bytes
+from .visoes.user_view import criar_usuario, autenticar_logar, discente_existe, criar_string, docente_existe
 
 # Create your views here.
 
@@ -38,13 +42,15 @@ def cadastrar_user(request):
     if request.method == "POST":
        form_usuario = RegisterUserForm(request.POST)
        if form_usuario.is_valid():
-           form_usuario.save()
-           username = form_usuario.cleaned_data['username']
-           password = form_usuario.cleaned_data['password1']
-           user = authenticate(username=username, password=password)
-           login(request, user)
-           messages.success(request,("Cadastrado com sucesso!"))
-           return redirect('/')
+         try:
+             criar_usuario(request, form_usuario)
+             autenticar_logar(request, form_usuario)
+             messages.success(request,('Usuário cadastrado com sucesso.'))
+             return redirect('/')
+         except ValueError as e:
+            form_usuario.add_error(None, e)
+       else:
+            messages.error(request, 'O formulário contém dados inválidos!')     
     else:
        form_usuario = RegisterUserForm()
     return render(request,'cadastro.html', {'form_usuario': form_usuario})
@@ -102,3 +108,34 @@ def password_reset_request(request):
                     return redirect ("/auth/reset_password_sent/")
     password_reset_form = PasswordResetForm()
     return render(request=request, template_name="senha/password_reset.html", context={"password_reset_form":password_reset_form})
+
+
+
+def perfil(request,username):
+    usuario = User.objects.get(username=username)
+
+    if request.user != usuario:
+         messages.error(request, 'Você não tem permissão de visualizar esse Perfil.')
+         return redirect(request)
+
+    if discente_existe(usuario):
+        profile = usuario.discente
+        profile_link = 'perfil_discente.html'
+        grupos = criar_string(usuario.groups.all())
+    elif docente_existe(usuario):
+        profile = usuario.docente
+        profile_link = 'perfil_docente.html'
+        grupos = criar_string(usuario.groups.all())
+
+    else:
+        profile = None
+        profile_link = 'perfil_discente.html'
+        grupos = criar_string(usuario.groups.all())
+    context = {
+        'usuario': usuario,
+        'grupos': grupos,
+        'profile': profile,
+    }
+
+    print(grupos)
+    return render(request, profile_link, context)

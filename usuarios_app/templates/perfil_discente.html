@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% block title %}
+  Gestor Lab - Perfil
+{% endblock title %}
+{% block content %}
+{% if user.is_authenticated %}
+<div class="container emp-profile">
+    <form method="post">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="profile-head">
+                            <h5>
+                                {{profile.nome_discente}}
+                            </h5>
+                            <h6>
+                                Discente
+                            </h6>
+                </div>
+            </div>
+        </div>
+            <div class="col-md-8">
+                <div class="tab-content profile-tab" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Matrícula</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{profile.matricula}}</p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Nome</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{profile.nome_discente}}</p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Email</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{user.email}}</p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Usuário</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{profile.usuario}}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Ano ingresso</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{profile.ano_ingresso}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Forma de ingresso</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{profile.forma_ingresso}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Tipo discente</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{profile.tipo_discente}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Status</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p> {{profile.status}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Curso</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{profile.nome_curso}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>           
+</div>
+{% endif %}
+
+{% endblock content %}
