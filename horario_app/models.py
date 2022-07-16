@@ -1,5 +1,5 @@
 from django.db import models
-from membros_app.models import Membro
+from usuarios_app.models import Discente
 
 
 # Create your models here.
@@ -22,7 +22,7 @@ class Horario(models.Model):
     )
     turno = models.CharField(max_length=50, choices=os_choices)
     dia_semana = models.CharField(max_length=50,choices=dias_choices)
-    membro = models.ForeignKey(Membro, on_delete=models.CASCADE, related_name='membrohorario')
+    membro = models.ForeignKey(Discente, on_delete=models.CASCADE, related_name='membrohorario')
 
     def __str__(self):
         return self.titulo
