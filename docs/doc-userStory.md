@@ -353,7 +353,7 @@ Requisitos Envolvidos |      |
 RF037 | Cadastrar estágio    |
 RF038 | Alterar estágio      |
 RF039 | Listar estágio       |
-RF050 | Excluir estágio      |
+RF040 | Excluir estágio      |
 
 Prioridade | Essencial
 ---------- | --------
