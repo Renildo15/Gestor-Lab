@@ -55,7 +55,7 @@ RF014 - Atualizar projeto de ensino, Pesquisa ou Extensão | Permite a mudança 
 RF015 - Listar projeto de ensino, Pesquisa ou Extensão | Lista todos os projetos por todos tipo, ou por cada tipo. | Usuário
 RF016 - Deletar projeto de ensino, Pesquisa ou Extensão | Deleta o projeto de ensino, Pesquisa ou Extensão. | Administrador
 RF017 - Cadastrar evento | O evento possui título, descrição, área, data de submissão, site. | Professor
-RF018 - Atulizar evento | Permite a mudança no título, descrição, área e site. | professor
+RF018 - Atualizar evento | Permite a mudança no título, descrição, área e site. | professor
 RF019 - Listar eventos | Lista todos os eventos que serão realizados, que já ocorreram, ou todos os eventos. | Professor
 RF020 - Deleta evento | Deleta um evento do banco de dados. | Administrador
 RF021 - Cadastrar artigos publicados | Os artigos possuem título, autores, local de publicação e descrição. | Professor
@@ -75,7 +75,7 @@ RF034 - Atualizar apresentações | Permite a mudança no autor(es), e a vincula
 RF035 - Lista apresentações | Lista as apresentações que iram acontecer, que aconteceram, ou todas. | Professor
 RF036 - Deletar apresentação | Deleta uma apresentação. | Professor
 RF037 - Cadastrar estágios | Os estágios possuem informações do estagiário, orientador, supervisor e atividades. | Administrador
-RF038 - Aualizar estágios | Permite mudança nas informações do estagiário, orientador, supervisor e atividades. | Administrador
+RF038 - Atualizar estágios | Permite mudança nas informações do estagiário, orientador, supervisor e atividades. | Administrador
 RF039 - Listar estágios | lista os estágios ativos, encerrados ou todos. | Usuário
 RF040 - Deletar estágios | Deleta um estágio. | Administrador
 
@@ -103,3 +103,4 @@ Data | Risco | Prioridade | Responsável | status | Providência/Solução
 24/05/2022 | O código do projeto não rodar na máquina de um dos membros da equipe | Baixa | Todos | Resolvido | Os responsáveis devem Orientar a forma correta de executar o código do projeto |
 09/06/2022 | Um membro da equipe teve sua maquina danificada e não pode trabalhar no projeto | Alta | Membro | Não Resolvido | O membro deve concertar a maquina ou encontrar alguma que a substitua |
 09/06/2022 | O codigo do projeto apresentou erros no momento da execução | Alta | Gerente | Não Resolvido | O gerente deve buscar soluções junto aos membros da equipe para solucionar o problema |
+19/07/2022 |Excesso de tarefas passadas para serem resolvidas em um curto espaço de tempo| Alta | Todos | Resolvido | Enviar o que foi feito até agora
