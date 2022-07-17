@@ -7,6 +7,7 @@ Data | Versão |  Descrição |  Autor
 02/05/2022 | 0.0.1 | Detalhamento do User Story RF001 | Eduardo
 17/05/2022 |0.0.2|Atualização dos User Stories|Renildo
 13/06/2022 |0.0.3|Atualização dos User Stories|Jeison
+19/07/2022 |0.0.4|Atualização dos User Stories|Renildo
 
 ### User Story 001 - Manter laboratório de pesquisa:
 
@@ -237,10 +238,10 @@ Descrição | O Sistema deve manter um cadastro de TCC´s. Os trabalhos cadastra
 
 Requisitos Envolvidos |      |
 --------------------- | -------
-RF022 | Cadastrar TCC         |
-RF023 | Alterar TCC        |
-RF024 | Listar TCC         |
-RF025 | Excluir TCC           |
+RF025 | Cadastrar TCC         |
+RF026 | Alterar TCC        |
+RF027 | Listar TCC         |
+RF028 | Excluir TCC           |
 
 Prioridade | Essencial
 ---------- | --------
@@ -276,10 +277,10 @@ Descrição | O Sistema deve manter um cadastro de Horários. Os horários cadas
 
 Requisitos Envolvidos |      |
 --------------------- | -------
-RF026 | Cadastrar Horário         |
-RF027 | Alterar Horário        |
-RF028 | Listar Horário        |
-RF029 | Excluir Horário           |
+RF029 | Cadastrar Horário         |
+RF030 | Alterar Horário        |
+RF031 | Listar Horário        |
+RF032 | Excluir Horário           |
 
 Prioridade | Essencial
 ---------- | --------
@@ -313,10 +314,10 @@ Descrição | O Sistema deve manter um cadastro de Apresentações. As apresenta
 
 Requisitos Envolvidos |      |
 --------------------- | -------
-RF030 | Cadastrar Apresentação         |
-RF031 | Alterar Apresentação       |
-RF032 | Listar Apresentação         |
-RF033 | Excluir Apresentação           |
+RF033 | Cadastrar Apresentação         |
+RF034 | Alterar Apresentação       |
+RF035 | Listar Apresentação         |
+RF036 | Excluir Apresentação           |
 
 Prioridade | Essencial
 ---------- | --------
@@ -349,10 +350,10 @@ Descrição | O Sistema deve manter um cadastro de estágios. Os estágios cadas
 
 Requisitos Envolvidos |      |
 --------------------- | -------
-RF034 | Cadastrar estágio    |
-RF035 | Alterar estágio      |
-RF036 | Listar estágio       |
-RF037 | Excluir estágio      |
+RF037 | Cadastrar estágio    |
+RF038 | Alterar estágio      |
+RF039 | Listar estágio       |
+RF050 | Excluir estágio      |
 
 Prioridade | Essencial
 ---------- | --------
