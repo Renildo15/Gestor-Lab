@@ -62,23 +62,22 @@ RF021 - Cadastrar artigos publicados | Os artigos possuem título, autores, loca
 RF022 - Atualizar artigos publicados | Permite a mudança no título, autor, local de publização e descrição. | Administrador
 RF023 - Listar artigos publicados | lista todos os artigos publicados. | Usuário
 RF024 - Deletar artigos publicados | Deleta um artigo publicado. | Administrador
-RF025 - Cadastrar estágios | Os estágios possuem informações do estagiário, orientador, supervisor e atividades. | Administrador
-RF026 - Aualizar estágios | Permite mudança nas informações do estagiário, orientador, supervisor e atividades. | Administrador
-RF027 - Listar estágios | lista os estágios ativos, encerrados ou todos. | Usuário
-RF028 - Deletar estágios | Deleta um estágio. | Administrador
-RF029 - Cadastrar apresentações | As apresentações possuem autores e são vinculados a um evento ou projeto. | Professor
-RF030 - Atualizar apresentações | Permite a mudança no autor(es), e a vinculação do evento. | Professor
-RF031 - Lista apresentações | Lista as apresentações que iram acontecer, que aconteceram, ou todas. | Professor
-RF032 - Deletar apresentação | Deleta uma apresentação. | Professor
-RF033 - Cadastrar horários dos membros dos laboratórios | Os horários possuem horário de entrada, horário de saída e os dias na semana em que os membros estaram trabalhando. | Professor
-RF034 - Atulizar horários dos membros dos laboratórios | Permite a mudança do horário de entrada, horário de saída e os dias na semana em que os membros estaram trabalhando. | Professor
-RF035 - Listar horários dos membros dos laboratórios | Lista todos os horários dos membros ativos dos laboratórios | Usuário
-RF036 - Deletar horários dos membros dos laboratórios | Deleta um horário de um membro do laboratório | Professor
-RF037 - Cadastrar TCC | O TCC possui título, descrição, linha de pesquisa, informações do discente, do orientador. | Professor
-RF038 - Atulizar TCC | Permite a atualização do título, descrição, linha de pesquisa, informações do orientador. | Administrador
-RF039 - Listar TCC | Lista todos os TCC por linha de pesquisa. | Usuário 
-RF040 - Deletar TCC | Deleta um TCC. | Administrador
- 
+RF025 - Cadastrar TCC | O TCC possui título, descrição, linha de pesquisa, informações do discente, do orientador. | Professor
+RF026 - Atualizar TCC | Permite a atualização do título, descrição, linha de pesquisa, informações do orientador. | Administrador
+RF027 - Listar TCC | Lista todos os TCC por linha de pesquisa. | Usuário 
+RF028 - Deletar TCC | Deleta um TCC. | Administrador
+RF029 - Cadastrar horários dos membros dos laboratórios | Os horários possuem horário de entrada, horário de saída e os dias na semana em que os membros estaram trabalhando. | Professor
+RF030 - Atulizar horários dos membros dos laboratórios | Permite a mudança do horário de entrada, horário de saída e os dias na semana em que os membros estaram trabalhando. | Professor
+RF031 - Listar horários dos membros dos laboratórios | Lista todos os horários dos membros ativos dos laboratórios | Usuário
+RF032 - Deletar horários dos membros dos laboratórios | Deleta um horário de um membro do laboratório | Professor
+RF033 - Cadastrar apresentações | As apresentações possuem autores e são vinculados a um evento ou projeto. | Professor
+RF034 - Atualizar apresentações | Permite a mudança no autor(es), e a vinculação do evento. | Professor
+RF035 - Lista apresentações | Lista as apresentações que iram acontecer, que aconteceram, ou todas. | Professor
+RF036 - Deletar apresentação | Deleta uma apresentação. | Professor
+RF037 - Cadastrar estágios | Os estágios possuem informações do estagiário, orientador, supervisor e atividades. | Administrador
+RF038 - Aualizar estágios | Permite mudança nas informações do estagiário, orientador, supervisor e atividades. | Administrador
+RF039 - Listar estágios | lista os estágios ativos, encerrados ou todos. | Usuário
+RF040 - Deletar estágios | Deleta um estágio. | Administrador
 
 
 
