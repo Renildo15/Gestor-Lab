@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render
-from estagio_app.forms import estForm
+from estagio_app.forms import EstForm
 from django.core.paginator import Paginator
 from estagio_app.models import Estagio
 from django.contrib.auth.decorators import login_required
@@ -28,13 +28,13 @@ def home(request):
 @login_required(login_url='logar_user')
 def form(request):
     data = {}
-    data['form'] = estForm()
+    data['form'] = EstForm()
     return render(request,'est_form.html',data)
 
 @require_http_methods(["POST"])
 @login_required(login_url='logar_user')
 def create(request):
-    form = estForm(request.POST or None)
+    form = EstForm(request.POST or None)
     if form.is_valid():
         form.save()
         return redirect(redirLink)
@@ -51,7 +51,7 @@ def view(request,pk):
 def edit(request, pk):
     data = {}
     data['est'] = Estagio.objects.get(pk = pk)
-    data['form'] = estForm(instance=data['est'])
+    data['form'] = EstForm(instance=data['est'])
     return render(request,'est_form.html', data)
 
 @require_http_methods(["POST"])
@@ -59,7 +59,7 @@ def edit(request, pk):
 def update(request, pk):
     data = {}
     data['est'] = Estagio.objects.get(pk = pk)
-    form = estForm(request.POST or None, instance=data['est'])
+    form = EstForm(request.POST or None, instance=data['est'])
     if form.is_valid():
         form.save()
         return redirect(redirLink)
