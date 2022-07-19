@@ -12,9 +12,11 @@ from django.db.models.query_utils import Q
 from django.utils.http import urlsafe_base64_encode
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.encoding import force_bytes
+from django.views.decorators.http import require_safe, require_http_methods
 
 # Create your views here.
 
+@require_http_methods(["POST", "GET"])
 def logar_user(request):
     if request.method == "POST":
         username = request.POST.get('username')
@@ -26,14 +28,13 @@ def logar_user(request):
             return redirect('/')
         else:
             messages.error(request, "Username ou senha incorretos! Tente novamente!")
-            form_login = AuthenticationForm()
             return redirect('/auth/login/')
     else:
         form_login = AuthenticationForm()
     return render(request, "login.html", {'form_login': form_login})
 
 
-
+@require_http_methods(["POST", "GET"])
 def cadastrar_user(request):
     if request.method == "POST":
        form_usuario = RegisterUserForm(request.POST)
@@ -50,12 +51,14 @@ def cadastrar_user(request):
     return render(request,'cadastro.html', {'form_usuario': form_usuario})
 
 
+@require_http_methods(["POST", "GET"])
 @login_required(login_url='logar_user')
 def deslogar_usuario(request):
     logout(request)
     messages.success(request, 'Usuário deslogado com sucesso.')
     return redirect('/')
 
+@require_http_methods(["POST", "GET"])
 @login_required(login_url='logar_user')
 def mudar_senha(request):
     if request.method == "POST":
@@ -69,12 +72,14 @@ def mudar_senha(request):
         form_senha = PasswordChangingForm(request.user)
     return render(request, 'mudar_senha.html', {'form_senha': form_senha})
 
+@require_http_methods(["POST", "GET"])
 @login_required(login_url='logar_user')
 def mudar_senha_sucesso(request):
     return render(request, 'mudar_senha_sucesso.html')
 
 
 
+@require_http_methods(["POST", "GET"])
 def password_reset_request(request):
     if request.method == "POST":
         password_reset_form = PasswordResetForm(request.POST)

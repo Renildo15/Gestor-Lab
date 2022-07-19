@@ -2,7 +2,7 @@ from django.forms import ModelForm
 from .models import Estagio
 from django import forms
 
-class estForm(ModelForm):
+class EstForm(ModelForm):
     class Meta:
 
         model = Estagio
@@ -16,7 +16,7 @@ class estForm(ModelForm):
         }
 
     def __init__(self, *args, **kwargs):
-        super(estForm, self).__init__(*args, **kwargs)
+        super(EstForm, self).__init__(*args, **kwargs)
         self.fields['laboratorio'].empty_label = "Selecione"
         self.fields['estagiario'].empty_label = "Selecione"
         self.fields['supervisor'].empty_label = "Selecione"
