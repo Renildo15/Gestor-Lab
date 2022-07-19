@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'horario_app',
     'apresentacao_app',
     'estagio_app',
+    'rolepermissions'
 ]
 
 MIDDLEWARE = [
@@ -151,3 +152,4 @@ ACCOUNT_SESSION_REMEMBER = True
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+ROLEPERMISSIONS_MODULE = "gestorlabapp.roles"
